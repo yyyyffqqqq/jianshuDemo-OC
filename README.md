@@ -1,2 +1,2 @@
 # jianshuDemo-OC
-iOS 
+仿写 iOS 版简书客户端；
