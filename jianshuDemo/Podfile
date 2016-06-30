@@ -1,0 +1,7 @@
+platform :ios 
+
+target 'jianshuDemo' do
+
+ pod 'AFNetworking'
+
+end
