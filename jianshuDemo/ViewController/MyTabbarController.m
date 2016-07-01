@@ -6,17 +6,20 @@
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MyTabbarController.h"
+#import "MyCustomTabBar.h"
 
-@interface ViewController ()
+@interface MyTabbarController ()
 
 @end
 
-@implementation ViewController
+@implementation MyTabbarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setValue:[[MyCustomTabBar alloc] init] forKeyPath:@"tabBar"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

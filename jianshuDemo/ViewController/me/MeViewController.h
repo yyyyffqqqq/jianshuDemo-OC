@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MeViewController.h
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MeViewController : UIViewController
 
 @end
-

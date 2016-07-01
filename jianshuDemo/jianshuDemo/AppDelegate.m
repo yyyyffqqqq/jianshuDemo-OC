@@ -7,7 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MyTabbarController.h"
+
+#import "FindViewController.h"
+#import "AttensionViewController.h"
+#import "MeViewController.h"
+#import "NotificationViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +27,49 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
+    //1.创建标签控制器
+    MyTabbarController *tab = [[MyTabbarController alloc]init];
+    
+    //2.创建相应的子控制器（viewcontroller）
+    FindViewController *firstVC = [[FindViewController alloc]init];
+//    firstVC.navigationItem.title = @"发现";
+    firstVC.tabBarItem.title = @"发现";
+    firstVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_home"];
+    UINavigationController *firstNC = [[UINavigationController alloc]initWithRootViewController:firstVC];
+    
+    
+    AttensionViewController *secondVC = [AttensionViewController new];
+//    secondVC.navigationItem.title = @"关注";
+    //设置标签名称
+    secondVC.tabBarItem.title = @"关注";
+    //可以根据需求设置标签的的图标
+    secondVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_subscription"];
+    UINavigationController *secondNC = [[UINavigationController alloc]initWithRootViewController:secondVC];
+    
+    NotificationViewController *threeVC = [NotificationViewController new];
+//    threeVC.navigationItem.title = @"消息";
+    //设置标签名称
+    threeVC.tabBarItem.title = @"消息";
+    //可以根据需求设置标签的的图标
+    threeVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_notification_active"];
+    UINavigationController *threeNC = [[UINavigationController alloc]initWithRootViewController:threeVC];
+    
+    MeViewController *fourVC = [MeViewController new];
+//    fourVC.navigationItem.title = @"我的";
+    //设置标签名称
+    fourVC.tabBarItem.title = @"我的";
+    //可以根据需求设置标签的的图标
+    fourVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_me"];
+    UINavigationController *fourNC = [[UINavigationController alloc]initWithRootViewController:fourVC];
+    
+    
+    //3.添加到控制器
+    //特别注意：管理一组的控制器(最多显示五个,多余五个的话,包括第五个全部在更多模块里面,并且可以通过拖拽方式进行顺序编辑);
+    NSArray *array = @[firstNC, secondNC, threeNC, fourNC];
+    tab.viewControllers = array;
+    
     //这里加载第一个页面；
-    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:[[ViewController alloc]init]];
+    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:tab];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = navC;
     
