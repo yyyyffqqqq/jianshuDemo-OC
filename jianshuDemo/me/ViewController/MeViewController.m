@@ -1,22 +1,24 @@
 //
-//  PublishViewController.m
+//  MeViewController.m
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "PublishViewController.h"
+#import "MeViewController.h"
 
-@interface PublishViewController ()
+@interface MeViewController ()
 
 @end
 
-@implementation PublishViewController
+@implementation MeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"我的");
+    self.navigationItem.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

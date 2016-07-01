@@ -1,28 +1,37 @@
 //
-//  AttensionViewController.m
+//  PublishViewController.m
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "AttensionViewController.h"
+#import "PublishViewController.h"
 
-@interface AttensionViewController ()
+@interface PublishViewController ()
 
 @end
 
-@implementation AttensionViewController
+@implementation PublishViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"关注");
+    
+    UIBarButtonItem *backBt = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(tapCancelGoBack)];
+    self.navigationItem.leftBarButtonItem = backBt;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tapCancelGoBack {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 /*

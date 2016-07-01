@@ -1,23 +1,24 @@
 //
-//  FindViewController.m
+//  NotificationViewController.m
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "FindViewController.h"
+#import "NotificationViewController.h"
 
-@interface FindViewController ()
+@interface NotificationViewController ()
 
 @end
 
-@implementation FindViewController
+@implementation NotificationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"发现");
+    NSLog(@"消息");
+    self.navigationItem.title = @"消息";
 }
 
 - (void)didReceiveMemoryWarning {

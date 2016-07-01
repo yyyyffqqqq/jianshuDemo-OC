@@ -7,35 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		143F44B81D2660270080C726 /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44B71D2660270080C726 /* MyTabbarController.m */; };
-		143F44C21D2661E60080C726 /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44C11D2661E60080C726 /* MyCustomTabBar.m */; };
-		143F44C61D266C660080C726 /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44C51D266C660080C726 /* FindViewController.m */; };
-		143F44CC1D266E810080C726 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44CB1D266E810080C726 /* MeViewController.m */; };
-		143F44CF1D266EA50080C726 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44CE1D266EA50080C726 /* NotificationViewController.m */; };
-		143F44D21D266EBE0080C726 /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44D11D266EBE0080C726 /* AttensionViewController.m */; };
-		143F44D61D2677120080C726 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 143F44D51D2677120080C726 /* PublishViewController.m */; };
 		145B0A511D2591BA004BE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A501D2591BA004BE429 /* main.m */; };
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
 		145B0A5F1D2591BA004BE429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5D1D2591BA004BE429 /* LaunchScreen.storyboard */; };
+		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
+		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
+		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
+		14A6802B1D2704F60073FAAA /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680111D2704F60073FAAA /* HorizontalScrollView.m */; };
+		14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680171D2704F60073FAAA /* MeViewController.m */; };
+		14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6801D1D2704F60073FAAA /* NotificationViewController.m */; };
+		14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680211D2704F60073FAAA /* PublicClass.m */; };
+		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
+		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
+		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		143F44B61D2660270080C726 /* MyTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabbarController.h; sourceTree = "<group>"; };
-		143F44B71D2660270080C726 /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
-		143F44C01D2661E60080C726 /* MyCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabBar.h; sourceTree = "<group>"; };
-		143F44C11D2661E60080C726 /* MyCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabBar.m; sourceTree = "<group>"; };
-		143F44C41D266C660080C726 /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
-		143F44C51D266C660080C726 /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
-		143F44CA1D266E810080C726 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		143F44CB1D266E810080C726 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		143F44CD1D266EA50080C726 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
-		143F44CE1D266EA50080C726 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
-		143F44D01D266EBE0080C726 /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
-		143F44D11D266EBE0080C726 /* AttensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttensionViewController.m; sourceTree = "<group>"; };
-		143F44D41D2677120080C726 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
-		143F44D51D2677120080C726 /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
 		145B0A4C1D2591BA004BE429 /* jianshuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jianshuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145B0A501D2591BA004BE429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		145B0A521D2591BA004BE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +32,26 @@
 		145B0A5B1D2591BA004BE429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145B0A5E1D2591BA004BE429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		145B0A601D2591BA004BE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A680051D2704F60073FAAA /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
+		14A680061D2704F60073FAAA /* AttensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttensionViewController.m; sourceTree = "<group>"; };
+		14A680081D2704F60073FAAA /* MyCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabBar.h; sourceTree = "<group>"; };
+		14A680091D2704F60073FAAA /* MyCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabBar.m; sourceTree = "<group>"; };
+		14A6800E1D2704F60073FAAA /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
+		14A6800F1D2704F60073FAAA /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
+		14A680101D2704F60073FAAA /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
+		14A680111D2704F60073FAAA /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollView.m; sourceTree = "<group>"; };
+		14A680161D2704F60073FAAA /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		14A680171D2704F60073FAAA /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		14A6801C1D2704F60073FAAA /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		14A6801D1D2704F60073FAAA /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		14A680201D2704F60073FAAA /* PublicClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicClass.h; sourceTree = "<group>"; };
+		14A680211D2704F60073FAAA /* PublicClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicClass.m; sourceTree = "<group>"; };
+		14A680261D2704F60073FAAA /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
+		14A680271D2704F60073FAAA /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
+		14A680301D2705660073FAAA /* MyTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabbarController.h; sourceTree = "<group>"; };
+		14A680311D2705660073FAAA /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
+		14A680331D2705F20073FAAA /* CollectionCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellImageView.h; sourceTree = "<group>"; };
+		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,95 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		143F44B31D2660140080C726 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		143F44B41D2660210080C726 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				143F44BF1D2661E60080C726 /* CustomTabBar */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		143F44B51D2660270080C726 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				143F44D31D2676FF0080C726 /* publish */,
-				143F44C91D266E600080C726 /* me */,
-				143F44C81D266E5B0080C726 /* Message */,
-				143F44C71D266E0F0080C726 /* attention */,
-				143F44C31D266C340080C726 /* Find */,
-				143F44B61D2660270080C726 /* MyTabbarController.h */,
-				143F44B71D2660270080C726 /* MyTabbarController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		143F44BF1D2661E60080C726 /* CustomTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				143F44C01D2661E60080C726 /* MyCustomTabBar.h */,
-				143F44C11D2661E60080C726 /* MyCustomTabBar.m */,
-			);
-			path = CustomTabBar;
-			sourceTree = "<group>";
-		};
-		143F44C31D266C340080C726 /* Find */ = {
-			isa = PBXGroup;
-			children = (
-				143F44C41D266C660080C726 /* FindViewController.h */,
-				143F44C51D266C660080C726 /* FindViewController.m */,
-			);
-			path = Find;
-			sourceTree = "<group>";
-		};
-		143F44C71D266E0F0080C726 /* attention */ = {
-			isa = PBXGroup;
-			children = (
-				143F44D01D266EBE0080C726 /* AttensionViewController.h */,
-				143F44D11D266EBE0080C726 /* AttensionViewController.m */,
-			);
-			path = attention;
-			sourceTree = "<group>";
-		};
-		143F44C81D266E5B0080C726 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				143F44CD1D266EA50080C726 /* NotificationViewController.h */,
-				143F44CE1D266EA50080C726 /* NotificationViewController.m */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
-		143F44C91D266E600080C726 /* me */ = {
-			isa = PBXGroup;
-			children = (
-				143F44CA1D266E810080C726 /* MeViewController.h */,
-				143F44CB1D266E810080C726 /* MeViewController.m */,
-			);
-			path = me;
-			sourceTree = "<group>";
-		};
-		143F44D31D2676FF0080C726 /* publish */ = {
-			isa = PBXGroup;
-			children = (
-				143F44D41D2677120080C726 /* PublishViewController.h */,
-				143F44D51D2677120080C726 /* PublishViewController.m */,
-			);
-			path = publish;
-			sourceTree = "<group>";
-		};
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
-				143F44B51D2660270080C726 /* ViewController */,
-				143F44B41D2660210080C726 /* View */,
-				143F44B31D2660140080C726 /* Model */,
+				14A680011D2704F60073FAAA /* Attention */,
+				14A680071D2704F60073FAAA /* CustomTabBar */,
+				14A6800A1D2704F60073FAAA /* home */,
+				14A680121D2704F60073FAAA /* me */,
+				14A680181D2704F60073FAAA /* Message */,
+				14A6801E1D2704F60073FAAA /* PublicModel */,
+				14A680221D2704F60073FAAA /* publish */,
 				145B0A4E1D2591BA004BE429 /* jianshuDemo */,
 				145B0A4D1D2591BA004BE429 /* Products */,
 				42DB5CD6EA202EAE6D67A8F6 /* Pods */,
@@ -175,6 +105,8 @@
 		145B0A4F1D2591BA004BE429 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14A680301D2705660073FAAA /* MyTabbarController.h */,
+				14A680311D2705660073FAAA /* MyTabbarController.m */,
 				145B0A521D2591BA004BE429 /* AppDelegate.h */,
 				145B0A531D2591BA004BE429 /* AppDelegate.m */,
 				145B0A501D2591BA004BE429 /* main.m */,
@@ -183,6 +115,201 @@
 				145B0A601D2591BA004BE429 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14A680011D2704F60073FAAA /* Attention */ = {
+			isa = PBXGroup;
+			children = (
+				14A680021D2704F60073FAAA /* Model */,
+				14A680031D2704F60073FAAA /* View */,
+				14A680041D2704F60073FAAA /* ViewController */,
+			);
+			path = Attention;
+			sourceTree = "<group>";
+		};
+		14A680021D2704F60073FAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14A680031D2704F60073FAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A680041D2704F60073FAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14A680051D2704F60073FAAA /* AttensionViewController.h */,
+				14A680061D2704F60073FAAA /* AttensionViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14A680071D2704F60073FAAA /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				14A680081D2704F60073FAAA /* MyCustomTabBar.h */,
+				14A680091D2704F60073FAAA /* MyCustomTabBar.m */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		14A6800A1D2704F60073FAAA /* home */ = {
+			isa = PBXGroup;
+			children = (
+				14A6800B1D2704F60073FAAA /* Model */,
+				14A6800C1D2704F60073FAAA /* View */,
+				14A6800D1D2704F60073FAAA /* ViewController */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		14A6800B1D2704F60073FAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14A6800C1D2704F60073FAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14A680331D2705F20073FAAA /* CollectionCellImageView.h */,
+				14A680341D2705F20073FAAA /* CollectionCellImageView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A6800D1D2704F60073FAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14A6800E1D2704F60073FAAA /* FindViewController.h */,
+				14A6800F1D2704F60073FAAA /* FindViewController.m */,
+				14A680101D2704F60073FAAA /* HorizontalScrollView.h */,
+				14A680111D2704F60073FAAA /* HorizontalScrollView.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14A680121D2704F60073FAAA /* me */ = {
+			isa = PBXGroup;
+			children = (
+				14A680131D2704F60073FAAA /* Model */,
+				14A680141D2704F60073FAAA /* View */,
+				14A680151D2704F60073FAAA /* ViewController */,
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		14A680131D2704F60073FAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14A680141D2704F60073FAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A680151D2704F60073FAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14A680161D2704F60073FAAA /* MeViewController.h */,
+				14A680171D2704F60073FAAA /* MeViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14A680181D2704F60073FAAA /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				14A680191D2704F60073FAAA /* Model */,
+				14A6801A1D2704F60073FAAA /* View */,
+				14A6801B1D2704F60073FAAA /* ViewController */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		14A680191D2704F60073FAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14A6801A1D2704F60073FAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A6801B1D2704F60073FAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14A6801C1D2704F60073FAAA /* NotificationViewController.h */,
+				14A6801D1D2704F60073FAAA /* NotificationViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14A6801E1D2704F60073FAAA /* PublicModel */ = {
+			isa = PBXGroup;
+			children = (
+				14A6801F1D2704F60073FAAA /* public */,
+			);
+			path = PublicModel;
+			sourceTree = "<group>";
+		};
+		14A6801F1D2704F60073FAAA /* public */ = {
+			isa = PBXGroup;
+			children = (
+				14A680201D2704F60073FAAA /* PublicClass.h */,
+				14A680211D2704F60073FAAA /* PublicClass.m */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		14A680221D2704F60073FAAA /* publish */ = {
+			isa = PBXGroup;
+			children = (
+				14A680231D2704F60073FAAA /* Model */,
+				14A680241D2704F60073FAAA /* View */,
+				14A680251D2704F60073FAAA /* ViewController */,
+			);
+			path = publish;
+			sourceTree = "<group>";
+		};
+		14A680231D2704F60073FAAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14A680241D2704F60073FAAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		14A680251D2704F60073FAAA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14A680261D2704F60073FAAA /* PublishViewController.h */,
+				14A680271D2704F60073FAAA /* PublishViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		42DB5CD6EA202EAE6D67A8F6 /* Pods */ = {
@@ -323,15 +450,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				143F44D21D266EBE0080C726 /* AttensionViewController.m in Sources */,
-				143F44CF1D266EA50080C726 /* NotificationViewController.m in Sources */,
-				143F44CC1D266E810080C726 /* MeViewController.m in Sources */,
-				143F44C21D2661E60080C726 /* MyCustomTabBar.m in Sources */,
-				143F44B81D2660270080C726 /* MyTabbarController.m in Sources */,
-				143F44C61D266C660080C726 /* FindViewController.m in Sources */,
+				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
+				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
+				14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */,
+				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
+				14A6802B1D2704F60073FAAA /* HorizontalScrollView.m in Sources */,
+				14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */,
+				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
-				143F44D61D2677120080C726 /* PublishViewController.m in Sources */,
+				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
+				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
+				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

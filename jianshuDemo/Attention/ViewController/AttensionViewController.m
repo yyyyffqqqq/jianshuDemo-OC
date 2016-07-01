@@ -1,23 +1,24 @@
 //
-//  MeViewController.m
+//  AttensionViewController.m
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "MeViewController.h"
+#import "AttensionViewController.h"
 
-@interface MeViewController ()
+@interface AttensionViewController ()
 
 @end
 
-@implementation MeViewController
+@implementation AttensionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"我的");
+    NSLog(@"关注");
+    self.navigationItem.title = @"关注";
 }
 
 - (void)didReceiveMemoryWarning {

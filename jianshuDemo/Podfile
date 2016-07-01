@@ -1,7 +1,21 @@
-platform :ios 
+platform :ios,’8.0‘
 
 target 'jianshuDemo' do
 
  pod 'AFNetworking'
+
+ pod 'Reachability'
+
+ pod 'SVPullToRefresh’
+
+ pod ’SDWebImage‘
+
+ pod ’WebViewJavascriptBridge‘
+
+ pod ’FDFullscreenPopGesture‘
+
+ pod ’Masonry‘
+
+ pod ‘FMDB’
 
 end

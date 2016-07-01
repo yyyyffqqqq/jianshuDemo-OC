@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FindViewController : UIViewController
+#import "HorizontalScrollView.h"
+
+@interface FindViewController : UITableViewController
+
+@property (strong, nonatomic) HorizontalScrollView *horizontalScrollView;
 
 @end

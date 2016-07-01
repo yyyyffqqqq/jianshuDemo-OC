@@ -32,34 +32,34 @@
     
     //2.创建相应的子控制器（viewcontroller）
     FindViewController *firstVC = [[FindViewController alloc]init];
-//    firstVC.navigationItem.title = @"发现";
     firstVC.tabBarItem.title = @"发现";
-    firstVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_home"];
+    firstVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_home_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    firstVC.tabBarItem.image = [[UIImage imageNamed:@"icon_tabbar_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *firstNC = [[UINavigationController alloc]initWithRootViewController:firstVC];
     
     
     AttensionViewController *secondVC = [AttensionViewController new];
-//    secondVC.navigationItem.title = @"关注";
     //设置标签名称
     secondVC.tabBarItem.title = @"关注";
     //可以根据需求设置标签的的图标
-    secondVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_subscription"];
+    secondVC.tabBarItem.image = [[UIImage imageNamed:@"icon_tabbar_subscription"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    secondVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_subscription_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *secondNC = [[UINavigationController alloc]initWithRootViewController:secondVC];
     
     NotificationViewController *threeVC = [NotificationViewController new];
-//    threeVC.navigationItem.title = @"消息";
     //设置标签名称
     threeVC.tabBarItem.title = @"消息";
     //可以根据需求设置标签的的图标
-    threeVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_notification_active"];
+    threeVC.tabBarItem.image = [[UIImage imageNamed:@"icon_tabbar_notification"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    threeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_notification_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *threeNC = [[UINavigationController alloc]initWithRootViewController:threeVC];
     
     MeViewController *fourVC = [MeViewController new];
-//    fourVC.navigationItem.title = @"我的";
     //设置标签名称
     fourVC.tabBarItem.title = @"我的";
     //可以根据需求设置标签的的图标
-    fourVC.tabBarItem.image = [UIImage imageNamed:@"icon_tabbar_me"];
+    fourVC.tabBarItem.image = [[UIImage imageNamed:@"icon_tabbar_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    fourVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_me_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *fourNC = [[UINavigationController alloc]initWithRootViewController:fourVC];
     
     
@@ -69,9 +69,9 @@
     tab.viewControllers = array;
     
     //这里加载第一个页面；
-    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:tab];
+//    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:tab];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = navC;
+    self.window.rootViewController = tab;
     
     [self.window makeKeyAndVisible];
     
