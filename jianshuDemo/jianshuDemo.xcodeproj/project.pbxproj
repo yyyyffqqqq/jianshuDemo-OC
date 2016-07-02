@@ -14,13 +14,15 @@
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
-		14A6802B1D2704F60073FAAA /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680111D2704F60073FAAA /* HorizontalScrollView.m */; };
 		14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680171D2704F60073FAAA /* MeViewController.m */; };
 		14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6801D1D2704F60073FAAA /* NotificationViewController.m */; };
 		14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680211D2704F60073FAAA /* PublicClass.m */; };
 		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
+		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
+		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
+		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +40,6 @@
 		14A680091D2704F60073FAAA /* MyCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabBar.m; sourceTree = "<group>"; };
 		14A6800E1D2704F60073FAAA /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
 		14A6800F1D2704F60073FAAA /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
-		14A680101D2704F60073FAAA /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
-		14A680111D2704F60073FAAA /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollView.m; sourceTree = "<group>"; };
 		14A680161D2704F60073FAAA /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		14A680171D2704F60073FAAA /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		14A6801C1D2704F60073FAAA /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
@@ -52,6 +52,12 @@
 		14A680311D2705660073FAAA /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
 		14A680331D2705F20073FAAA /* CollectionCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellImageView.h; sourceTree = "<group>"; };
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
+		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
+		14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollView.m; sourceTree = "<group>"; };
+		14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableHeaderView.h; sourceTree = "<group>"; };
+		14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeaderView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +187,10 @@
 			children = (
 				14A680331D2705F20073FAAA /* CollectionCellImageView.h */,
 				14A680341D2705F20073FAAA /* CollectionCellImageView.m */,
+				14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */,
+				14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */,
+				14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */,
+				14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,8 +200,8 @@
 			children = (
 				14A6800E1D2704F60073FAAA /* FindViewController.h */,
 				14A6800F1D2704F60073FAAA /* FindViewController.m */,
-				14A680101D2704F60073FAAA /* HorizontalScrollView.h */,
-				14A680111D2704F60073FAAA /* HorizontalScrollView.m */,
+				14E028D21D27B72D00767AF2 /* SearchResultViewController.h */,
+				14E028D31D27B72D00767AF2 /* SearchResultViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -451,17 +461,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
+				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
+				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
 				14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
-				14A6802B1D2704F60073FAAA /* HorizontalScrollView.m in Sources */,
 				14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */,
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
+				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

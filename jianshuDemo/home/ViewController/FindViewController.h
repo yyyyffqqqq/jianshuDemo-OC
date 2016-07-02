@@ -10,8 +10,15 @@
 
 #import "HorizontalScrollView.h"
 
-@interface FindViewController : UITableViewController
+#import "SearchResultViewController.h"
+
+@interface FindViewController : UITableViewController<UISearchResultsUpdating, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) HorizontalScrollView *horizontalScrollView;
+
+@property (nonatomic , strong) SearchResultViewController *searchResultVC;
+@property(strong, nonatomic) UISearchController *searchController;
+@property(strong, nonatomic) NSMutableArray *searchHistorys; // 搜索记录
+@property(strong, nonatomic) NSMutableArray *searchResults; // 根据searchController搜索的结果
 
 @end

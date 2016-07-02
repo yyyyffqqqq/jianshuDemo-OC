@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     NSLog(@"发现");
     self.navigationItem.title = @"发现";
     
@@ -34,7 +36,44 @@
     
     _horizontalScrollView.backgroundColor = [UIColor grayColor];
     
+    
     self.tableView.tableHeaderView = _horizontalScrollView;
+    
+    
+    
+    _searchHistorys = [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
+    _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
+    _searchResultVC.searchResults = _searchHistorys;
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:_searchResultVC];
+    self.searchController.searchResultsUpdater = self;
+//    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    //    self.searchController.dimsBackgroundDuringPresentation = false;
+//    [self.searchController.searchBar sizeToFit];
+    //    self.searchController.searchBar.backgroundColor = UIColorFromHex(0xdcdcdc);
+    //    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    [self.tableView.tableHeaderView addSubview:self.searchController.searchBar];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (self.searchController.active) {
+        self.searchController.active = NO;
+        [self.searchController.searchBar removeFromSuperview];
+    }
+}
+
+#pragma mark - searchController delegate
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    [self.searchResults removeAllObjects];
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", self.searchController.searchBar.text];
+    self.searchResults = [[self.searchHistorys filteredArrayUsingPredicate:searchPredicate] mutableCopy];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        _searchResultVC.searchResults = self.searchResults;
+        [_searchResultVC.tableView reloadData];
+    });
 }
 
 //HorizontalScrollViewDelegate
@@ -49,12 +88,28 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
+    if (section == 0) {
+        return 0;
+    }
     
     return 10;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return 44;
+//    }
+    
+    return 0;
+}
 
+//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return self.searchController.searchBar;
+//    }
+//
+//    return nil;
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
