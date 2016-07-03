@@ -14,7 +14,7 @@
 
 #import "HomeTableHeaderView.h"
 
-@interface FindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
+@interface FindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 

@@ -38,7 +38,7 @@
     UINavigationController *firstNC = [[UINavigationController alloc]initWithRootViewController:firstVC];
     
     
-    AttensionViewController *secondVC = [AttensionViewController new];
+    AttensionViewController *secondVC = [[AttensionViewController alloc]initWithStyle:UITableViewStyleGrouped];
     //设置标签名称
     secondVC.tabBarItem.title = @"关注";
     //可以根据需求设置标签的的图标
@@ -46,7 +46,7 @@
     secondVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_subscription_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *secondNC = [[UINavigationController alloc]initWithRootViewController:secondVC];
     
-    NotificationViewController *threeVC = [NotificationViewController new];
+    NotificationViewController *threeVC = [[NotificationViewController alloc]initWithStyle:UITableViewStylePlain];
     //设置标签名称
     threeVC.tabBarItem.title = @"消息";
     //可以根据需求设置标签的的图标
@@ -54,7 +54,7 @@
     threeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_notification_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *threeNC = [[UINavigationController alloc]initWithRootViewController:threeVC];
     
-    MeViewController *fourVC = [MeViewController new];
+    MeViewController *fourVC = [[MeViewController alloc]initWithStyle:UITableViewStylePlain];
     //设置标签名称
     fourVC.tabBarItem.title = @"我的";
     //可以根据需求设置标签的的图标

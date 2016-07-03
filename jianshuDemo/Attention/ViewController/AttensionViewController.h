@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchResultViewController.h"
 
-@interface AttensionViewController : UIViewController
+@interface AttensionViewController : UITableViewController<UISearchResultsUpdating, UISearchControllerDelegate>
+
+@property(strong, nonatomic) UISearchController *searchController;
+@property (nonatomic , strong) SearchResultViewController *searchResultVC;
 
 @end

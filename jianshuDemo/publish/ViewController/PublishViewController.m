@@ -21,6 +21,8 @@
     UIBarButtonItem *backBt = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(tapCancelGoBack)];
     self.navigationItem.leftBarButtonItem = backBt;
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {

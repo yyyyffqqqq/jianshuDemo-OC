@@ -18,6 +18,8 @@
     
     _nameLabel = [[UILabel alloc]init];
     
+    _nameLabel.textColor = [UIColor whiteColor];
+    
     [self addSubview:_imageView];
     [self addSubview:_nameLabel];
         

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : UIViewController
+@interface MeViewController : UITableViewController
+
+@property (strong, nonatomic) NSMutableArray *dataTitle;
+@property (strong, nonatomic) NSMutableArray *imageDatas;
+
+@property (strong, nonatomic) NSMutableArray *dataTitles_2;
+@property (strong, nonatomic) NSMutableArray *imageDatas_2;
 
 @end

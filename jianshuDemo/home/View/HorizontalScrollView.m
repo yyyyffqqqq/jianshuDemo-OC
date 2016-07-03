@@ -132,15 +132,17 @@
     cell.collectionImageItem.nameLabel.adjustsFontSizeToFitWidth = YES;
     cell.collectionImageItem.backgroundColor = [UIColor whiteColor];
     
-    cell.collectionImageItem.nameLabel.backgroundColor = [UIColor greenColor];
-    cell.collectionImageItem.imageView.backgroundColor = [UIColor blueColor];
+//    cell.collectionImageItem.nameLabel.backgroundColor = [UIColor greenColor];
+//    cell.collectionImageItem.imageView.backgroundColor = [UIColor blueColor];
 
     return cell;
 }
 
 # pragma mark - CollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(selectItemAtIndex:)]) {
+        [_delegate selectItemAtIndex:indexPath.item];
+    }
 }
 
 
@@ -223,6 +225,9 @@
 //    [self.contentView addSubview:_nameLabel];
     
     _collectionImageItem = [[CollectionCellImageView alloc]initWithFrame:CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, self.contentView.frame.size.height)];
+    
+    _collectionImageItem.image = [UIImage imageNamed:@"h1"];
+//    _collectionImageItem.backgroundColor = [UIColor redColor];
     
     [self.contentView addSubview:_collectionImageItem];
     

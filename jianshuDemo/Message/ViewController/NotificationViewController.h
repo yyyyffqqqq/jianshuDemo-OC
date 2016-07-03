@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NotificationViewController : UIViewController
+@interface NotificationViewController : UITableViewController
+
+@property (strong, nonatomic) NSMutableArray *dataTitle;
 
 @end
