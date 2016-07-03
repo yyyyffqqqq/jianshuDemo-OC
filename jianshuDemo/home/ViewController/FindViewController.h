@@ -12,13 +12,18 @@
 
 #import "SearchResultViewController.h"
 
-@interface FindViewController : UITableViewController<UISearchResultsUpdating, UISearchDisplayDelegate>
+#import "HomeTableHeaderView.h"
 
-@property (strong, nonatomic) HorizontalScrollView *horizontalScrollView;
+@interface FindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
+
+@property (strong, nonatomic) UITableView *tableView;
+
+@property (strong, nonatomic) HomeTableHeaderView *homeTableHeader;
+
+@property(strong, nonatomic) UISearchController *searchController;
 
 @property (nonatomic , strong) SearchResultViewController *searchResultVC;
-@property(strong, nonatomic) UISearchController *searchController;
-@property(strong, nonatomic) NSMutableArray *searchHistorys; // 搜索记录
-@property(strong, nonatomic) NSMutableArray *searchResults; // 根据searchController搜索的结果
+@property (nonatomic , strong) NSMutableArray *searchHistorys;
+
 
 @end

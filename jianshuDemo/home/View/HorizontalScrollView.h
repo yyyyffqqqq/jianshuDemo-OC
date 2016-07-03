@@ -19,6 +19,8 @@
 
 @interface HorizontalScrollView : UIView
 
+@property (nonatomic, strong) UICollectionView *collectionView;
+
 /// array of images' name
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *itemTitles;

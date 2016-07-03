@@ -8,7 +8,7 @@ target 'jianshuDemo' do
 
  pod 'SVPullToRefresh’
 
- pod ’SDWebImage‘
+ pod 'SDWebImage'
 
  pod ’WebViewJavascriptBridge‘
 
@@ -17,5 +17,7 @@ target 'jianshuDemo' do
  pod ’Masonry‘
 
  pod ‘FMDB’
+
+ pod 'SDCycleScrollView'
 
 end

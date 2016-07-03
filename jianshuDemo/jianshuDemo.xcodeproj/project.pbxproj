@@ -20,6 +20,7 @@
 		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
+		14B0AC661D28889600914386 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0AC651D28889600914386 /* HomeTableViewCell.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
@@ -52,6 +53,8 @@
 		14A680311D2705660073FAAA /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
 		14A680331D2705F20073FAAA /* CollectionCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellImageView.h; sourceTree = "<group>"; };
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
+		14B0AC641D28889600914386 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		14B0AC651D28889600914386 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */,
 				14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */,
 				14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */,
+				14B0AC641D28889600914386 /* HomeTableViewCell.h */,
+				14B0AC651D28889600914386 /* HomeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 			files = (
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
+				14B0AC661D28889600914386 /* HomeTableViewCell.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,

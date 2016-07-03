@@ -31,8 +31,6 @@
 {
     NSInteger _centerIndex;
 }
-
-@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) CollectionLayout *collectionLayout;
 
 @property CGFloat widthMargin_imageView_nameLabel; //图片与文本的水平间距

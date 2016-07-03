@@ -18,63 +18,89 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     
-    NSLog(@"发现");
+    [self.view addSubview:_tableView];
+    
+    _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.5)];
+    
+    _tableView.tableHeaderView = _homeTableHeader;
+    
+    _tableView.rowHeight = 150;
+    
     self.navigationItem.title = @"发现";
     
+    self.navigationController.navigationBar.hidden = YES;
     
     NSArray *itemNames = @[@"新上榜", @"日报", @"七日热门", @"三十日热门。。。。", @"市集", @"有奖活动",@"简书出版"];
     
     NSArray *imageNames = [NSArray arrayWithObjects:@"button_write", @"button_write", @"button_write", @"button_write", @"button_write", @"button_write", @"button_write", nil];
     
+    _homeTableHeader.horizontalScrollView.itemTitles = itemNames;
+    _homeTableHeader.horizontalScrollView.images = imageNames;
+    _homeTableHeader.horizontalScrollView.delegate = self;
+//    [_homeTableHeader.horizontalScrollView updateData];
     
-    _horizontalScrollView = [[HorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 80)];
-    _horizontalScrollView.itemTitles = itemNames;
-    _horizontalScrollView.images = imageNames;
-    _horizontalScrollView.delegate = self;
-    [_horizontalScrollView updateData];
-    
-    _horizontalScrollView.backgroundColor = [UIColor grayColor];
-    
-    
-    self.tableView.tableHeaderView = _horizontalScrollView;
-    
-    
-    
-    _searchHistorys = [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
-    _searchResultVC.searchResults = _searchHistorys;
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:_searchResultVC];
-    self.searchController.searchResultsUpdater = self;
-//    self.searchController.hidesNavigationBarDuringPresentation = NO;
-    //    self.searchController.dimsBackgroundDuringPresentation = false;
-//    [self.searchController.searchBar sizeToFit];
-    //    self.searchController.searchBar.backgroundColor = UIColorFromHex(0xdcdcdc);
-    //    self.tableView.tableHeaderView = self.searchController.searchBar;
     
-    [self.tableView.tableHeaderView addSubview:self.searchController.searchBar];
+    _searchHistorys= [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
+    _searchResultVC.searchResults = [_searchHistorys copy];
+    
+    _homeTableHeader.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    _homeTableHeader.searchBar.delegate = self;
+    
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:_searchResultVC];
+    self.searchController.view.backgroundColor = [UIColor whiteColor];
+    self.searchController.searchResultsUpdater = self;
+//    self.searchController.dimsBackgroundDuringPresentation = NO;
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    self.searchController.delegate = self;
+    [self.searchController.searchBar sizeToFit];
+    
+    
+    self.definesPresentationContext = YES;
+    
+    self.navigationItem.titleView = self.searchController.searchBar;
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    if (self.searchController.active) {
-        self.searchController.active = NO;
-        [self.searchController.searchBar removeFromSuperview];
-    }
+    
+//    if (self.searchController.active) {
+//        self.searchController.active = NO;
+//        [self.searchController.searchBar removeFromSuperview];
+//    }
+
 }
 
-#pragma mark - searchController delegate
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    self.navigationController.navigationBar.hidden = YES;
+}
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    [self.searchResults removeAllObjects];
-    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", self.searchController.searchBar.text];
-    self.searchResults = [[self.searchHistorys filteredArrayUsingPredicate:searchPredicate] mutableCopy];
+//    [_searchResultVC.searchResults removeAllObjects];
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", self.searchController.searchBar.text ];
+    _searchResultVC.searchResults = [[self.searchHistorys filteredArrayUsingPredicate:searchPredicate] mutableCopy];
     dispatch_async(dispatch_get_main_queue(), ^{
-        _searchResultVC.searchResults = self.searchResults;
         [_searchResultVC.tableView reloadData];
     });
 }
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    self.navigationController.navigationBar.hidden = NO;
+    [self.searchController.searchBar becomeFirstResponder];
+    
+    return NO;
+}
+
 
 //HorizontalScrollViewDelegate
 - (void)selectItemAtIndex:(NSInteger)index {
@@ -95,19 +121,21 @@
     return 10;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
 //    if (section == 0) {
 //        return 44;
 //    }
-    
-    return 0;
-}
+//    
+//    return 0;
+//}
 
 //-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
 //    if (section == 0) {
-//        return self.searchController.searchBar;
+//        return self.searchBar;
 //    }
-//
+////    if (section==0) {
+////        return self.searchController.searchBar;
+////    }
 //    return nil;
 //}
 
@@ -117,7 +145,7 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     
-    
+    cell.textLabel.text = @"ddsdsd";
     
     return cell;
     
@@ -127,6 +155,10 @@
     
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
