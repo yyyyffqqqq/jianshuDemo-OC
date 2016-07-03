@@ -23,8 +23,15 @@
     
     _dataTitle = [[NSMutableArray alloc]initWithObjects:@"评论", @"简信", @"请求", @"喜欢", @"关注", @"其他提醒",nil];
     
+    UIBarButtonItem *notificationBt = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"icon_notification_settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(tapnotificationButton)];
+    self.navigationItem.rightBarButtonItem = notificationBt;
     
 }
+
+-(void)tapnotificationButton {
+    
+}
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     

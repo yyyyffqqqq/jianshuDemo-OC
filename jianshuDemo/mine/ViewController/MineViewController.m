@@ -1,18 +1,22 @@
 //
-//  MeViewController.m
+//  MineViewController.m
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "MeViewController.h"
+#import "MineViewController.h"
+#import "MineTableViewCell.h"
 
-@interface MeViewController ()
+#define firstRowHeight 80.0f
+#define otherRowHeightOfMe 50.0f
+
+@interface MineViewController ()
 
 @end
 
-@implementation MeViewController
+@implementation MineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +62,10 @@
     } else if (indexPath.section==2) {
         cell.textLabel.text = _dataTitles_2[indexPath.row];
         cell.imageView.image = _imageDatas_2[indexPath.row];
+    } else if (indexPath.section == 0) {
+        cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        ((MineTableViewCell*)cell).headerImageView.layer.cornerRadius = firstRowHeight*0.6*0.5; //0.6是图片大小占行高的比率
+        ((MineTableViewCell*)cell).headerImageView.layer.masksToBounds = YES;
     }
     
     cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;
@@ -71,9 +79,9 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
     if (indexPath.section != 0) {
-        return 50;
+        return otherRowHeightOfMe;
     }
-    return 80;
+    return firstRowHeight;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

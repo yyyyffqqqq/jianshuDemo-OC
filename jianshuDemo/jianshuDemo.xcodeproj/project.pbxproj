@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5561D297A43003F0A6F /* MineTableViewCell.m */; };
+		1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5591D297A43003F0A6F /* MineViewController.m */; };
 		145B0A511D2591BA004BE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A501D2591BA004BE429 /* main.m */; };
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
@@ -14,7 +16,6 @@
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
-		14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680171D2704F60073FAAA /* MeViewController.m */; };
 		14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6801D1D2704F60073FAAA /* NotificationViewController.m */; };
 		14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680211D2704F60073FAAA /* PublicClass.m */; };
 		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
@@ -28,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1416A5551D297A43003F0A6F /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		1416A5561D297A43003F0A6F /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		1416A5581D297A43003F0A6F /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		1416A5591D297A43003F0A6F /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		145B0A4C1D2591BA004BE429 /* jianshuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jianshuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145B0A501D2591BA004BE429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		145B0A521D2591BA004BE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,8 +46,6 @@
 		14A680091D2704F60073FAAA /* MyCustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTabBar.m; sourceTree = "<group>"; };
 		14A6800E1D2704F60073FAAA /* FindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindViewController.h; sourceTree = "<group>"; };
 		14A6800F1D2704F60073FAAA /* FindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindViewController.m; sourceTree = "<group>"; };
-		14A680161D2704F60073FAAA /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		14A680171D2704F60073FAAA /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		14A6801C1D2704F60073FAAA /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		14A6801D1D2704F60073FAAA /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		14A680201D2704F60073FAAA /* PublicClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicClass.h; sourceTree = "<group>"; };
@@ -78,13 +81,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1416A5521D297A43003F0A6F /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				1416A5531D297A43003F0A6F /* Model */,
+				1416A5541D297A43003F0A6F /* View */,
+				1416A5571D297A43003F0A6F /* ViewController */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		1416A5531D297A43003F0A6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1416A5541D297A43003F0A6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1416A5551D297A43003F0A6F /* MineTableViewCell.h */,
+				1416A5561D297A43003F0A6F /* MineTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1416A5571D297A43003F0A6F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1416A5581D297A43003F0A6F /* MineViewController.h */,
+				1416A5591D297A43003F0A6F /* MineViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
+				1416A5521D297A43003F0A6F /* mine */,
 				14A680011D2704F60073FAAA /* Attention */,
 				14A680071D2704F60073FAAA /* CustomTabBar */,
 				14A6800A1D2704F60073FAAA /* home */,
-				14A680121D2704F60073FAAA /* me */,
 				14A680181D2704F60073FAAA /* Message */,
 				14A6801E1D2704F60073FAAA /* PublicModel */,
 				14A680221D2704F60073FAAA /* publish */,
@@ -207,39 +245,6 @@
 				14A6800F1D2704F60073FAAA /* FindViewController.m */,
 				14E028D21D27B72D00767AF2 /* SearchResultViewController.h */,
 				14E028D31D27B72D00767AF2 /* SearchResultViewController.m */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		14A680121D2704F60073FAAA /* me */ = {
-			isa = PBXGroup;
-			children = (
-				14A680131D2704F60073FAAA /* Model */,
-				14A680141D2704F60073FAAA /* View */,
-				14A680151D2704F60073FAAA /* ViewController */,
-			);
-			path = me;
-			sourceTree = "<group>";
-		};
-		14A680131D2704F60073FAAA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		14A680141D2704F60073FAAA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		14A680151D2704F60073FAAA /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				14A680161D2704F60073FAAA /* MeViewController.h */,
-				14A680171D2704F60073FAAA /* MeViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -471,14 +476,15 @@
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
-				14A6802C1D2704F60073FAAA /* MeViewController.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
+				1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */,
 				14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */,
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
+				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
 				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

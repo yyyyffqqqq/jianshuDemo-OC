@@ -90,23 +90,6 @@
     return 10;
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return 44;
-//    }
-//
-//    return 0;
-//}
-
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return self.searchBar;
-//    }
-////    if (section==0) {
-////        return self.searchController.searchBar;
-////    }
-//    return nil;
-//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -131,6 +114,8 @@
         cell.detailTextLabel.text = @"Ios开发之约束布局";
 //        cell.detailTextLabel.layer.borderWidth = 1;
 //        cell.detailTextLabel.layer.borderColor = [UIColor redColor].CGColor;
+        cell.imageView.layer.borderWidth = 1;
+        cell.imageView.layer.borderColor = [UIColor redColor].CGColor;
         cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
     }
     

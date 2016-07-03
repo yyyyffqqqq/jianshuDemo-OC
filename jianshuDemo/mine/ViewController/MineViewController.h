@@ -1,5 +1,5 @@
 //
-//  MeViewController.h
+//  MineViewController.h
 //  jianshuDemo
 //
 //  Created by quan on 16/7/1.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MeViewController : UITableViewController
+@interface MineViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *dataTitle;
 @property (strong, nonatomic) NSMutableArray *imageDatas;

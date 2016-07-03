@@ -11,7 +11,7 @@
 
 #import "FindViewController.h"
 #import "AttensionViewController.h"
-#import "MeViewController.h"
+#import "MineViewController.h"
 #import "NotificationViewController.h"
 
 @interface AppDelegate ()
@@ -54,7 +54,7 @@
     threeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_notification_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *threeNC = [[UINavigationController alloc]initWithRootViewController:threeVC];
     
-    MeViewController *fourVC = [[MeViewController alloc]initWithStyle:UITableViewStylePlain];
+    MineViewController *fourVC = [[MineViewController alloc]initWithStyle:UITableViewStylePlain];
     //设置标签名称
     fourVC.tabBarItem.title = @"我的";
     //可以根据需求设置标签的的图标
