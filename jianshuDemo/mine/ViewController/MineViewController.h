@@ -10,7 +10,11 @@
 
 @interface MineViewController : UITableViewController
 
-@property (strong, nonatomic) NSMutableArray *dataTitle;
+@property (strong, nonatomic) NSArray *mintTitleDatas_section_one;
+@property (strong, nonatomic) NSArray *mintTitleDatas_section_two;
+@property (strong, nonatomic) NSArray *mineUserInfDatas;
+
+@property (strong, nonatomic) NSMutableArray *dataTitles;
 @property (strong, nonatomic) NSMutableArray *imageDatas;
 
 @property (strong, nonatomic) NSMutableArray *dataTitles_2;

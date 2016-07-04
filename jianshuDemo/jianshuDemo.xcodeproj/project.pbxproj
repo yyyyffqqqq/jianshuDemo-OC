@@ -26,6 +26,8 @@
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
+		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
+		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,10 @@
 		14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollView.m; sourceTree = "<group>"; };
 		14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableHeaderView.h; sourceTree = "<group>"; };
 		14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeaderView.m; sourceTree = "<group>"; };
+		14E3E7591D2AD7A700D2E7D5 /* MineUserInformationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserInformationClass.h; sourceTree = "<group>"; };
+		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
+		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
+		14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTitleClass.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +103,10 @@
 		1416A5531D297A43003F0A6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14E3E7591D2AD7A700D2E7D5 /* MineUserInformationClass.h */,
+				14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */,
+				14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */,
+				14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -476,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
+				14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */,
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
 				14B0AC661D28889600914386 /* HomeTableViewCell.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
@@ -488,6 +499,7 @@
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
+				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,

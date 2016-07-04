@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MineUserInformationClass.h"
+#import "MineTitleClass.h"
 #import "Masonry.h"
 
 #define jifenColor [UIColor brownColor]
@@ -17,6 +18,9 @@
 @property (nonatomic, strong) MASConstraint *topConstraint;
 
 @property CGSize contentSize; //cell大小
+
+@property (nonatomic, strong) MineTitleClass *mineTitle;
+@property (nonatomic, strong) MineUserInformationClass *mineUserInf;
 
 @property (strong, nonatomic) UIImageView *headerImageView;
 @property (strong, nonatomic) UIImageView *jifenImageView;

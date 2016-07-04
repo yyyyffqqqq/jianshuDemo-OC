@@ -118,8 +118,7 @@
             make.right.mas_equalTo(_jifenImageView.mas_right).multipliedBy(1.1).offset(jifenSuperViewWidth);
             
         }];
-        
-        
+    
         [_jifenLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_jifenImageView.mas_right).multipliedBy(1.1);
             make.height.mas_equalTo(_jifenSuperView.mas_height).multipliedBy(0.6);
@@ -199,6 +198,23 @@
         self.topConstraint = make.width.mas_equalTo(_accessoryTypeValueLabel.superview.mas_width).multipliedBy(0.1);
         make.centerY.mas_equalTo(_accessoryTypeValueLabel.superview);
     }];
+}
+
+-(void)setMineTitle:(MineTitleClass *)mineTitle {
+    self.textLabel.text = mineTitle.titleName;
+    self.detailTextLabel.text = mineTitle.articleCounts;
+    
+    //如果是从网络获取图片数据，则在这里请求网络获取图片；
+    
+    
+}
+
+-(void)setMineUserInf:(MineUserInformationClass *)mineUserInf {
+    self.nameLabel.text = mineUserInf.userName;
+    self.jifenLabel.text = mineUserInf.userPoint;
+    self.jifenValueLabel.text = mineUserInf.userPointValue;
+    self.headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+    self.jifenImageView.image = [UIImage imageNamed:@"icon_mine_pts"];
 }
 
 -(void)dealloc {
