@@ -9,7 +9,7 @@
 #import "MineTableViewCell.h"
 #import "PublicClass.h"
 
-#define jifenColor [UIColor brownColor]
+
 
 
 @implementation MineTableViewCell
@@ -24,8 +24,10 @@
     // Configure the view for the selected state
 }
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+-(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withFrame:(CGRect)frame{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    _contentSize = frame.size;
     
     _headerImageView = [[UIImageView alloc]init];
     _jifenImageView = [[UIImageView alloc]init];
@@ -33,6 +35,7 @@
     _jifenLabel = [[UILabel alloc]init];
     _jifenValueLabel = [[UILabel alloc]init];
     _jifenSuperView = [[UILabel alloc]init];
+    _accessoryTypeValueLabel = [[UILabel alloc]init];
     
     [self.contentView addSubview:_headerImageView];
     [self.contentView addSubview:_jifenSuperView];
@@ -40,50 +43,32 @@
     [self.contentView addSubview:_nameLabel];
     [self.contentView addSubview:_jifenLabel];
     [self.contentView addSubview:_jifenValueLabel];
+    [self.contentView addSubview:_accessoryTypeValueLabel];
     
     [_nameLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_jifenLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_jifenValueLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    [_accessoryTypeValueLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     
     [_nameLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_jifenLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_jifenValueLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    [_accessoryTypeValueLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     
     [self layoutMyView];
-    
-    _nameLabel.text = @"mary";
-    _nameLabel.font = [UIFont systemFontOfSize:16];
-    _nameLabel.adjustsFontSizeToFitWidth = YES;
-    
-    _jifenLabel.text = @"积分: ";
-    _jifenLabel.font = [UIFont systemFontOfSize:13];
-    _jifenLabel.adjustsFontSizeToFitWidth= YES;
-    _jifenLabel.textColor = jifenColor;
-    
-    _jifenValueLabel.text = @"22222222224444446656562";
-    _jifenValueLabel.font = [UIFont systemFontOfSize:12.5];
-    _jifenValueLabel.adjustsFontSizeToFitWidth = YES;
-    _jifenValueLabel.textColor = jifenColor;
-    
-    _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-    _jifenImageView.image = [UIImage imageNamed:@"icon_mine_pts"];
-    
-    _jifenSuperView.layer.borderColor = jifenColor.CGColor;
-    _jifenSuperView.layer.borderWidth=1;
     
     
     return self;
 }
 
+
+//监听代理方法
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 
 {
-    if(object==_nameLabel){
-//        if (![_nameLabel.text isEqualToString:@""]) {
-//            
-//        }
+    if(object ==_nameLabel){
         // 值变化后执行以下执行相关逻辑...
-        CGSize size = CGSizeMake(self.contentView.frame.size.width*0.5, self.contentView.frame.size.height*0.5);
+        CGSize size = CGSizeMake(_contentSize.width*0.6, _contentSize.height*0.5);
         NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:_nameLabel.font.pointSize]};
         CGSize labelWidth = [PublicClass boolLabelLength:_nameLabel.text size:size option: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:dic];
         [_nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -93,16 +78,32 @@
             make.width.mas_equalTo(labelWidth.width+2);
         }];
         
+    } else if (object ==_accessoryTypeValueLabel){
+        CGSize accessoryTypeValueLabelSizeOfMax = CGSizeMake(_contentSize.width*0.2, _contentSize.height*0.3);
+        NSDictionary *accessoryTypeValueLabelDic = @{NSFontAttributeName : [UIFont systemFontOfSize:_accessoryTypeValueLabel.font.pointSize]};
+        CGSize accessoryTypeValueLabelSize = [PublicClass boolLabelLength:_accessoryTypeValueLabel.text size:accessoryTypeValueLabelSizeOfMax option: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:accessoryTypeValueLabelDic];
+        CGFloat accessoryTypeValueLabelWidth;
+        if (accessoryTypeValueLabelSize.width+2 < _contentSize.height*0.3) {
+            accessoryTypeValueLabelWidth = _contentSize.height*0.3;
+        } else {
+            accessoryTypeValueLabelWidth = accessoryTypeValueLabelSize.width+2;
+        }
+        
+        //
+        [self.topConstraint uninstall];
+        [_accessoryTypeValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(_accessoryTypeValueLabel.superview.mas_right).offset(0);
+            make.height.mas_equalTo(_accessoryTypeValueLabel.superview.mas_height).multipliedBy(0.3);
+            self.topConstraint = make.width.mas_equalTo(accessoryTypeValueLabelWidth);
+            make.centerY.mas_equalTo(_accessoryTypeValueLabel.superview);
+            
+        }];
+        
+        
+        
     } else {
-//        if ((![_jifenLabel.text isEqualToString:@""]) || (![_jifenValueLabel.text isEqualToString:@""])) {
-//            
-//            _jifenValueLabel.hidden = NO;
-//            _jifenLabel.hidden = NO;
-//            
-//            
-//        }
-        CGSize jifenLabelSize = CGSizeMake(self.contentView.frame.size.width*0.5, self.contentView.frame.size.height);
-        CGSize jifenValueLabelSize = CGSizeMake(self.contentView.frame.size.width*0.65, self.contentView.frame.size.height);
+        CGSize jifenLabelSize = CGSizeMake(_contentSize.width*0.5, _contentSize.height*0.3);
+        CGSize jifenValueLabelSize = CGSizeMake(_contentSize.width*0.5, _contentSize.height*0.3);
         NSDictionary *jifenLabelDic = @{NSFontAttributeName : [UIFont systemFontOfSize:_jifenLabel.font.pointSize]};
         CGSize jifenLabelWidth = [PublicClass boolLabelLength:_jifenLabel.text size:jifenLabelSize option: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:jifenLabelDic];
         
@@ -129,7 +130,7 @@
         [_jifenValueLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_jifenLabel.mas_right).offset(0);
             make.height.mas_equalTo(_jifenSuperView.mas_height).multipliedBy(0.6);
-            make.width.mas_equalTo(jifenValueLabelWidth.width);
+            make.width.mas_equalTo(jifenValueLabelWidth.width+2);
             make.centerY.mas_equalTo(_jifenSuperView);
         }];
         
@@ -190,6 +191,27 @@
         make.width.mas_equalTo(_jifenSuperView.mas_width).multipliedBy(0.45);
         make.centerY.mas_equalTo(_jifenSuperView);
     }];
+    
+//     _accessoryTypeValueLabel.backgroundColor = [UIColor yellowColor];
+    [_accessoryTypeValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(_accessoryTypeValueLabel.superview.mas_right).offset(0);
+        make.height.mas_equalTo(_accessoryTypeValueLabel.superview.mas_height).multipliedBy(0.3);
+        self.topConstraint = make.width.mas_equalTo(_accessoryTypeValueLabel.superview.mas_width).multipliedBy(0.1);
+        make.centerY.mas_equalTo(_accessoryTypeValueLabel.superview);
+    }];
+}
+
+-(void)dealloc {
+    
+    [_nameLabel removeObserver:self forKeyPath:@"text"];
+    [_jifenLabel removeObserver:self forKeyPath:@"text"];
+    [_accessoryTypeValueLabel removeObserver:self forKeyPath:@"text"];
+    [_jifenValueLabel removeObserver:self forKeyPath:@"text"];
+    
+    [_nameLabel removeObserver:self forKeyPath:@"font"];
+    [_jifenLabel removeObserver:self forKeyPath:@"font"];
+    [_accessoryTypeValueLabel removeObserver:self forKeyPath:@"font"];
+    [_jifenValueLabel removeObserver:self forKeyPath:@"font"];
 }
 
 @end

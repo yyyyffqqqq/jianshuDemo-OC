@@ -63,9 +63,33 @@
         cell.textLabel.text = _dataTitles_2[indexPath.row];
         cell.imageView.image = _imageDatas_2[indexPath.row];
     } else if (indexPath.section == 0) {
-        cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, firstRowHeight)];
+        
         ((MineTableViewCell*)cell).headerImageView.layer.cornerRadius = firstRowHeight*0.6*0.5; //0.6是图片大小占行高的比率
         ((MineTableViewCell*)cell).headerImageView.layer.masksToBounds = YES;
+        
+        ((MineTableViewCell*)cell).nameLabel.text = @"mary";
+        ((MineTableViewCell*)cell).nameLabel.font = [UIFont systemFontOfSize:16];
+    
+        ((MineTableViewCell*)cell).jifenLabel.text = @"积分: ";
+        ((MineTableViewCell*)cell).jifenLabel.font = [UIFont systemFontOfSize:13];
+        ((MineTableViewCell*)cell).jifenLabel.textColor = jifenColor;
+    
+        ((MineTableViewCell*)cell).jifenValueLabel.text = @"222222222244446";
+//        ((MineTableViewCell*)cell).jifenValueLabel.adjustsFontSizeToFitWidth = YES;
+        ((MineTableViewCell*)cell).jifenValueLabel.font = [UIFont systemFontOfSize:12.5];
+        ((MineTableViewCell*)cell).jifenValueLabel.textColor = jifenColor;
+        
+//        ((MineTableViewCell*)cell).accessoryTypeValueLabel.text = @"2344454";
+        ((MineTableViewCell*)cell).accessoryTypeValueLabel.font = [UIFont systemFontOfSize:13];
+        ((MineTableViewCell*)cell).accessoryTypeValueLabel.textColor = [UIColor whiteColor];
+//        ((MineTableViewCell*)cell).accessoryTypeValueLabel.backgroundColor = [UIColor redColor];
+    
+        ((MineTableViewCell*)cell).headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+        ((MineTableViewCell*)cell).jifenImageView.image = [UIImage imageNamed:@"icon_mine_pts"];
+    
+        ((MineTableViewCell*)cell).jifenSuperView.layer.borderColor = jifenColor.CGColor;
+        ((MineTableViewCell*)cell).jifenSuperView.layer.borderWidth=1;
     }
     
     cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;

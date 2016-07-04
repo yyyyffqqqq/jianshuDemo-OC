@@ -53,20 +53,6 @@
     
     //显示数据，暂时不获取；
     UITableViewCell *cell;
-//    if (indexPath.row<2) {
-//        if (indexPath.row == 1) {
-//            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-//            cell.textLabel.text = @"一键查看全部关注更新";
-//            cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
-//        } else {
-//            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-//            cell.textLabel.text = @"简友圈";
-//            cell.imageView.image = [UIImage imageNamed:@"icon_notification_frds"];
-//        }
-//        
-//    } else {
-//        
-//    }
     
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     cell.textLabel.text = _dataTitle[indexPath.row];

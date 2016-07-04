@@ -7,6 +7,9 @@
 //
 
 #import "AttensionViewController.h"
+#import "AttenssionTableViewCell.h"
+
+#define attenssionRowHeight 80
 
 @interface AttensionViewController ()
 
@@ -16,9 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.navigationItem.title = @"关注";
-    self.tableView.rowHeight = 80;
+    self.tableView.rowHeight = attenssionRowHeight;
     
     UIBarButtonItem *addBt = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"icon_side_add"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(tapAddButton)];
     self.navigationItem.leftBarButtonItem = addBt;
@@ -96,31 +99,46 @@
     static NSString *reuseIdentifier = @"cellID";
     
     //显示数据，暂时不获取；
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+//    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    AttenssionTableViewCell *cell = [[AttenssionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, attenssionRowHeight)];
     if (indexPath.row<2) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
         if (indexPath.row == 1) {
-            cell.textLabel.text = @"一键查看全部关注更新";
-            cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
-            cell.detailTextLabel.text = @"20";
+            cell.titleLabel.text = @"一键查看全部关注更新";
+            cell.headerImageView.image = [UIImage imageNamed:@"icon_all_new"];
+            
         } else {
-            cell.textLabel.text = @"简友圈";
-            cell.imageView.image = [UIImage imageNamed:@"icon_notification_frds"];
+            cell.titleLabel.text = @"简友圈";
+            cell.headerImageView.image = [UIImage imageNamed:@"icon_notification_frds"];
         }
         
     } else {
         
-        cell.textLabel.text = @"IOS Developer";
-        cell.detailTextLabel.text = @"Ios开发之约束布局";
-//        cell.detailTextLabel.layer.borderWidth = 1;
-//        cell.detailTextLabel.layer.borderColor = [UIColor redColor].CGColor;
-        cell.imageView.layer.borderWidth = 1;
-        cell.imageView.layer.borderColor = [UIColor redColor].CGColor;
-        cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
+        cell.nameLabel.text = @"IOS Developer";
+        cell.nameLabel.font = [UIFont systemFontOfSize:16];
+        
+        cell.contentLabel.text = @"Ios开发之约束布局";
+        
+        cell.contentLabel.font = [UIFont systemFontOfSize:12.5];
+        cell.contentLabel.textColor = [UIColor colorWithWhite:0.8 alpha:0.9];
+        
+        cell.accessoryTypeValueLabel.text = @"2562";
+        cell.accessoryTypeValueLabel.font = [UIFont systemFontOfSize:13];
+        cell.accessoryTypeValueLabel.textColor = [UIColor whiteColor];
+        cell.accessoryTypeValueLabel.backgroundColor = [UIColor redColor];
+        
+        
+        cell.headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+        
     }
     
-    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;
-    cell.imageView.layer.masksToBounds = YES;
+    cell.headerImageView.layer.cornerRadius = attenssionRowHeight*headerImageViewHeight*0.5; //0.5是长宽相等的控件剪切成圆的比率
+    cell.headerImageView.layer.masksToBounds = YES;
+    
+    //0.3是accessoryTypeValueLabel大小占行高的比率,0.4是决定圆角弧度
+    cell.accessoryTypeValueLabel.layer.cornerRadius = attenssionRowHeight*accessoryTypeValueLabelHeight*0.5;
+    cell.accessoryTypeValueLabel.layer.masksToBounds = YES;
+    
+    cell.headerImageView.backgroundColor = [UIColor greenColor];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -139,10 +157,10 @@
     return label;
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
