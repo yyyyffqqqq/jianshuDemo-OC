@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5561D297A43003F0A6F /* MineTableViewCell.m */; };
 		1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5591D297A43003F0A6F /* MineViewController.m */; };
+		1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454679C1D2C2E32005E153B /* FQPageScrollView.m */; };
 		145B0A511D2591BA004BE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A501D2591BA004BE429 /* main.m */; };
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
@@ -36,6 +37,8 @@
 		1416A5561D297A43003F0A6F /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		1416A5581D297A43003F0A6F /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1416A5591D297A43003F0A6F /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		1454679B1D2C2E32005E153B /* FQPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageScrollView.h; sourceTree = "<group>"; };
+		1454679C1D2C2E32005E153B /* FQPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageScrollView.m; sourceTree = "<group>"; };
 		145B0A4C1D2591BA004BE429 /* jianshuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jianshuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145B0A501D2591BA004BE429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		145B0A521D2591BA004BE429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,9 +132,43 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		145467971D2C2587005E153B /* UserInformation */ = {
+			isa = PBXGroup;
+			children = (
+				145467981D2C2587005E153B /* Controller */,
+				145467991D2C2587005E153B /* Model */,
+				1454679A1D2C2587005E153B /* View */,
+			);
+			path = UserInformation;
+			sourceTree = "<group>";
+		};
+		145467981D2C2587005E153B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		145467991D2C2587005E153B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1454679A1D2C2587005E153B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1454679B1D2C2E32005E153B /* FQPageScrollView.h */,
+				1454679C1D2C2E32005E153B /* FQPageScrollView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
+				145467971D2C2587005E153B /* UserInformation */,
 				1416A5521D297A43003F0A6F /* mine */,
 				14A680011D2704F60073FAAA /* Attention */,
 				14A680071D2704F60073FAAA /* CustomTabBar */,
@@ -500,6 +537,7 @@
 				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
 				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
+				1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
