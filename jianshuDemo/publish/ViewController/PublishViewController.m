@@ -18,8 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIBarButtonItem *backBt = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(tapCancelGoBack)];
+    self.navigationItem.title = @"0字";
+    
+    self.navigationController.navigationBar.tintColor = [UIColor brownColor];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithWhite:0.7 alpha:0.9],NSForegroundColorAttributeName, [UIFont systemFontOfSize:12], NSFontAttributeName, nil]];
+    
+    
+    UIBarButtonItem *backBt = [[UIBarButtonItem alloc]initWithTitle:@"关闭" style:UIBarButtonItemStyleDone target:self action:@selector(tapCancelGoBack)];
     self.navigationItem.leftBarButtonItem = backBt;
+    
+    UIBarButtonItem *rightBt = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(tapCancelGoBack)];
+    self.navigationItem.rightBarButtonItem = rightBt;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -30,10 +40,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+//返回上个界面
 -(void)tapCancelGoBack {
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
+}
+
+//发布文章
+-(void)publishArticle {
+    
 }
 
 /*

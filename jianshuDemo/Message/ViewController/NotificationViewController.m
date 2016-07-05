@@ -54,9 +54,8 @@
     //显示数据，暂时不获取；
     UITableViewCell *cell;
     
-    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     cell.textLabel.text = _dataTitle[indexPath.row];
-//    cell.detailTextLabel.text = @"Ios开发之约束布局";
     cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
     
     cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;

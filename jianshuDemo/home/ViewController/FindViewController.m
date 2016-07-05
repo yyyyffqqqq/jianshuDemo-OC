@@ -26,9 +26,12 @@
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.96 alpha:1.0];
     self.navigationController.navigationBar.translucent = NO;
     
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    
+    _tableView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+    
     
     [self.view addSubview:_tableView];
     
@@ -123,35 +126,43 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return 0;
-    }
+//    if (section == 0) {
+//        return 0;
+//    }
     
-    return 10;
+    return 40;
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return 44;
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    if (section==1) {
+//        return 20;
 //    }
-//    
-//    return 0;
-//}
+    return 0;
+}
 
-//-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return self.searchBar;
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+//    if (section==1) {
+//        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.text = @"-End-";
+//        label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
+//        label.font = [UIFont systemFontOfSize:12];
+//        return label;
 //    }
-////    if (section==0) {
-////        return self.searchController.searchBar;
-////    }
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = @"-End-";
+    label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
+    label.font = [UIFont systemFontOfSize:12];
+    return label;
+    
 //    return nil;
-//}
+}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -69,7 +69,7 @@
     [_specialTopicBt setTitle:@"ios Developer" forState:UIControlStateNormal];
     [_specialTopicBt setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
 //    NSLog(@"%@", [_specialTopicBt titleForState:UIControlStateNormal]) ;
-    _readedCommentLoveLabel.text = @"阅读 621 . 评论 12 . 喜欢 66";
+    _readedCommentLoveLabel.text = @"阅读 621 • 评论 12 • 喜欢 66";
     
 //    _nameLabel.adjustsFontSizeToFitWidth =
     _nameBt.titleLabel.font = [UIFont systemFontOfSize:15];

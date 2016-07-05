@@ -35,11 +35,11 @@
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.delegate = self;
     [self.searchController.searchBar sizeToFit];
-    self.searchController.searchBar.searchBarStyle = UISearchBarStyleProminent;
+    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     self.definesPresentationContext = YES;
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
-    
+    self.tableView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
     
     
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
@@ -71,7 +71,7 @@
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
-    _searchResultVC.tableView.frame = CGRectMake(0, 64, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
+    _searchResultVC.tableView.frame = CGRectMake(0, 44, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
     [self.view addSubview:_searchResultVC.tableView];
 }
 
@@ -154,6 +154,8 @@
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"-End-";
+    label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
+    label.font = [UIFont systemFontOfSize:12];
     return label;
 }
 
