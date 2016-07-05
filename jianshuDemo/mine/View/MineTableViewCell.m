@@ -110,7 +110,7 @@
         NSDictionary *jifenValueLabelDic = @{NSFontAttributeName : [UIFont systemFontOfSize:_jifenValueLabel.font.pointSize]};
         CGSize jifenValueLabelWidth = [PublicClass boolLabelLength:_jifenValueLabel.text size:jifenValueLabelSize option: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:jifenValueLabelDic];
         
-        CGFloat jifenSuperViewWidth = jifenLabelWidth.width+jifenValueLabelWidth.width+5;
+        CGFloat jifenSuperViewWidth = jifenLabelWidth.width+jifenValueLabelWidth.width+6;
         [_jifenSuperView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(_nameLabel.mas_bottom).offset(0);
             make.left.mas_equalTo(_headerImageView.mas_right).multipliedBy(1.15);

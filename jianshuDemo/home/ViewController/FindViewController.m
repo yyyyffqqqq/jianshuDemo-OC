@@ -8,6 +8,10 @@
 
 #import "FindViewController.h"
 
+#import "HomeArticleListTableViewCell.h"
+
+#define homeTableRowHeight  150.0f
+
 @interface FindViewController () <HorizontalScrollViewDelegate>
 
 @end
@@ -32,7 +36,7 @@
     
     _tableView.tableHeaderView = _homeTableHeader;
     
-    _tableView.rowHeight = 150;
+    _tableView.rowHeight = homeTableRowHeight;
     
     NSArray *itemNames = @[@"新上榜", @"日报", @"七日热门", @"三十日热门。。。。", @"市集", @"有奖活动",@"简书出版"];
     
@@ -153,9 +157,9 @@
     
     static NSString *reuseIdentifier = @"cellID";
     
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    HomeArticleListTableViewCell *cell = [[HomeArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
     
-    cell.textLabel.text = @"ddsdsd";
+//    cell.textLabel.text = @"ddsdsd";
     
     return cell;
     

@@ -13,6 +13,7 @@
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
 		145B0A5F1D2591BA004BE429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5D1D2591BA004BE429 /* LaunchScreen.storyboard */; };
+		149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */; };
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
@@ -21,7 +22,6 @@
 		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
-		14B0AC661D28889600914386 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0AC651D28889600914386 /* HomeTableViewCell.m */; };
 		14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
@@ -43,6 +43,8 @@
 		145B0A5B1D2591BA004BE429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145B0A5E1D2591BA004BE429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		145B0A601D2591BA004BE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticleListTableViewCell.h; sourceTree = "<group>"; };
+		149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeArticleListTableViewCell.m; sourceTree = "<group>"; };
 		14A680051D2704F60073FAAA /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
 		14A680061D2704F60073FAAA /* AttensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttensionViewController.m; sourceTree = "<group>"; };
 		14A680081D2704F60073FAAA /* MyCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabBar.h; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		14A680311D2705660073FAAA /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
 		14A680331D2705F20073FAAA /* CollectionCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellImageView.h; sourceTree = "<group>"; };
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
-		14B0AC641D28889600914386 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		14B0AC651D28889600914386 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		14B1A15E1D2A6BD000D065B6 /* AttenssionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttenssionTableViewCell.h; sourceTree = "<group>"; };
 		14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttenssionTableViewCell.m; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 				14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */,
 				14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */,
 				14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */,
-				14B0AC641D28889600914386 /* HomeTableViewCell.h */,
-				14B0AC651D28889600914386 /* HomeTableViewCell.m */,
+				149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */,
+				149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,7 +488,6 @@
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
 				14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */,
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
-				14B0AC661D28889600914386 /* HomeTableViewCell.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
@@ -498,6 +497,7 @@
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
+				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
 				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
