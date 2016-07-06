@@ -32,6 +32,7 @@
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
+		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
 		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
 		14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTitleClass.m; sourceTree = "<group>"; };
+		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
+		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 			children = (
 				1454679B1D2C2E32005E153B /* FQPageScrollView.h */,
 				1454679C1D2C2E32005E153B /* FQPageScrollView.m */,
+				14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */,
+				14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
+				14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
 				1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */,
 				14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */,

@@ -11,6 +11,8 @@
 #import "HomeArticleListTableViewCell.h"
 #import "FQPopViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
+
+#define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define homeTableRowHeight  150.0f
 
 @interface FindViewController () <HorizontalScrollViewDelegate>
@@ -71,6 +73,7 @@
     
     self.navigationItem.titleView = self.searchController.searchBar;
     
+    
 }
 
 #pragma mark - FDFullscreenPopGesture
@@ -81,25 +84,27 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
+    //不移除对tableview的监听，这样会影响右滑返回的效果，与FDFullscreenPopGesture
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
     
     self.hidesBottomBarWhenPushed = NO;
 
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    self.navigationController.navigationBar.translucent = YES;
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.searchController.searchBar becomeFirstResponder];
-    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
     return NO;
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
-    
+    self.navigationController.navigationBar.translucent = YES;
     _searchResultVC.tableView.frame = CGRectMake(0, 64, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
     [self.view addSubview:_searchResultVC.tableView];
 }
@@ -109,7 +114,8 @@
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     [_searchResultVC.tableView removeFromSuperview];
 }
 
@@ -142,29 +148,14 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    if (section == 0) {
-//        return 0;
-//    }
-    
     return 40;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    if (section==1) {
-//        return 20;
-//    }
     return 0;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    if (section==1) {
-//        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
-//        label.textAlignment = NSTextAlignmentCenter;
-//        label.text = @"-End-";
-//        label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
-//        label.font = [UIFont systemFontOfSize:12];
-//        return label;
-//    }
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = @"-End-";
@@ -172,7 +163,6 @@
     label.font = [UIFont systemFontOfSize:12];
     return label;
     
-//    return nil;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -180,8 +170,6 @@
     static NSString *reuseIdentifier = @"cellID";
     
     HomeArticleListTableViewCell *cell = [[HomeArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
-    
-//    cell.textLabel.text = @"ddsdsd";
     
     return cell;
     
@@ -194,25 +182,26 @@
     
 }
 
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%f", scrollView.contentOffset.y) ;
-    if ( _homeTableHeaderHeight*0.75 -64 == scrollView.contentOffset.y + 20) {
-        self.navigationController.navigationBar.hidden = NO;
-        [self.searchController.searchBar becomeFirstResponder];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+        if ([keyPath isEqualToString:@"contentOffset"]) {
+            if (![self.homeTableHeader.searchBar isFirstResponder ] && ![self.searchController.searchBar isFirstResponder]) {
+                CGPoint newPoint = [change[NSKeyValueChangeNewKey] CGPointValue];
+                //CGPoint oldPoint = [change[NSKeyValueChangeOldKey] CGPointValue];
+                if (newPoint.y + 20 >= _homeTableHeaderHeight*0.72 ) { //0.72是头部视图布局时的比率
+                    self.navigationController.navigationBar.translucent = YES;
+                    [self.navigationController setNavigationBarHidden:NO animated:NO];
+                } else {
+                    [self.navigationController setNavigationBarHidden:YES animated:NO];
+                }
+            }
     }
 }
 
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    if (_homeTableHeaderHeight-64 < scrollView.contentOffset.y - 20) {
-//        self.navigationController.navigationBar.hidden = NO;
-//        [self.searchController.searchBar becomeFirstResponder];
-//    }
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 /*

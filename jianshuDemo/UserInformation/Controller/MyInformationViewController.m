@@ -7,6 +7,7 @@
 //
 
 #import "MyInformationViewController.h"
+#import "FQCustomToolbarView.h"
 
 @interface MyInformationViewController ()
 
@@ -16,8 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSArray *images =  [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], nil];
+    FQCustomToolbarView *gggg = [[FQCustomToolbarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 44) withTitles:[[NSArray alloc]initWithObjects:@"ffdf", @"ffdf", @"ffdf", nil] andImages:nil];
+    gggg.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    gggg.responseTapEvent = ^(int index) {
+        NSLog(@"tap at :  %d", index);
+    };
+    [self.view addSubview:gggg];
     
 }
 

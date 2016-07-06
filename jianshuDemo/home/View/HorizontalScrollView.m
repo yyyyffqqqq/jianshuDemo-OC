@@ -216,14 +216,6 @@
     
     self.layer.doubleSided = NO;
     
-//    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.contentView.frame.origin.x+self.contentView.frame.size.width*0.1, self.contentView.center.y - self.contentView.frame.size.height*0.05, self.contentView.frame.size.height*0.1, (self.contentView.frame.size.height*0.1))];
-//    _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    
-//    _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.contentView.frame.size.width*0.1-self.contentView.frame.size.width*0.05, self.contentView.center.y - self.contentView.frame.size.height*0.05, self.contentView.frame.size.height*0.1, (self.contentView.frame.size.height*0.1))];
-//    
-//    [self.contentView addSubview:_imageView];
-//    [self.contentView addSubview:_nameLabel];
-    
     _collectionImageItem = [[CollectionCellImageView alloc]initWithFrame:CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, self.contentView.frame.size.height)];
     
     _collectionImageItem.image = [UIImage imageNamed:@"h1"];

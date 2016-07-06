@@ -60,9 +60,7 @@
     return self;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-
-{
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(object ==_nameLabel){
         // 值变化后执行以下执行相关逻辑...
         CGSize size = CGSizeMake(_contentSize.width*0.6, _contentSize.height*0.3);

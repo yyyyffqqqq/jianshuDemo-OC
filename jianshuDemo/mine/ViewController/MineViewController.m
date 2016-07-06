@@ -41,6 +41,11 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -123,6 +128,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row==0) {
+        self.hidesBottomBarWhenPushed = YES;
         MyInformationViewController *myInformationVC = [[MyInformationViewController alloc]init];
         [self showViewController:myInformationVC sender:self];
     }
