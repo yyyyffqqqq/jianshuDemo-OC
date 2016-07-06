@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "MineTableViewCell.h"
 #import "MineUserInformationClass.h"
+#import "MyInformationViewController.h"
 
 #define firstRowHeight 80.0f
 #define otherRowHeightOfMe 50.0f
@@ -121,7 +122,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.row==0) {
+        MyInformationViewController *myInformationVC = [[MyInformationViewController alloc]init];
+        [self showViewController:myInformationVC sender:self];
+    }
 }
 
 /*

@@ -14,6 +14,8 @@
 #import "MineViewController.h"
 #import "NotificationViewController.h"
 
+#import "FQPopViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -36,7 +38,7 @@
     firstVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"icon_tabbar_home_active"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     firstVC.tabBarItem.image = [[UIImage imageNamed:@"icon_tabbar_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *firstNC = [[UINavigationController alloc]initWithRootViewController:firstVC];
-    
+//    FQPopViewController *firstNC = [[FQPopViewController alloc]initWithRootViewController:firstVC];
     
     AttensionViewController *secondVC = [[AttensionViewController alloc]initWithStyle:UITableViewStyleGrouped];
     //设置标签名称

@@ -14,6 +14,9 @@
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
 		145B0A5F1D2591BA004BE429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5D1D2591BA004BE429 /* LaunchScreen.storyboard */; };
+		14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA61D2C80E500A32D48 /* FQPopViewController.m */; };
+		14974BAA1D2C81BE00A32D48 /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */; };
+		14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */; };
 		149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */; };
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
@@ -46,6 +49,12 @@
 		145B0A5B1D2591BA004BE429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145B0A5E1D2591BA004BE429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		145B0A601D2591BA004BE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14974BA51D2C80E500A32D48 /* FQPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPopViewController.h; sourceTree = "<group>"; };
+		14974BA61D2C80E500A32D48 /* FQPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPopViewController.m; sourceTree = "<group>"; };
+		14974BA81D2C81BE00A32D48 /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
+		14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
+		14974BAE1D2CB57400A32D48 /* MyInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationViewController.h; sourceTree = "<group>"; };
+		14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationViewController.m; sourceTree = "<group>"; };
 		149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticleListTableViewCell.h; sourceTree = "<group>"; };
 		149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeArticleListTableViewCell.m; sourceTree = "<group>"; };
 		14A680051D2704F60073FAAA /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
@@ -145,6 +154,8 @@
 		145467981D2C2587005E153B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				14974BAE1D2CB57400A32D48 /* MyInformationViewController.h */,
+				14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +179,7 @@
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
+				14974BA11D2C786700A32D48 /* ArticleContentDetail */,
 				145467971D2C2587005E153B /* UserInformation */,
 				1416A5521D297A43003F0A6F /* mine */,
 				14A680011D2704F60073FAAA /* Attention */,
@@ -212,6 +224,41 @@
 				145B0A601D2591BA004BE429 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14974BA11D2C786700A32D48 /* ArticleContentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				14974BA21D2C786700A32D48 /* Controller */,
+				14974BA31D2C786700A32D48 /* Model */,
+				14974BA41D2C786700A32D48 /* View */,
+			);
+			path = ArticleContentDetail;
+			sourceTree = "<group>";
+		};
+		14974BA21D2C786700A32D48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				14974BA51D2C80E500A32D48 /* FQPopViewController.h */,
+				14974BA61D2C80E500A32D48 /* FQPopViewController.m */,
+				14974BA81D2C81BE00A32D48 /* ArticleContentViewController.h */,
+				14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		14974BA31D2C786700A32D48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		14974BA41D2C786700A32D48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		14A680011D2704F60073FAAA /* Attention */ = {
@@ -523,7 +570,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
+				14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */,
 				14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */,
+				14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */,
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
@@ -540,6 +589,7 @@
 				1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
+				14974BAA1D2C81BE00A32D48 /* ArticleContentViewController.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
 				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
 			);

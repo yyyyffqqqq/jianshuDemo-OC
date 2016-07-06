@@ -9,10 +9,13 @@
 #import "FindViewController.h"
 
 #import "HomeArticleListTableViewCell.h"
-
+#import "FQPopViewController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #define homeTableRowHeight  150.0f
 
 @interface FindViewController () <HorizontalScrollViewDelegate>
+
+@property CGFloat homeTableHeaderHeight;
 
 @end
 
@@ -20,9 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.96 alpha:1.0];
     self.navigationController.navigationBar.translucent = NO;
     
@@ -35,7 +36,8 @@
     
     [self.view addSubview:_tableView];
     
-    _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.5)];
+    _homeTableHeaderHeight = self.view.frame.size.height*0.5;
+    _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
     
     _tableView.tableHeaderView = _homeTableHeader;
     
@@ -71,17 +73,33 @@
     
 }
 
+#pragma mark - FDFullscreenPopGesture
+//- (BOOL)fd_prefersNavigationBarHidden {
+//    return YES;
+//}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-//    if (self.searchController.active) {
-//        self.searchController.active = NO;
-//        [self.searchController.searchBar removeFromSuperview];
-//    }
+    self.hidesBottomBarWhenPushed = NO;
 
 }
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.searchController.searchBar becomeFirstResponder];
+    
+    return NO;
+}
+
 - (void)willPresentSearchController:(UISearchController *)searchController {
+    
     _searchResultVC.tableView.frame = CGRectMake(0, 64, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
     [self.view addSubview:_searchResultVC.tableView];
 }
@@ -91,7 +109,7 @@
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
-    self.navigationController.navigationBar.hidden = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [_searchResultVC.tableView removeFromSuperview];
 }
 
@@ -108,13 +126,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [_searchResultVC.tableView reloadData];
     });
-}
-
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    self.navigationController.navigationBar.hidden = NO;
-    [self.searchController.searchBar becomeFirstResponder];
-    
-    return NO;
 }
 
 
@@ -177,13 +188,27 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.hidesBottomBarWhenPushed = YES;
+    FQPopViewController *ArticleContentVC = [[FQPopViewController alloc]init];
+    [self showViewController:ArticleContentVC sender:self];
     
 }
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    
+    NSLog(@"%f", scrollView.contentOffset.y) ;
+    if ( _homeTableHeaderHeight*0.75 -64 == scrollView.contentOffset.y + 20) {
+        self.navigationController.navigationBar.hidden = NO;
+        [self.searchController.searchBar becomeFirstResponder];
+    }
 }
+
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    if (_homeTableHeaderHeight-64 < scrollView.contentOffset.y - 20) {
+//        self.navigationController.navigationBar.hidden = NO;
+//        [self.searchController.searchBar becomeFirstResponder];
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

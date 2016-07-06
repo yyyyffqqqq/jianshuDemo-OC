@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "HorizontalScrollView.h"
-
 #import "SearchResultViewController.h"
-
 #import "HomeTableHeaderView.h"
+
 
 @interface FindViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
 
