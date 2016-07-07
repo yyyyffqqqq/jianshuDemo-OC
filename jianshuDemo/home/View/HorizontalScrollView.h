@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "CollectionCellImageView.h"
+#import "HomeHorizontalClass.h"
 
 @protocol HorizontalScrollViewDelegate <NSObject>
 
@@ -21,20 +22,21 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-/// array of images' name
-@property (nonatomic, strong) NSArray *images;
-@property (nonatomic, strong) NSArray *itemTitles;
+//@property (nonatomic, strong) NSArray<NSString*> *images;
+//@property (nonatomic, strong) NSArray *itemTitles;
 
-/// scroll speed
+@property (nonatomic, strong) NSArray<HomeHorizontalClass*> *horizontalItems;
+
+/// scroll 速度
 @property (nonatomic, assign) BOOL acuteScroll;
 
-/// show scroll indicator
 @property (nonatomic, assign) BOOL showIndicator;
 
 @property (nonatomic, weak) id<HorizontalScrollViewDelegate> delegate;
 
 
 - (void)updateData;
+
 
 
 @end

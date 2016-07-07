@@ -10,8 +10,8 @@
 
 #import "PublicClass.h"
 
-#define CELL_ID @"Cell"
-#define LAYOUT_ITEM_OFFSET  20
+NSString * const CELL_ID  = @"Cell";
+CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
 
 
 @interface CollectionLayout : UICollectionViewFlowLayout
@@ -67,6 +67,11 @@
     return self;
 }
 
+-(void)setHorizontalItems:(NSArray<HomeHorizontalClass *> *)horizontalItems {
+    _horizontalItems = horizontalItems;
+    [self updateData];
+}
+
 
 # pragma mark - private func
 // set default
@@ -111,14 +116,19 @@
 
 # pragma mark - CollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _images.count;
+//    return _images.count;
+    return _horizontalItems.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID forIndexPath:indexPath];
     
-    cell.collectionImageItem.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
-    cell.collectionImageItem.nameLabel.text = _itemTitles[indexPath.row];
+//    cell.collectionImageItem.imageView.image = [UIImage imageNamed:_images[indexPath.row]];
+//    cell.collectionImageItem.nameLabel.text = _itemTitles[indexPath.row];
+    
+    cell.collectionImageItem.imageView.image = [UIImage imageNamed:_horizontalItems[indexPath.row].imageUrl];
+    cell.collectionImageItem.nameLabel.text = _horizontalItems[indexPath.row].titleString;
+    cell.collectionImageItem.image = [UIImage imageNamed:_horizontalItems[indexPath.row].backgroundImageUrl];
     
     CGSize size = CGSizeMake(cell.collectionImageItem.frame.size.width-_widthMargin_imageView_nameLabel-_imageSize.width, _imageSize.height);
     NSDictionary *dic = @{NSFontAttributeName : [UIFont systemFontOfSize:12]};
@@ -218,13 +228,15 @@
     
     _collectionImageItem = [[CollectionCellImageView alloc]initWithFrame:CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, self.contentView.frame.size.height)];
     
-    _collectionImageItem.image = [UIImage imageNamed:@"h1"];
+//    _collectionImageItem.image = [UIImage imageNamed:@"h1"];
 //    _collectionImageItem.backgroundColor = [UIColor redColor];
     
     [self.contentView addSubview:_collectionImageItem];
     
 
 }
+
+
 
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "Masonry.h"
+#import "FQHomeArticleClass.h"
 
 @interface HomeArticleListTableViewCell : UITableViewCell
 
@@ -16,6 +17,8 @@
 
 //@property (nonatomic, strong) MineTitleClass *mineTitle;
 //@property (nonatomic, strong) MineUserInformationClass *mineUserInf;
+
+@property (strong, nonatomic) FQHomeArticleClass *homeArticle;
 
 @property (strong, nonatomic) UIImageView *headerImageView;
 @property (strong, nonatomic) UIImageView *contentImageView;

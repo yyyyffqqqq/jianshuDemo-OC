@@ -9,7 +9,7 @@
 #import "AttensionViewController.h"
 #import "AttenssionTableViewCell.h"
 
-#define attenssionRowHeight 80
+CGFloat const attenssionRowHeight = 80.0f;
 
 @interface AttensionViewController ()
 
@@ -90,7 +90,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 10;
+    return 50;
 }
 
 
@@ -138,7 +138,7 @@
     cell.accessoryTypeValueLabel.layer.cornerRadius = attenssionRowHeight*accessoryTypeValueLabelHeight*0.5;
     cell.accessoryTypeValueLabel.layer.masksToBounds = YES;
     
-    cell.headerImageView.backgroundColor = [UIColor greenColor];
+//    cell.headerImageView.backgroundColor = [UIColor greenColor];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

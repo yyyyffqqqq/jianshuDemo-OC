@@ -8,21 +8,24 @@
 
 #import "HomeTableHeaderView.h"
 
-#define cycleScrollViewHeight 0.5  // 占比
-#define horizontalScrollViewHeight 0.25  // 占比
-#define searchBarHeight 0.13  // 占比
-#define hotArticleImageViewHeight 0.12// 占比
+CGFloat const cycleScrollViewHeight = 0.5;  // 占比
+CGFloat const horizontalScrollViewHeight = 0.25;  // 占比
+CGFloat const searchBarHeight = 0.13;  // 占比
+CGFloat const hotArticleImageViewHeight = 0.12;// 占比
 
 @implementation HomeTableHeaderView
 
 -(id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    NSArray *imageNames_1 = @[@"h1.jpg",
-                            @"h2.jpg",
-                            @"h3.jpg"// 本地图片请填写全名
-                            ];
-    _cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, 0, 180) shouldInfiniteLoop:YES imageNamesGroup:imageNames_1];
+//    NSArray *imageNames_1 = @[@"h1.jpg",
+//                            @"h2.jpg",
+//                            @"h3.jpg"// 本地图片请填写全名
+//                            ];
+//    [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, 0, 180) shouldInfiniteLoop:YES imageNamesGroup:imageNames_1];
+    _cycleScrollView =  [SDCycleScrollView cycleScrollViewWithFrame:frame delegate:nil placeholderImage:[UIImage imageNamed:@"h1.jpg"]];
+//    _cycleScrollView.imageURLStringsGroup = imageNames_1;
+    
     _cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     _cycleScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
     _cycleScrollView.currentPageDotColor = [UIColor whiteColor]; // 自定义分页控件小圆标颜色
@@ -60,6 +63,10 @@
     [self layoutViews];
     
     return self;
+}
+
+-(void)setCycleScrollView:(SDCycleScrollView *)cycleScrollView {
+    
 }
 
 //布局
@@ -125,7 +132,6 @@
         
     }];
     
-    _homePageImageView.backgroundColor = [UIColor greenColor];
     [_homePageImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.bottom.equalTo(_searchBar.superview.mas_bottom).with.offset(-5);

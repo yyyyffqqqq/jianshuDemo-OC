@@ -1,0 +1,73 @@
+//
+//  FQHomeClass.m
+//  jianshuDemo
+//
+//  Created by quan on 16/7/7.
+//  Copyright © 2016年 quan. All rights reserved.
+//
+
+#import "FQHomeClass.h"
+
+@implementation FQHomeClass
+
+-(instancetype)init {
+    self = [super init];
+    
+    return self;
+}
+
+-(instancetype)initWith:(NSDictionary*)dic {
+    self = [super init];
+    
+    _homeCycleImageUrl = [dic objectForKey:@"homeCycleImageUrl"];
+    _homePageLabelString = [dic objectForKey:@"homePageLabelString"];
+    _homePageImageURL = [dic objectForKey:@"homePageImageURL"];
+    _hotArticleImageURL = [dic objectForKey:@"hotArticleImageURL"];
+    _hotArticleLabelString = [dic objectForKey:@"hotArticleLabelString"];
+    
+    return self;
+}
+
++(void)requestHomeData:(void (^)(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects))block  {
+    
+    NSMutableArray  *horizontalObjects = [[NSMutableArray alloc]init];
+    NSMutableArray  *articleObjects = [[NSMutableArray alloc]init];
+    
+    
+    //模拟请求得到的数据
+    //cycleImageOBJ
+    NSArray *cyleImageURL = @[@"h1.jpg", @"h2.jpg", @"h3.jpg"];
+    NSDictionary *homeObjectsDic = [NSDictionary dictionaryWithObjectsAndKeys:cyleImageURL,@"homeCycleImageUrl", @"首页投稿",@"homePageLabelString", @"button_submit_green",@"homePageImageURL", @"",@"hotArticleImageURL", @"热门文章",@"hotArticleLabelString", nil];
+    FQHomeClass *homeObject = [[FQHomeClass alloc]initWith:homeObjectsDic];
+    
+    //articleObjects
+    NSDictionary *articleObjectDic = [NSDictionary dictionaryWithObjectsAndKeys:@"http://www.valuewalk.com/wp-content/uploads/2016/06/Apple-against-iOS-Jailbreaking.jpg", @"contentImageUrl", @"icon_personal_qq", @"headerImageUrl", @"name", @"nameString", @"2016.07.07", @"publishDateString", @"kllfdsadaddfdfdfsfdsfsdsaddfdfdfsargfd", @"contentString", @"ios Developer", @"specialTopicString", @"阅读 621 • 评论 12 • 喜欢 66", @"readedCommentLoveString", nil];
+    
+//    NSArray *articleObjectArray = [NSMutableArray arrayWithObjects: count:30];
+//    for (int i = 0; i< articleObjectArray.count; i++) {
+    for (int i = 0; i< 30; i++) {
+        FQHomeArticleClass *homeHoritzontalObj = [[FQHomeArticleClass alloc]initWith:articleObjectDic];
+        [articleObjects addObject:homeHoritzontalObj];
+    }
+    
+    //horizontal
+    NSDictionary *horizontalDic_1 = [NSDictionary dictionaryWithObjectsAndKeys:@"新上榜", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_2 = [NSDictionary dictionaryWithObjectsAndKeys:@"日报", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_3 = [NSDictionary dictionaryWithObjectsAndKeys:@"七日热门", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_4 = [NSDictionary dictionaryWithObjectsAndKeys:@"三十日热门", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_5 = [NSDictionary dictionaryWithObjectsAndKeys:@"市集", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_6 = [NSDictionary dictionaryWithObjectsAndKeys:@"有奖活动", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    NSDictionary *horizontalDic_7 = [NSDictionary dictionaryWithObjectsAndKeys:@"简书出版", @"titleName", @"button_write", @"imageUrl", @"h1", @"backgroundImageUrl",nil];
+    
+    NSArray *horizontalArray = [NSArray arrayWithObjects:horizontalDic_1, horizontalDic_2, horizontalDic_3, horizontalDic_4, horizontalDic_5, horizontalDic_6, horizontalDic_7, nil];
+    
+    for (int i = 0; i < horizontalArray.count; i++) {
+        HomeHorizontalClass *homeHoritzontalObj = [[HomeHorizontalClass alloc]initWithDicationary:horizontalArray[i]];
+        [horizontalObjects addObject:homeHoritzontalObj];
+    }
+    
+    block(articleObjects, homeObject, horizontalObjects);
+    
+}
+
+@end

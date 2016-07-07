@@ -11,5 +11,6 @@
 @interface NotificationViewController : UITableViewController
 
 @property (strong, nonatomic) NSMutableArray *dataTitle;
+@property (strong, nonatomic) NSMutableArray *dataImages;
 
 @end

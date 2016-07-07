@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyInformationViewController : UIViewController
+@interface MyInformationViewController : UITableViewController
+
+@property (strong, nonatomic) UIImageView *titleImageView;
 
 @end

@@ -11,8 +11,8 @@
 #import "MineUserInformationClass.h"
 #import "MyInformationViewController.h"
 
-#define firstRowHeight 80.0f
-#define otherRowHeightOfMe 50.0f
+CGFloat const firstRowHeight = 80.0f;
+CGFloat const otherRowHeightOfMe = 50.0f;
 
 @interface MineViewController ()
 
@@ -127,7 +127,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row==0) {
+    if (indexPath.section==0) {
         self.hidesBottomBarWhenPushed = YES;
         MyInformationViewController *myInformationVC = [[MyInformationViewController alloc]init];
         [self showViewController:myInformationVC sender:self];

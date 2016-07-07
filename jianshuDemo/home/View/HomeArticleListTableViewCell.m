@@ -8,6 +8,7 @@
 
 #import "HomeArticleListTableViewCell.h"
 #import "PublicClass.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HomeArticleListTableViewCell
 
@@ -56,26 +57,15 @@
     [_readedCommentLoveLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_specialTopicBt.titleLabel addObserver:self forKeyPath:@"font" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     
+    [_contentImageView addObserver:self forKeyPath:@"image" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     
     _contentLabel.numberOfLines = 2;
     
-    
-    _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-    _contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-    [_nameBt setTitle:@"ios开发" forState:UIControlStateNormal];
-    
-    _publishDateLabel.text = @"2016.07.14";
-    _contentLabel.text = @"ioskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk";
-    [_specialTopicBt setTitle:@"ios Developer" forState:UIControlStateNormal];
     [_specialTopicBt setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-//    NSLog(@"%@", [_specialTopicBt titleForState:UIControlStateNormal]) ;
-    _readedCommentLoveLabel.text = @"阅读 621 • 评论 12 • 喜欢 66";
-    
-//    _nameLabel.adjustsFontSizeToFitWidth =
+
     _nameBt.titleLabel.font = [UIFont systemFontOfSize:15];
     [_nameBt setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     
-//    _publishDateLabel.adjustsFontSizeToFitWidth = YES;
     _publishDateLabel.font = [UIFont systemFontOfSize:13];
     
     _readedCommentLoveLabel.font = [UIFont systemFontOfSize:12];
@@ -83,8 +73,26 @@
     
     [self layoutMyView];
     
-    
     return self;
+}
+
+-(void)setHomeArticle:(FQHomeArticleClass *)homeArticle {
+//    self.contentImageView.image = [UIImage imageNamed:homeArticle.contentImageUrl];
+//    [UIImage imageNamed:@"icon_personal_qq"]
+    dispatch_async(dispatch_queue_create("queue", nil), ^{
+        [self.contentImageView sd_setImageWithURL:[NSURL URLWithString: homeArticle.contentImageUrl] placeholderImage:nil options:SDWebImageRefreshCached | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+        }];
+        
+    });
+    
+    self.headerImageView.image = [UIImage imageNamed:homeArticle.headerImageUrl];
+    [self.nameBt setTitle:homeArticle.nameString forState:UIControlStateNormal];
+    self.publishDateLabel.text = homeArticle.publishDateString;
+    self.contentLabel.text = homeArticle.contentString;
+    [self.specialTopicBt setTitle:homeArticle.specialTopicString forState:UIControlStateNormal];
+    self.readedCommentLoveLabel.text = homeArticle.readedCommentLoveString;
+    
 }
 
 
@@ -153,19 +161,12 @@
             make.top.mas_equalTo(_contentLabel.mas_bottom).offset(_contentSize.height*0.06);
         }];
         
-        [_readedCommentLoveLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_readedCommentLoveLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_specialTopicBt.mas_right).offset(5);
             make.height.mas_equalTo(_specialTopicBt);
             make.right.mas_equalTo(_contentImageView.mas_left);
             make.centerY.mas_equalTo(_specialTopicBt);
         }];
-        
-//        [_contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.left.mas_equalTo(_contentLabel.superview.mas_left).offset(15);
-//            make.right.mas_equalTo(_contentImageView.mas_left);
-//            make.height.mas_equalTo(_contentLabel.superview.mas_height).multipliedBy(0.2);
-//            make.centerY.mas_equalTo(_contentLabel.superview);
-//        }];
         
         CGSize maxSize;
         if (_contentImageView.image) {
@@ -277,7 +278,6 @@
     }];
 }
 
-
 -(void)dealloc {
     
     [_nameBt.titleLabel removeObserver:self forKeyPath:@"text"];
@@ -291,6 +291,8 @@
     [_contentLabel removeObserver:self forKeyPath:@"font"];
     [_readedCommentLoveLabel removeObserver:self forKeyPath:@"font"];
     [_specialTopicBt.titleLabel removeObserver:self forKeyPath:@"font"];
+    
+    [_contentImageView removeObserver:self forKeyPath:@"image"];
 }
 
 @end

@@ -11,14 +11,15 @@
 #import "HorizontalScrollView.h"
 #import "SDCycleScrollView.h"
 #import "Masonry.h"
+//#import "FQHomeTabelHeaderClass.h"
 
-
-@interface HomeTableHeaderView : UIView<SDCycleScrollViewDelegate>
+@interface HomeTableHeaderView : UIView
 
 @property (nonatomic, strong) MASConstraint *topConstraint;
 
 @property (strong, nonatomic) HorizontalScrollView *horizontalScrollView;  //横向滚动视图
 @property (strong, nonatomic) SDCycleScrollView *cycleScrollView; //图片轮播
+//@property (strong, nonatomic) FQHomeTabelHeaderClass *homeHeaderClass;
 
 @property (strong, nonatomic) UISearchBar *searchBar;
 

@@ -25,6 +25,8 @@
     
     _dataTitle = [[NSMutableArray alloc]initWithObjects:@"评论", @"简信", @"请求", @"喜欢", @"关注", @"其他提醒",nil];
     
+    _dataImages = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"icon_notification_comment"], [UIImage imageNamed:@"icon_notification_message"], [UIImage imageNamed:@"icon_notification_request"], [UIImage imageNamed:@"icon_notification_like"], [UIImage imageNamed:@"icon_notification_follow"], [UIImage imageNamed:@"icon_notification_more"], nil];
+    
     UIBarButtonItem *notificationBt = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"icon_notification_settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(tapnotificationButton)];
     self.navigationItem.rightBarButtonItem = notificationBt;
     
@@ -74,8 +76,7 @@
     
     cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     cell.textLabel.text = _dataTitle[indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"icon_all_new"];
-    
+    cell.imageView.image = _dataImages[indexPath.row];
     cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;
     cell.imageView.layer.masksToBounds = YES;
     
