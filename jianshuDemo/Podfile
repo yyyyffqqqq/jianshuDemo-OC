@@ -6,7 +6,7 @@ target 'jianshuDemo' do
 
  pod 'Reachability'
 
- pod 'SVPullToRefresh’
+ pod 'MJRefresh'
 
  pod 'SDWebImage'
 
@@ -19,5 +19,7 @@ target 'jianshuDemo' do
  pod ‘FMDB’
 
  pod 'SDCycleScrollView'
+
+ pod 'ZSSRichTextEditor'
 
 end

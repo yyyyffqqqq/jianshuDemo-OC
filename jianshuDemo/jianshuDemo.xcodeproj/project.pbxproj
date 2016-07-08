@@ -15,12 +15,11 @@
 		145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5B1D2591BA004BE429 /* Assets.xcassets */; };
 		145B0A5F1D2591BA004BE429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145B0A5D1D2591BA004BE429 /* LaunchScreen.storyboard */; };
 		146D5CEF1D2E784400D2F7F1 /* FQHomeArticleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D5CEE1D2E784400D2F7F1 /* FQHomeArticleClass.m */; };
-		146D5CF21D2E79A000D2F7F1 /* FQHomeTableCycleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D5CF11D2E79A000D2F7F1 /* FQHomeTableCycleClass.m */; };
 		146D5CF51D2E7A2700D2F7F1 /* FQHomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D5CF41D2E7A2700D2F7F1 /* FQHomeClass.m */; };
 		146D5CF81D2E966000D2F7F1 /* HomeHorizontalClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D5CF71D2E966000D2F7F1 /* HomeHorizontalClass.m */; };
 		146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 146D5CFA1D2EF78900D2F7F1 /* UserInformationHeaderView.m */; };
 		14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA61D2C80E500A32D48 /* FQPopViewController.m */; };
-		14974BAA1D2C81BE00A32D48 /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */; };
+		14974BAA1D2C81BE00A32D48 /* TextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA91D2C81BE00A32D48 /* TextEditViewController.m */; };
 		14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */; };
 		149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */; };
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
@@ -32,6 +31,8 @@
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
 		14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */; };
+		14B7134F1D303FB200AAAC2E /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7134E1D303FB200AAAC2E /* PickerViewController.m */; };
+		14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B713511D3048C700AAAC2E /* ArticleContentViewController.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
@@ -57,8 +58,6 @@
 		145B0A601D2591BA004BE429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		146D5CED1D2E784400D2F7F1 /* FQHomeArticleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQHomeArticleClass.h; sourceTree = "<group>"; };
 		146D5CEE1D2E784400D2F7F1 /* FQHomeArticleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQHomeArticleClass.m; sourceTree = "<group>"; };
-		146D5CF01D2E79A000D2F7F1 /* FQHomeTableCycleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQHomeTableCycleClass.h; sourceTree = "<group>"; };
-		146D5CF11D2E79A000D2F7F1 /* FQHomeTableCycleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQHomeTableCycleClass.m; sourceTree = "<group>"; };
 		146D5CF31D2E7A2700D2F7F1 /* FQHomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQHomeClass.h; sourceTree = "<group>"; };
 		146D5CF41D2E7A2700D2F7F1 /* FQHomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQHomeClass.m; sourceTree = "<group>"; };
 		146D5CF61D2E966000D2F7F1 /* HomeHorizontalClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHorizontalClass.h; sourceTree = "<group>"; };
@@ -67,8 +66,8 @@
 		146D5CFA1D2EF78900D2F7F1 /* UserInformationHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationHeaderView.m; sourceTree = "<group>"; };
 		14974BA51D2C80E500A32D48 /* FQPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPopViewController.h; sourceTree = "<group>"; };
 		14974BA61D2C80E500A32D48 /* FQPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPopViewController.m; sourceTree = "<group>"; };
-		14974BA81D2C81BE00A32D48 /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
-		14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
+		14974BA81D2C81BE00A32D48 /* TextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditViewController.h; sourceTree = "<group>"; };
+		14974BA91D2C81BE00A32D48 /* TextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditViewController.m; sourceTree = "<group>"; };
 		14974BAE1D2CB57400A32D48 /* MyInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationViewController.h; sourceTree = "<group>"; };
 		14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationViewController.m; sourceTree = "<group>"; };
 		149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticleListTableViewCell.h; sourceTree = "<group>"; };
@@ -91,6 +90,10 @@
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
 		14B1A15E1D2A6BD000D065B6 /* AttenssionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttenssionTableViewCell.h; sourceTree = "<group>"; };
 		14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttenssionTableViewCell.m; sourceTree = "<group>"; };
+		14B7134D1D303FB200AAAC2E /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		14B7134E1D303FB200AAAC2E /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		14B713501D3048C700AAAC2E /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
+		14B713511D3048C700AAAC2E /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
@@ -263,8 +266,12 @@
 			children = (
 				14974BA51D2C80E500A32D48 /* FQPopViewController.h */,
 				14974BA61D2C80E500A32D48 /* FQPopViewController.m */,
-				14974BA81D2C81BE00A32D48 /* ArticleContentViewController.h */,
-				14974BA91D2C81BE00A32D48 /* ArticleContentViewController.m */,
+				14974BA81D2C81BE00A32D48 /* TextEditViewController.h */,
+				14974BA91D2C81BE00A32D48 /* TextEditViewController.m */,
+				14B7134D1D303FB200AAAC2E /* PickerViewController.h */,
+				14B7134E1D303FB200AAAC2E /* PickerViewController.m */,
+				14B713501D3048C700AAAC2E /* ArticleContentViewController.h */,
+				14B713511D3048C700AAAC2E /* ArticleContentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,8 +349,6 @@
 			children = (
 				146D5CED1D2E784400D2F7F1 /* FQHomeArticleClass.h */,
 				146D5CEE1D2E784400D2F7F1 /* FQHomeArticleClass.m */,
-				146D5CF01D2E79A000D2F7F1 /* FQHomeTableCycleClass.h */,
-				146D5CF11D2E79A000D2F7F1 /* FQHomeTableCycleClass.m */,
 				146D5CF31D2E7A2700D2F7F1 /* FQHomeClass.h */,
 				146D5CF41D2E7A2700D2F7F1 /* FQHomeClass.m */,
 				146D5CF61D2E966000D2F7F1 /* HomeHorizontalClass.h */,
@@ -609,23 +614,24 @@
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
+				14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
 				14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
 				1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */,
 				14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */,
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
-				146D5CF21D2E79A000D2F7F1 /* FQHomeTableCycleClass.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */,
 				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
 				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
+				14B7134F1D303FB200AAAC2E /* PickerViewController.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
 				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
 				1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */,
-				14974BAA1D2C81BE00A32D48 /* ArticleContentViewController.m in Sources */,
+				14974BAA1D2C81BE00A32D48 /* TextEditViewController.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
 				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
 			);

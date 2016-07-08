@@ -1,8 +1,8 @@
 //
-//  ArticleContentViewController.h
+//  ArticleContentTableViewController.h
 //  jianshuDemo
 //
-//  Created by quan on 16/7/6.
+//  Created by quan on 16/7/9.
 //  Copyright © 2016年 quan. All rights reserved.
 //
 

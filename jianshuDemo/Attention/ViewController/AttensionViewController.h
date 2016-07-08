@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SearchResultViewController.h"
 
-@interface AttensionViewController : UITableViewController<UISearchResultsUpdating, UISearchControllerDelegate>
+@interface AttensionViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
 
+//@property(strong, nonatomic) UITableView *tableView;
 @property(strong, nonatomic) UISearchController *searchController;
 @property (nonatomic , strong) SearchResultViewController *searchResultVC;
 

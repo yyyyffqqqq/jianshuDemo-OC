@@ -8,6 +8,7 @@
 
 #import "AttensionViewController.h"
 #import "AttenssionTableViewCell.h"
+#import "MJRefresh.h"
 
 CGFloat const attenssionRowHeight = 80.0f;
 
@@ -19,6 +20,11 @@ CGFloat const attenssionRowHeight = 80.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStylePlain];
+//    _tableView.delegate = self;
+//    _tableView.dataSource = self;
+//    
+//    [self.view addSubview:self.tableView];
     
     self.navigationItem.title = @"关注";
     self.tableView.rowHeight = attenssionRowHeight;
@@ -35,15 +41,50 @@ CGFloat const attenssionRowHeight = 80.0f;
     self.searchController.dimsBackgroundDuringPresentation = NO;
     self.searchController.delegate = self;
     [self.searchController.searchBar sizeToFit];
-    self.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    self.searchController.searchBar.searchBarStyle = UISearchBarStyleDefault;
     self.definesPresentationContext = YES;
+    self.searchController.searchBar.barTintColor = [UIColor colorWithWhite:0.95 alpha:0.8];
     
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.tableView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
     
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"-End-" forState:MJRefreshStateIdle];
+    [footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
+    footer.refreshingTitleHidden = YES;
+    self.tableView.mj_footer = footer;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    
+    [view addSubview:self.searchController.searchBar];
+    
+    self.tableView.tableHeaderView = view;
     
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
     _searchResultVC.searchResults = [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
+    
+    
+    
+}
+
+-(void)loadNewData {
+    //请求数据
+//    ....
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView reloadData];
+}
+
+-(void)loadMoreData {
+    //请求数据
+//    ....
+    [self.tableView reloadData];
+    [self.tableView.mj_footer endRefreshing];
+    
+//    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    
     
 }
 
@@ -147,16 +188,7 @@ CGFloat const attenssionRowHeight = 80.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20;
-}
-
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"-End-";
-    label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
-    label.font = [UIFont systemFontOfSize:12];
-    return label;
+    return 2;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

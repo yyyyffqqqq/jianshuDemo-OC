@@ -78,11 +78,13 @@
 
 -(void)setHomeArticle:(FQHomeArticleClass *)homeArticle {
 //    self.contentImageView.image = [UIImage imageNamed:homeArticle.contentImageUrl];
-//    [UIImage imageNamed:@"icon_personal_qq"]
+//    [UIImage imageNamed:@"img_default"]
     dispatch_async(dispatch_queue_create("queue", nil), ^{
-        [self.contentImageView sd_setImageWithURL:[NSURL URLWithString: homeArticle.contentImageUrl] placeholderImage:nil options:SDWebImageRefreshCached | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            
-        }];
+        if (homeArticle.contentImageUrl == nil || ![homeArticle.contentImageUrl isEqualToString:@""]) {
+            [self.contentImageView sd_setImageWithURL:[NSURL URLWithString: homeArticle.contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                
+            }];
+        }
         
     });
     
@@ -103,7 +105,7 @@
     if(object ==_contentLabel){
         CGSize maxSize;
         if (_contentImageView.image) {
-            maxSize = CGSizeMake(_contentSize.width*0.7, _contentSize.height*0.4);
+            maxSize = CGSizeMake(_contentSize.width - 15 - 15 - _contentSize.height*0.55, _contentSize.height*0.4);
         } else {
             maxSize = CGSizeMake(_contentSize.width*0.9, _contentSize.height*0.4);
         }
@@ -170,7 +172,7 @@
         
         CGSize maxSize;
         if (_contentImageView.image) {
-            maxSize = CGSizeMake(_contentSize.width*0.7, _contentSize.height*0.4);
+            maxSize = CGSizeMake(_contentSize.width - 15 - 15 - _contentSize.height*0.55, _contentSize.height*0.4);
         } else {
             maxSize = CGSizeMake(_contentSize.width*0.9, _contentSize.height*0.4);
         }
@@ -256,8 +258,8 @@
 //    _contentImageView.backgroundColor = [UIColor grayColor];
     [_contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(_contentImageView.superview.mas_right).offset(-15);
-        make.height.mas_equalTo(_contentImageView.superview.mas_height).multipliedBy(0.6);
-        make.width.mas_equalTo(_contentImageView.superview.mas_height).multipliedBy(0.6);
+        make.height.mas_equalTo(_contentImageView.superview.mas_height).multipliedBy(0.55);
+        make.width.mas_equalTo(_contentImageView.superview.mas_height).multipliedBy(0.55);
         make.centerY.mas_equalTo(_contentLabel.superview);
     }];
     

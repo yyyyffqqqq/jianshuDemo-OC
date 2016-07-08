@@ -40,7 +40,7 @@
     UINavigationController *firstNC = [[UINavigationController alloc]initWithRootViewController:firstVC];
 //    FQPopViewController *firstNC = [[FQPopViewController alloc]initWithRootViewController:firstVC];
     
-    AttensionViewController *secondVC = [[AttensionViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    AttensionViewController *secondVC = [[AttensionViewController alloc]init];
     //设置标签名称
     secondVC.tabBarItem.title = @"关注";
     //可以根据需求设置标签的的图标

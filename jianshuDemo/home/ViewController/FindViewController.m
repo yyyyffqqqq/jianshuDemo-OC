@@ -12,6 +12,7 @@
 #import "FQPopViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "FQHomeClass.h"
+#import "MJRefresh.h"
 
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 CGFloat const homeTableRowHeight = 150.0f;
@@ -22,6 +23,8 @@ CGFloat const homeTableRowHeight = 150.0f;
 
 @property NSMutableArray<FQHomeArticleClass*> *homeArticleObjs;
 
+@property (strong, nonatomic) MJRefreshAutoNormalFooter *footer;
+
 @end
 
 @implementation FindViewController
@@ -30,7 +33,7 @@ CGFloat const homeTableRowHeight = 150.0f;
     [super viewDidLoad];
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.96 alpha:1.0];
-    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.navigationBar.translucent = NO;
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
@@ -41,6 +44,8 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     [self.view addSubview:_tableView];
     
+    _homeArticleObjs = [[NSMutableArray alloc]init];
+    
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
     
@@ -48,32 +53,24 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     _tableView.rowHeight = homeTableRowHeight;
     
-    [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
-        
-        _homeArticleObjs = articleObjects;
-        
-        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
-        _homeTableHeader.horizontalScrollView.delegate = self;
-        
-        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
-//        _homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
-        
-        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
-        
-        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
-        
-        
-        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
-    }];
+//    [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
+//        
+//        _homeArticleObjs = articleObjects;
+//        
+//        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+//        _homeTableHeader.horizontalScrollView.delegate = self;
+//        
+//        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
+////        _homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
+//        
+//        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
+//        
+//        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
+//        
+//        
+//        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
+//    }];
     
-//    NSArray *itemNames = @[@"新上榜", @"日报", @"七日热门", @"三十日热门。。。。", @"市集", @"有奖活动",@"简书出版"];
-//    
-//    NSArray *imageNames = [NSArray arrayWithObjects:@"button_write", @"button_write", @"button_write", @"button_write", @"button_write", @"button_write", @"button_write", nil];
-//    
-//    _homeTableHeader.horizontalScrollView.itemTitles = itemNames;
-//    _homeTableHeader.horizontalScrollView.images = imageNames;
-//    _homeTableHeader.horizontalScrollView.delegate = self;
-//    [_homeTableHeader.horizontalScrollView updateData];
     
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
     
@@ -94,7 +91,63 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     self.navigationItem.titleView = self.searchController.searchBar;
     
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    self.tableView.mj_header = header;
+    [self.tableView.mj_header beginRefreshing];
     
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"-End-" forState:MJRefreshStateIdle];
+    [footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
+    footer.refreshingTitleHidden = YES;
+    self.tableView.mj_footer = footer;
+}
+
+-(void)loadNewData {
+    //请求数据
+    [FQHomeClass pullRequestData:^(NSMutableArray<FQHomeArticleClass *> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass *> *homeHorizontalObjects) {
+        if (articleObjects) {
+            _homeArticleObjs = articleObjects;
+        }
+        
+        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+        _homeTableHeader.horizontalScrollView.delegate = self;
+        
+        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
+        //_homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
+        
+        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
+        
+        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
+        
+        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    }];
+}
+
+-(void)loadMoreData {
+    //请求数据
+    
+    [FQHomeClass infiniteScrollingRequestDataWithCounts:2 complete:^(NSMutableArray<FQHomeArticleClass *> *articleObjects) {
+        if (articleObjects) {
+            [_homeArticleObjs addObjectsFromArray:articleObjects];
+            
+            [self.tableView reloadData];
+            [self.tableView.mj_footer endRefreshing];
+        } else {
+            [self.tableView reloadData];
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        
+    }];
+
 }
 
 #pragma mark - FDFullscreenPopGesture
@@ -125,7 +178,7 @@ CGFloat const homeTableRowHeight = 150.0f;
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
-    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.translucent = YES;
     _searchResultVC.tableView.frame = CGRectMake(0, 64, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
     [self.view addSubview:_searchResultVC.tableView];
 }
@@ -173,17 +226,11 @@ CGFloat const homeTableRowHeight = 150.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0;
+    return 2;
 }
 
--(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 20)];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"-End-";
-    label.textColor = [UIColor colorWithWhite:0.7 alpha:0.9];
-    label.font = [UIFont systemFontOfSize:12];
-    return label;
-    
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"55555");
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -212,7 +259,7 @@ CGFloat const homeTableRowHeight = 150.0f;
             CGPoint newPoint = [change[NSKeyValueChangeNewKey] CGPointValue];
             //CGPoint oldPoint = [change[NSKeyValueChangeOldKey] CGPointValue];
             if (newPoint.y + 20 >= _homeTableHeaderHeight*0.72 ) { //0.72是头部视图布局时的比率
-                self.navigationController.navigationBar.translucent = YES;
+//                self.navigationController.navigationBar.translucent = YES;
                 [self.navigationController setNavigationBarHidden:NO animated:NO];
             } else {
                 [self.navigationController setNavigationBarHidden:YES animated:NO];

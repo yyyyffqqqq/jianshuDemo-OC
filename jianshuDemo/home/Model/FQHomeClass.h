@@ -36,8 +36,11 @@
 
 -(instancetype)initWith:(NSDictionary*)dic;
 
+//需要加个获取数据是否成功的参数返回
 +(void)requestHomeData:(void (^)(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects))block ;
 
++(void)pullRequestData:(void (^)(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects))block;
 
++(void)infiniteScrollingRequestDataWithCounts:(NSInteger)count complete:(void (^)(NSMutableArray<FQHomeArticleClass*> *articleObjects))block ;
 
 @end

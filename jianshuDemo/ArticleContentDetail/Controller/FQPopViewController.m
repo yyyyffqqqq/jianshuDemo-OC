@@ -35,7 +35,6 @@
     
     //导航栏一定要加载ROOTVC上面
     ArticleContentViewController * root = [[ArticleContentViewController alloc]init];
-    root.title = @"Pop";
     
     //关闭btn
     UIButton * closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -81,13 +80,13 @@
 {
     
     if (self.navigationController) {
-        self.navigationController.navigationBar.translucent = YES;
         [_rootVC.view addSubview:self.navigationController.navigationBar];
     }
     
     self.view.backgroundColor = [UIColor blackColor];
     
     _rootVC.view.frame = self.view.bounds;
+//    _rootVC.view.frame = CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-44);
     _rootVC.view.backgroundColor = [UIColor whiteColor];
     _rootview = _rootVC.view;
     
