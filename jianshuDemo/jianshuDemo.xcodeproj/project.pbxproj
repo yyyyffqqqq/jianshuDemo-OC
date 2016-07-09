@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5561D297A43003F0A6F /* MineTableViewCell.m */; };
 		1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5591D297A43003F0A6F /* MineViewController.m */; };
+		1420E2401D3088D200D04636 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = 1420E23F1D3088D200D04636 /* content.html */; };
 		1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454679C1D2C2E32005E153B /* FQPageScrollView.m */; };
 		145B0A511D2591BA004BE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A501D2591BA004BE429 /* main.m */; };
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
@@ -27,12 +28,11 @@
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
 		14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6801D1D2704F60073FAAA /* NotificationViewController.m */; };
 		14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680211D2704F60073FAAA /* PublicClass.m */; };
-		14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680271D2704F60073FAAA /* PublishViewController.m */; };
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
 		14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */; };
-		14B7134F1D303FB200AAAC2E /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B7134E1D303FB200AAAC2E /* PickerViewController.m */; };
 		14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B713511D3048C700AAAC2E /* ArticleContentViewController.m */; };
+		14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
@@ -47,6 +47,7 @@
 		1416A5561D297A43003F0A6F /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		1416A5581D297A43003F0A6F /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1416A5591D297A43003F0A6F /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		1420E23F1D3088D200D04636 /* content.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content.html; sourceTree = "<group>"; };
 		1454679B1D2C2E32005E153B /* FQPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageScrollView.h; sourceTree = "<group>"; };
 		1454679C1D2C2E32005E153B /* FQPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageScrollView.m; sourceTree = "<group>"; };
 		145B0A4C1D2591BA004BE429 /* jianshuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jianshuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,18 +83,16 @@
 		14A6801D1D2704F60073FAAA /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		14A680201D2704F60073FAAA /* PublicClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicClass.h; sourceTree = "<group>"; };
 		14A680211D2704F60073FAAA /* PublicClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicClass.m; sourceTree = "<group>"; };
-		14A680261D2704F60073FAAA /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
-		14A680271D2704F60073FAAA /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
 		14A680301D2705660073FAAA /* MyTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabbarController.h; sourceTree = "<group>"; };
 		14A680311D2705660073FAAA /* MyTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabbarController.m; sourceTree = "<group>"; };
 		14A680331D2705F20073FAAA /* CollectionCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCellImageView.h; sourceTree = "<group>"; };
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
 		14B1A15E1D2A6BD000D065B6 /* AttenssionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttenssionTableViewCell.h; sourceTree = "<group>"; };
 		14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttenssionTableViewCell.m; sourceTree = "<group>"; };
-		14B7134D1D303FB200AAAC2E /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
-		14B7134E1D303FB200AAAC2E /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		14B713501D3048C700AAAC2E /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
 		14B713511D3048C700AAAC2E /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
+		14BEAC5B1D306EDD00C145E8 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
+		14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
@@ -239,6 +238,7 @@
 		145B0A4F1D2591BA004BE429 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1420E23F1D3088D200D04636 /* content.html */,
 				14A680301D2705660073FAAA /* MyTabbarController.h */,
 				14A680311D2705660073FAAA /* MyTabbarController.m */,
 				145B0A521D2591BA004BE429 /* AppDelegate.h */,
@@ -268,8 +268,6 @@
 				14974BA61D2C80E500A32D48 /* FQPopViewController.m */,
 				14974BA81D2C81BE00A32D48 /* TextEditViewController.h */,
 				14974BA91D2C81BE00A32D48 /* TextEditViewController.m */,
-				14B7134D1D303FB200AAAC2E /* PickerViewController.h */,
-				14B7134E1D303FB200AAAC2E /* PickerViewController.m */,
 				14B713501D3048C700AAAC2E /* ArticleContentViewController.h */,
 				14B713511D3048C700AAAC2E /* ArticleContentViewController.m */,
 			);
@@ -460,8 +458,8 @@
 		14A680251D2704F60073FAAA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				14A680261D2704F60073FAAA /* PublishViewController.h */,
-				14A680271D2704F60073FAAA /* PublishViewController.m */,
+				14BEAC5B1D306EDD00C145E8 /* PublishViewController.h */,
+				14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -546,6 +544,7 @@
 			files = (
 				145B0A5F1D2591BA004BE429 /* LaunchScreen.storyboard in Resources */,
 				145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */,
+				1420E2401D3088D200D04636 /* content.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,9 +622,7 @@
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */,
-				14A6802F1D2704F60073FAAA /* PublishViewController.m in Sources */,
 				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
-				14B7134F1D303FB200AAAC2E /* PickerViewController.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
 				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
 				1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */,
@@ -634,6 +631,7 @@
 				14974BAA1D2C81BE00A32D48 /* TextEditViewController.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
 				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
+				14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

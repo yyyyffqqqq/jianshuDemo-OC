@@ -53,23 +53,23 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     _tableView.rowHeight = homeTableRowHeight;
     
-//    [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
-//        
-//        _homeArticleObjs = articleObjects;
-//        
-//        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
-//        _homeTableHeader.horizontalScrollView.delegate = self;
-//        
-//        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
-////        _homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
-//        
-//        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
-//        
-//        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
-//        
-//        
-//        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
-//    }];
+    [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
+        
+        _homeArticleObjs = articleObjects;
+        
+        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+        _homeTableHeader.horizontalScrollView.delegate = self;
+        
+        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
+//        _homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
+        
+        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
+        
+        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
+        
+        
+        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
+    }];
     
     
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
@@ -99,23 +99,21 @@ CGFloat const homeTableRowHeight = 150.0f;
     self.tableView.mj_header = header;
     [self.tableView.mj_header beginRefreshing];
     
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"-End-" forState:MJRefreshStateIdle];
-    [footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
-    footer.refreshingTitleHidden = YES;
-    self.tableView.mj_footer = footer;
+    
 }
 
 -(void)loadNewData {
     //请求数据
     [FQHomeClass pullRequestData:^(NSMutableArray<FQHomeArticleClass *> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass *> *homeHorizontalObjects) {
         if (articleObjects) {
-            _homeArticleObjs = articleObjects;
+            
         }
-        
-        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+        _homeArticleObjs = articleObjects;
         _homeTableHeader.horizontalScrollView.delegate = self;
+        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+        
+        
+        NSLog(@"%@", homeHorizontalObjects);
         
         _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
         //_homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
@@ -128,7 +126,15 @@ CGFloat const homeTableRowHeight = 150.0f;
         
         [self.tableView.mj_header endRefreshing];
         [self.tableView reloadData];
+
     }];
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    [footer setTitle:@"-End-" forState:MJRefreshStateIdle];
+    [footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
+    footer.refreshingTitleHidden = YES;
+    self.tableView.mj_footer = footer;
+
 }
 
 -(void)loadMoreData {
