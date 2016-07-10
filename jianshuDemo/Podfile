@@ -20,7 +20,8 @@ target 'jianshuDemo' do
 
  pod 'SDCycleScrollView'
 
- pod 'WordPress-iOS-Editor'
+ pod 'Realm'
 
+ pod 'WordPress-iOS-Editor'
 
 end

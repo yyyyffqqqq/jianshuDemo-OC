@@ -67,7 +67,7 @@ CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
     return self;
 }
 
--(void)setHorizontalItems:(NSArray<HomeHorizontalClass *> *)horizontalItems {
+-(void)setHorizontalItems:(NSMutableArray<HomeHorizontalClass *> *)horizontalItems {
     _horizontalItems = horizontalItems;
     [self updateData];
 }

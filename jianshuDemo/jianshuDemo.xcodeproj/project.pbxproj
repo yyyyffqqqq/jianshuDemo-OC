@@ -39,6 +39,8 @@
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
+		14F535491D32AE8300268F9E /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F535481D32AE8300268F9E /* CoreText.framework */; };
+		14F5354B1D32AE9800268F9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F5354A1D32AE9800268F9E /* CoreGraphics.framework */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 		14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTitleClass.m; sourceTree = "<group>"; };
 		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
 		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
+		14F535481D32AE8300268F9E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		14F5354A1D32AE9800268F9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F5354B1D32AE9800268F9E /* CoreGraphics.framework in Frameworks */,
+				14F535491D32AE8300268F9E /* CoreText.framework in Frameworks */,
 				6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +482,8 @@
 		8609137557A578F1495DF52F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14F5354A1D32AE9800268F9E /* CoreGraphics.framework */,
+				14F535481D32AE8300268F9E /* CoreText.framework */,
 				A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */,
 			);
 			name = Frameworks;
@@ -515,7 +523,6 @@
 				TargetAttributes = {
 					145B0A4B1D2591BA004BE429 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 5879G9AGD8;
 					};
 				};
 			};
@@ -737,7 +744,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = jianshuDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quan.com.jianshuDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -753,7 +760,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = jianshuDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quan.com.jianshuDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -49,8 +49,6 @@ CGFloat const homeTableRowHeight = 150.0f;
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
     
-    _tableView.tableHeaderView = _homeTableHeader;
-    
     _tableView.rowHeight = homeTableRowHeight;
     
     [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
@@ -77,9 +75,6 @@ CGFloat const homeTableRowHeight = 150.0f;
     _searchHistorys= [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
     _searchResultVC.searchResults = [_searchHistorys copy];
     
-    _homeTableHeader.searchBar.searchBarStyle = UISearchBarStyleMinimal;
-    _homeTableHeader.searchBar.delegate = self;
-    
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
@@ -89,9 +84,15 @@ CGFloat const homeTableRowHeight = 150.0f;
     [self.searchController.searchBar sizeToFit];
     self.definesPresentationContext = YES;
     
+    _homeTableHeader.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    _homeTableHeader.searchBar.delegate = self;
+    
+    _tableView.tableHeaderView = _homeTableHeader;
     self.navigationItem.titleView = self.searchController.searchBar;
     
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadNewData];
+    }];
     header.lastUpdatedTimeLabel.hidden = YES;
     [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
     [header setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
@@ -112,8 +113,6 @@ CGFloat const homeTableRowHeight = 150.0f;
         _homeTableHeader.horizontalScrollView.delegate = self;
         _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
         
-        
-        NSLog(@"%@", homeHorizontalObjects);
         
         _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
         //_homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];

@@ -25,7 +25,7 @@
 //@property (nonatomic, strong) NSArray<NSString*> *images;
 //@property (nonatomic, strong) NSArray *itemTitles;
 
-@property (nonatomic, strong) NSArray<HomeHorizontalClass*> *horizontalItems;
+@property (nonatomic, strong) NSMutableArray<HomeHorizontalClass*> *horizontalItems;
 
 /// scroll 速度
 @property (nonatomic, assign) BOOL acuteScroll;

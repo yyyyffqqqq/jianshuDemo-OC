@@ -77,7 +77,7 @@ CGFloat const hotArticleImageViewHeight = 0.12;// 占比
         make.top.equalTo(_cycleScrollView.superview.mas_top).with.offset(0);
         make.left.equalTo(_cycleScrollView.superview.mas_left).with.offset(0);
         make.width.equalTo(_cycleScrollView.superview.mas_width);
-        make.height.equalTo(_cycleScrollView.superview.mas_height).multipliedBy(0.52);
+        make.height.equalTo(_cycleScrollView.superview.mas_height).multipliedBy(0.5);
         
     }];
     

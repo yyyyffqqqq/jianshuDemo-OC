@@ -10,6 +10,8 @@
 
 #import "PublishViewController.h"
 
+#import "WPEditorViewController.h"
+//#import <WordPressEditor/WPEditorViewController.h>
 
 @implementation MyCustomTabBar
 
@@ -37,7 +39,7 @@
     //        self.publishBtTapCallback();
     //    }
     
-    PublishViewController *publish = [[PublishViewController alloc] init];
+    PublishViewController *publish = [[PublishViewController alloc] initWithMode:kWPEditorViewControllerModeEdit];
     UINavigationController *publishNV = [[UINavigationController alloc]initWithRootViewController:publish];
     [self.window.rootViewController presentViewController:publishNV animated:YES completion:nil];
     

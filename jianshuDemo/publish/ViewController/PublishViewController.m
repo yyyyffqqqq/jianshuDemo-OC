@@ -74,18 +74,23 @@
     [WPFontManager merriweatherItalicFontOfSize:16.0];
     [WPFontManager merriweatherLightFontOfSize:16.0];
     [WPFontManager merriweatherRegularFontOfSize:16.0];
-//我注释的
-//    self.placeholderColor = [WPStyleGuide grey];
+    
+    //我加上的
+    
+    [self setAllItemsForToolbar];
+    
+    self.placeholderColor = [WPStyleGuide grey];
     self.editorView.sourceViewTitleField.font = [WPFontManager merriweatherBoldFontOfSize:24.0];
     //我注释的
-//    self.editorView.sourceContentDividerView.backgroundColor = [WPStyleGuide greyLighten30];
-//    [self.toolbarView setBorderColor:[WPStyleGuide greyLighten10]];
-//    [self.toolbarView setItemTintColor: [WPStyleGuide greyLighten10]];
-//    [self.toolbarView setSelectedItemTintColor: [WPStyleGuide baseDarkerBlue]];
+    self.editorView.sourceContentDividerView.backgroundColor = [WPStyleGuide greyLighten30];
+    [self.toolbarView setBorderColor:[WPStyleGuide greyLighten10]];
+    [self.toolbarView setItemTintColor: [WPStyleGuide greyLighten10]];
+    [self.toolbarView setSelectedItemTintColor: [WPStyleGuide baseDarkerBlue]];
 //    [self.toolbarView setDisabledItemTintColor:[UIColor colorWithRed:0.78 green:0.84 blue:0.88 alpha:0.5]];
     // Explicit design decision to use non-standard colors. See:
     // https://github.com/wordpress-mobile/WordPress-Editor-iOS/issues/657#issuecomment-113651034
-//    [self.toolbarView setBackgroundColor: [UIColor colorWithRed:0xF9/255.0 green:0xFB/255.0 blue:0xFC/255.0 alpha:1]];
+    [self.toolbarView setBackgroundColor: [UIColor colorWithRed:0xF9/255.0 green:0xFB/255.0 blue:0xFC/255.0 alpha:1]];
+    
 }
 
 #pragma mark - Navigation Bar
@@ -112,6 +117,7 @@
 {
     DDLogInfo(@"Editor did end editing.");
      NSLog(@"Editor did end editing.");
+    self.editorView;
 }
 
 - (void)editorDidFinishLoadingDOM:(PublishViewController *)editorController
@@ -213,6 +219,8 @@
                              enabled:(BOOL)isEnabled
 {
     DDLogInfo(@"Editor format bar status is now %@.", (isEnabled ? @"enabled" : @"disabled"));
+    
+    NSLog(@"Editor format bar status is now %@.", (isEnabled ? @"enabled" : @"disabled") );
 }
 
 - (void)showPromptForImageWithID:(NSString *)imageId
@@ -469,8 +477,9 @@
         //    }
         if (progress.fractionCompleted >= 1) {
             
-            //我注释的
+            //我注释的,新版本可用
 //            [self.editorView replaceLocalImageWithRemoteImage:[[NSURL fileURLWithPath:progress.userInfo[@"url"]] absoluteString] uniqueId:imageID mediaId:[@(arc4random()) stringValue]];
+            [self.editorView replaceLocalImageWithRemoteImage:[[NSURL fileURLWithPath:progress.userInfo[@"url"]] absoluteString] uniqueId:imageID];
             [timer invalidate];
         }
         return;
