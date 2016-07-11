@@ -59,8 +59,7 @@
 
 //发布文章
 -(void)publishArticle {
-    [self stopEditing];
-    
+    [self.view endEditing:YES];
     //到处HTML格式字符串，发送至服务器
     //...
 }
@@ -77,7 +76,7 @@
     
     //我加上的
     
-    [self setAllItemsForToolbar];
+//    [self setAllItemsForToolbar];
     
     self.placeholderColor = [WPStyleGuide grey];
     self.editorView.sourceViewTitleField.font = [WPFontManager merriweatherBoldFontOfSize:24.0];
@@ -115,9 +114,8 @@
 
 - (void)editorDidEndEditing:(PublishViewController *)editorController
 {
-    DDLogInfo(@"Editor did end editing.");
+
      NSLog(@"Editor did end editing.");
-    self.editorView;
 }
 
 - (void)editorDidFinishLoadingDOM:(PublishViewController *)editorController
@@ -125,7 +123,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"content" ofType:@"html"];
     NSLog(@"path : %@", path);
     NSString *htmlParam = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [self setTitleText:@"I'm editing a post !!! !"];
+//    [self setTitleText:@"I'm editing a post !!! !"];
     [self setBodyText:htmlParam];
 }
 
