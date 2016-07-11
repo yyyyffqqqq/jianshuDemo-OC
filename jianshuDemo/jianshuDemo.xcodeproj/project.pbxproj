@@ -105,8 +105,6 @@
 		14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTitleClass.m; sourceTree = "<group>"; };
 		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
 		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
-		14F535481D32AE8300268F9E /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		14F5354A1D32AE9800268F9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -478,8 +476,6 @@
 		8609137557A578F1495DF52F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14F5354A1D32AE9800268F9E /* CoreGraphics.framework */,
-				14F535481D32AE8300268F9E /* CoreText.framework */,
 				A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */,
 			);
 			name = Frameworks;
