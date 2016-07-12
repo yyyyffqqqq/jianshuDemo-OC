@@ -22,5 +22,6 @@ target 'jianshuDemo' do
 
  pod 'Realm'
 
+ pod 'WordPress-iOS-Editor'
 
 end
