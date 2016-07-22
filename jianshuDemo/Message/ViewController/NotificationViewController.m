@@ -8,8 +8,6 @@
 
 #import "NotificationViewController.h"
 
-#import "FQPageScrollView.h"
-
 @interface NotificationViewController ()
 
 @end
@@ -29,22 +27,6 @@
     
     UIBarButtonItem *notificationBt = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"icon_notification_settings"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(tapnotificationButton)];
     self.navigationItem.rightBarButtonItem = notificationBt;
-    
-    
-    //测试自定义的分页scrollView；
-    FQPageScrollView *scrollView = [[FQPageScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
-    UIView *view1 = [[UIView alloc]init];
-    UIView *view2 = [[UIView alloc]init];
-    UIView *view3 = [[UIView alloc]init];
-    view1.backgroundColor = [UIColor redColor];
-    view2.backgroundColor = [UIColor greenColor];
-    view3.backgroundColor = [UIColor yellowColor];
-    
-    NSArray *views = @[view1, view2, view3];
-    
-    [scrollView addCustomSubview:views];
-    
-    self.tableView.tableHeaderView = scrollView;
     
 }
 

@@ -14,6 +14,8 @@
     
 @property CGFloat viewHeight;
 
+@property CGFloat editWidth;
+
 @end
 
 @implementation UserInformationHeaderView
@@ -35,7 +37,6 @@
     
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _deatailLabel.textAlignment = NSTextAlignmentCenter;
-    
     
     [_nameLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
     [_deatailLabel addObserver:self forKeyPath:@"text" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
@@ -97,10 +98,10 @@
     }
     CGSize sizeOfMax = CGSizeMake(self.frame.size.width, self.frame.size.height*0.2);
     NSDictionary *Dic = @{NSFontAttributeName : [UIFont systemFontOfSize:fontSize]};
-    CGSize Size = [PublicClass boolLabelLength:text size:sizeOfMax option: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin attributes:Dic];
+    CGSize Size = [PublicClass boolLabelLength:text size:sizeOfMax option: NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin attributes:Dic];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(Size.width+16).priorityHigh();
+        make.width.mas_equalTo(Size.width+20).priorityHigh();
         make.centerX.mas_equalTo(_editBt.superview);
     }];
 }

@@ -113,16 +113,21 @@
     } completion:^(BOOL finished) {
         _tapAtIndex = tapindex;
         _tapAtIndex = 1;
+        
+        if (self.responseTapEvent) {
+            self.responseTapEvent(tapindex);
+        }
     }];
-    if (self.responseTapEvent) {
-        self.responseTapEvent(tapindex);
-    }
+    
     
 }
 
 -(void)setTapAtIndex:(CGFloat)tapAtIndex {
     UILabel *view = (UILabel*)_itemBts[(int)tapAtIndex];
-    _bottomView.center = CGPointMake(view.center.x, _bottomView.center.y);
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        _bottomView.center = CGPointMake(view.center.x, _bottomView.center.y);
+    }];
 }
 
 @end

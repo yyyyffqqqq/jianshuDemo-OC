@@ -31,6 +31,8 @@
     self.alwaysBounceHorizontal = YES;
     self.contentSize = CGSizeMake(_pageWidth*_pageCounts, 0); //
     
+    self.delegate = self;
+    
     return self;
 }
 
@@ -103,6 +105,13 @@
             subViews[i].frame = CGRectMake(0, i*_pageHeight, _pageWidth, _pageHeight);
             [self addSubview:subViews[i]];
         }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"%f",(NSInteger)scrollView.contentOffset.x/self.pageWidth);
+    if (self.mydelegate && [self.mydelegate respondsToSelector:@selector(scrollViewDidEndDraggingWithIndex:)]) {
+        [self.mydelegate scrollViewDidEndDraggingWithIndex:(NSInteger)scrollView.contentOffset.x/self.pageWidth];
     }
 }
 

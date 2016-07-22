@@ -177,6 +177,7 @@
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
+		14E2CE331D424EAA0027B8F2 /* UserInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */; };
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
@@ -416,6 +417,8 @@
 		14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollView.m; sourceTree = "<group>"; };
 		14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableHeaderView.h; sourceTree = "<group>"; };
 		14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeaderView.m; sourceTree = "<group>"; };
+		14E2CE311D424EAA0027B8F2 /* UserInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInforTableViewCell.h; sourceTree = "<group>"; };
+		14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInforTableViewCell.m; sourceTree = "<group>"; };
 		14E3E7591D2AD7A700D2E7D5 /* MineUserInformationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserInformationClass.h; sourceTree = "<group>"; };
 		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
 		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 				14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */,
 				146D5CF91D2EF78900D2F7F1 /* UserInformationHeaderView.h */,
 				146D5CFA1D2EF78900D2F7F1 /* UserInformationHeaderView.m */,
+				14E2CE311D424EAA0027B8F2 /* UserInforTableViewCell.h */,
+				14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1259,6 +1264,7 @@
 				140705BC1D37163900587FB4 /* NSString+Util.m in Sources */,
 				140705BE1D37163900587FB4 /* UIColor+Helpers.m in Sources */,
 				14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */,
+				14E2CE331D424EAA0027B8F2 /* UserInforTableViewCell.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
 				14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,

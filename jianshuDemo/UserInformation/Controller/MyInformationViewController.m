@@ -9,12 +9,19 @@
 #import "MyInformationViewController.h"
 #import "FQCustomToolbarView.h"
 #import "UserInformationHeaderView.h"
+#import "UserInforTableViewCell.h"
 
-#define tableHeaderHeight self.view.frame.size.height
+#define tableHeaderHeight [UIScreen mainScreen].bounds.size.height*0.3
 
-@interface MyInformationViewController ()
+CGFloat const firstHeaderViewHeight = 44;
+
+@interface MyInformationViewController ()<FQPageScrollViewDelegate>
 
 @property (strong, nonatomic) UserInformationHeaderView *userInfoHeaderView;
+
+@property (strong, nonatomic) FQCustomToolbarView *headerToolbarView;
+
+@property (strong, nonatomic) UserInforTableViewCell *pageScrollViewCell;
 
 @end
 
@@ -25,13 +32,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    NSArray *images =  [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], nil];
-//    FQCustomToolbarView *gggg = [[FQCustomToolbarView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 44) withTitles:[[NSArray alloc]initWithObjects:@"ffdf", @"ffdf", @"ffdf", nil] andImages:nil];
-//    gggg.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
-//    gggg.responseTapEvent = ^(int index) {
-//        NSLog(@"tap at :  %d", index);
-//    };
-//    [self.view addSubview:gggg];
+    self.tableView.rowHeight = [UIScreen mainScreen].bounds.size.height - firstHeaderViewHeight - 64; //64是导航栏和状态栏；
     
     UIView *titleView = [[UIView alloc] init];
     self.navigationItem.titleView = titleView;
@@ -44,14 +45,36 @@
     self.titleImageView.center = CGPointMake(titleView.center.x, 0);
     [titleView addSubview:self.titleImageView];
     
-    _userInfoHeaderView = [[UserInformationHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tableHeaderHeight*0.3)];
+    _userInfoHeaderView = [[UserInformationHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tableHeaderHeight)];
     self.tableView.tableHeaderView = _userInfoHeaderView;
     
     _userInfoHeaderView.nameLabel.text = @"ykllkk";
     
     _userInfoHeaderView.deatailLabel.text = @"写了130字，获得了5个喜欢";
     
+    [_userInfoHeaderView.editBt setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
     [_userInfoHeaderView.editBt setTitle:@"编辑个人资料" forState:UIControlStateNormal];
+    _userInfoHeaderView.editBt.layer.borderColor = [UIColor greenColor].CGColor;
+    _userInfoHeaderView.editBt.layer.borderWidth = 1.0;
+    
+    __weak MyInformationViewController *mySelf = self;
+    
+//    NSArray *images =  [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], [UIImage imageNamed:@"icon_tabbar_home"], nil];
+    _headerToolbarView = [[FQCustomToolbarView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, firstHeaderViewHeight) withTitles:[[NSArray alloc]initWithObjects:@"动态", @"文章", @"更多", nil] andImages:nil];
+    _headerToolbarView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+    _headerToolbarView.responseTapEvent = ^(int index) {
+        NSLog(@"%f", mySelf.tableView.contentOffset.y);
+        NSLog(@"tableHeaderHeight - 64.0 = %f", tableHeaderHeight - 64.0);
+         UserInforTableViewCell *cell = (UserInforTableViewCell*)[mySelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [UIView animateWithDuration:0.3 animations:^{
+            cell.pageScrollView.contentOffset = CGPointMake(cell.pageScrollView.pageWidth * index, 0);
+            
+            mySelf.tableView.contentOffset = CGPointMake(0, tableHeaderHeight - 64.0);
+        }];
+        
+        
+    };
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -78,6 +101,43 @@
     frame.origin.y = -self.titleImageView.layer.cornerRadius / 2;
     self.titleImageView.frame = frame;
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return firstHeaderViewHeight;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    return _headerToolbarView;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //cell
+    static NSString *reuseIdentifier = @"cellID";
+    //显示数据，暂时不获取；
+    _pageScrollViewCell = [[UserInforTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier size:CGSizeMake(self.view.frame.size.width, self.tableView.rowHeight)];
+    _pageScrollViewCell.pageScrollView.mydelegate = self;
+    
+    return _pageScrollViewCell;
+    
+}
+
+
+#pragma mark -FQPageScrollViewDelegate
+-(void)scrollViewDidEndDraggingWithIndex:(NSInteger)index {
+    [_headerToolbarView setTapAtIndex: index];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
