@@ -33,7 +33,21 @@
     
     self.delegate = self;
     
+    _subViews = [[NSMutableArray alloc]init];
+    
     return self;
+}
+
+-(void)setCurrentSelectedIndex:(CGFloat)currentSelectedIndex {
+    if (currentSelectedIndex<_subViews.count) {
+        if (_scrollDirection == isHorizontalScroll) {
+            self.alwaysBounceHorizontal = YES;
+            self.contentOffset = CGPointMake(_pageWidth * currentSelectedIndex, 0);
+        } else {
+            self.alwaysBounceVertical = YES;
+            self.contentOffset = CGPointMake(0, _pageHeight * currentSelectedIndex);
+        }
+    }
 }
 
 -(void)setScrollDirection:(FQPageScrollDirection)scrollDirection {
@@ -89,10 +103,11 @@
         }
     }
     
+    [_subViews insertObject:view atIndex:index];
 }
 
 //同时插入多个子视图
--(void)addCustomSubview:(NSArray<UIView *> *)subViews{
+-(void)addCustomSubviews:(NSArray<UIView *> *)subViews{
     
     if (subViews.count>_pageCounts) {
         [self setPageCounts:subViews.count];
@@ -106,6 +121,10 @@
             [self addSubview:subViews[i]];
         }
     }
+    
+    
+    
+    _subViews = (NSMutableArray*)subViews;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

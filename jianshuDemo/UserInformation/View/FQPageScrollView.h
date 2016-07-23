@@ -27,13 +27,17 @@ typedef enum : NSInteger {
 @property (assign,nonatomic) CGFloat pageWidth;
 @property (assign,nonatomic) CGFloat pageHeight;
 
+@property (assign,nonatomic) CGFloat currentSelectedIndex;
+
+@property (strong, nonatomic) NSMutableArray<UIView*> *subViews;
+
 @property (weak, nonatomic) id<FQPageScrollViewDelegate> mydelegate;
 
 //插入单个子视图
 -(void)addCustomSubview:(UIView *)view atIndex:(NSInteger)index;
 
 //同时插入多个子视图
--(void)addCustomSubview:(NSArray<UIView *> *)subViews ;
+-(void)addCustomSubviews:(NSArray<UIView *> *)subViews ;
 
 
 @end

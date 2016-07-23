@@ -11,7 +11,9 @@
 #import "UserInformationHeaderView.h"
 #import "UserInforTableViewCell.h"
 
-#define tableHeaderHeight [UIScreen mainScreen].bounds.size.height*0.3
+#import "YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h"
+
+#define tableHeaderHeight (int)([UIScreen mainScreen].bounds.size.height*0.3)
 
 CGFloat const firstHeaderViewHeight = 44;
 
@@ -23,16 +25,31 @@ CGFloat const firstHeaderViewHeight = 44;
 
 @property (strong, nonatomic) UserInforTableViewCell *pageScrollViewCell;
 
+
+@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView;
+
+@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;
+
+@property (nonatomic, assign) BOOL canScroll;
+
 @end
 
 @implementation MyInformationViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView = [[YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-kBottomBarHeight) style:UITableViewStylePlain];
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.tableView.rowHeight = [UIScreen mainScreen].bounds.size.height - firstHeaderViewHeight - 64; //64是导航栏和状态栏；
+    self.tableView.rowHeight = (int)[UIScreen mainScreen].bounds.size.height - (int)firstHeaderViewHeight - 64; //64是导航栏和状态栏；
+    self.tableView.showsVerticalScrollIndicator = NO;
     
     UIView *titleView = [[UIView alloc] init];
     self.navigationItem.titleView = titleView;
@@ -63,22 +80,42 @@ CGFloat const firstHeaderViewHeight = 44;
     _headerToolbarView = [[FQCustomToolbarView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, firstHeaderViewHeight) withTitles:[[NSArray alloc]initWithObjects:@"动态", @"文章", @"更多", nil] andImages:nil];
     _headerToolbarView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
     _headerToolbarView.responseTapEvent = ^(int index) {
-        NSLog(@"%f", mySelf.tableView.contentOffset.y);
-        NSLog(@"tableHeaderHeight - 64.0 = %f", tableHeaderHeight - 64.0);
+        
          UserInforTableViewCell *cell = (UserInforTableViewCell*)[mySelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [UIView animateWithDuration:0.3 animations:^{
             cell.pageScrollView.contentOffset = CGPointMake(cell.pageScrollView.pageWidth * index, 0);
             
-            mySelf.tableView.contentOffset = CGPointMake(0, tableHeaderHeight - 64.0);
+            mySelf.tableView.contentOffset = CGPointMake(0, tableHeaderHeight - 64);
         }];
         
         
     };
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:kLeaveTopNotificationName object:nil];
 }
 
+-(void)acceptMsg : (NSNotification *)notification{
+    //NSLog(@"%@",notification);
+    NSDictionary *userInfo = notification.userInfo;
+    NSString *canScroll = userInfo[@"canScroll"];
+    if ([canScroll isEqualToString:@"1"]) {
+        _canScroll = YES;
+    }
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top;
+    
+    NSLog(@"offsetY = %f", offsetY);
+    NSLog(@"scrollView.contentOffset.y = %f", scrollView.contentOffset.y);
+    
+    NSLog(@"tableHeaderHeight - 64.0 = %d", tableHeaderHeight - 64);
     
     CGFloat scale = 1.0;
     // 放大
@@ -100,6 +137,33 @@ CGFloat const firstHeaderViewHeight = 44;
     CGRect frame = self.titleImageView.frame;
     frame.origin.y = -self.titleImageView.layer.cornerRadius / 2;
     self.titleImageView.frame = frame;
+    
+    /** 
+     上下滑动手势相关
+     */
+    CGFloat tabOffsetY = [self.tableView rectForSection:0].origin.y-kTopBarHeight;
+    CGFloat offsetY2 = scrollView.contentOffset.y;
+    _isTopIsCanNotMoveTabViewPre = _isTopIsCanNotMoveTabView;
+    if (offsetY2>=tabOffsetY) {
+        scrollView.contentOffset = CGPointMake(0, tabOffsetY);
+        _isTopIsCanNotMoveTabView = YES;
+    }else{
+        _isTopIsCanNotMoveTabView = NO;
+    }
+    if (_isTopIsCanNotMoveTabView != _isTopIsCanNotMoveTabViewPre) {
+        if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
+            //NSLog(@"滑动到顶端");
+            [[NSNotificationCenter defaultCenter] postNotificationName:kGoTopNotificationName object:nil userInfo:@{@"canScroll":@"1"}];
+            _canScroll = NO;
+        }
+        if(_isTopIsCanNotMoveTabViewPre && !_isTopIsCanNotMoveTabView){
+            //NSLog(@"离开顶端");
+            if (!_canScroll) {
+                scrollView.contentOffset = CGPointMake(0, tabOffsetY);
+            }
+        }
+    }
+    
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -141,6 +205,7 @@ CGFloat const firstHeaderViewHeight = 44;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 

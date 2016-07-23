@@ -174,10 +174,16 @@
 		14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */; };
 		14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B713511D3048C700AAAC2E /* ArticleContentViewController.m */; };
 		14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */; };
+		14D133FA1D43D89200CEC982 /* FQTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */; };
+		14D133FE1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */; };
+		14D133FF1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
 		14E2CE331D424EAA0027B8F2 /* UserInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */; };
+		14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE351D42B0360027B8F2 /* FQPageFirstView.m */; };
+		14E2CE391D42B0570027B8F2 /* FQPageSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE381D42B0570027B8F2 /* FQPageSecondView.m */; };
+		14E2CE3C1D42B0720027B8F2 /* FQPageThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE3B1D42B0720027B8F2 /* FQPageThirdView.m */; };
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
@@ -411,6 +417,12 @@
 		14B713511D3048C700AAAC2E /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
 		14BEAC5B1D306EDD00C145E8 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
 		14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishViewController.m; sourceTree = "<group>"; };
+		14D133F81D43D89200CEC982 /* FQTabItemBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQTabItemBaseView.h; sourceTree = "<group>"; };
+		14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQTabItemBaseView.m; sourceTree = "<group>"; };
+		14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m; sourceTree = "<group>"; };
+		14D133FC1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIgnoreHeaderTouchTableView.h; sourceTree = "<group>"; };
+		14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIgnoreHeaderTouchTableView.m; sourceTree = "<group>"; };
+		14D134001D43DB0500CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		14E028D51D27B78D00767AF2 /* HorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollView.h; sourceTree = "<group>"; };
@@ -419,6 +431,12 @@
 		14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableHeaderView.m; sourceTree = "<group>"; };
 		14E2CE311D424EAA0027B8F2 /* UserInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInforTableViewCell.h; sourceTree = "<group>"; };
 		14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInforTableViewCell.m; sourceTree = "<group>"; };
+		14E2CE341D42B0360027B8F2 /* FQPageFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageFirstView.h; sourceTree = "<group>"; };
+		14E2CE351D42B0360027B8F2 /* FQPageFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageFirstView.m; sourceTree = "<group>"; };
+		14E2CE371D42B0570027B8F2 /* FQPageSecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageSecondView.h; sourceTree = "<group>"; };
+		14E2CE381D42B0570027B8F2 /* FQPageSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageSecondView.m; sourceTree = "<group>"; };
+		14E2CE3A1D42B0720027B8F2 /* FQPageThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageThirdView.h; sourceTree = "<group>"; };
+		14E2CE3B1D42B0720027B8F2 /* FQPageThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageThirdView.m; sourceTree = "<group>"; };
 		14E3E7591D2AD7A700D2E7D5 /* MineUserInformationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserInformationClass.h; sourceTree = "<group>"; };
 		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
 		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
@@ -544,6 +562,12 @@
 		1454679A1D2C2587005E153B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14D134001D43DB0500CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h */,
+				14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */,
+				14D133FC1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.h */,
+				14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */,
+				14D133F81D43D89200CEC982 /* FQTabItemBaseView.h */,
+				14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */,
 				1454679B1D2C2E32005E153B /* FQPageScrollView.h */,
 				1454679C1D2C2E32005E153B /* FQPageScrollView.m */,
 				14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */,
@@ -552,6 +576,12 @@
 				146D5CFA1D2EF78900D2F7F1 /* UserInformationHeaderView.m */,
 				14E2CE311D424EAA0027B8F2 /* UserInforTableViewCell.h */,
 				14E2CE321D424EAA0027B8F2 /* UserInforTableViewCell.m */,
+				14E2CE341D42B0360027B8F2 /* FQPageFirstView.h */,
+				14E2CE351D42B0360027B8F2 /* FQPageFirstView.m */,
+				14E2CE371D42B0570027B8F2 /* FQPageSecondView.h */,
+				14E2CE381D42B0570027B8F2 /* FQPageSecondView.m */,
+				14E2CE3A1D42B0720027B8F2 /* FQPageThirdView.h */,
+				14E2CE3B1D42B0720027B8F2 /* FQPageThirdView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1253,6 +1283,7 @@
 				146D5CF81D2E966000D2F7F1 /* HomeHorizontalClass.m in Sources */,
 				148CEC3D1D370C34004FBEE8 /* WPEditorFormatbarView.m in Sources */,
 				140705C51D37163900587FB4 /* WPStyleGuide.m in Sources */,
+				14D133FF1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m in Sources */,
 				148CEC311D370C34004FBEE8 /* CYRLayoutManager.m in Sources */,
 				14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */,
 				140705D21D371D1600587FB4 /* WPAnalytics.m in Sources */,
@@ -1261,6 +1292,7 @@
 				148CEC441D370C34004FBEE8 /* ZSSTextView.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
+				14D133FA1D43D89200CEC982 /* FQTabItemBaseView.m in Sources */,
 				140705BC1D37163900587FB4 /* NSString+Util.m in Sources */,
 				140705BE1D37163900587FB4 /* UIColor+Helpers.m in Sources */,
 				14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */,
@@ -1275,6 +1307,7 @@
 				146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */,
 				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
 				140705C11D37163900587FB4 /* WPFontManager.m in Sources */,
+				14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */,
 				140705CC1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m in Sources */,
 				148CEC3A1D370C34004FBEE8 /* HRColorUtil.m in Sources */,
 				148CEC331D370C34004FBEE8 /* CYRTextView.m in Sources */,
@@ -1289,6 +1322,7 @@
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				140705C81D37163900587FB4 /* WPTextFieldTableViewCell.m in Sources */,
 				148CEC361D370C34004FBEE8 /* HRCgUtil.m in Sources */,
+				14D133FE1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m in Sources */,
 				148CEC421D370C34004FBEE8 /* WPImageMeta.m in Sources */,
 				148CEC401D370C34004FBEE8 /* WPEditorView.m in Sources */,
 				148CEC3B1D370C34004FBEE8 /* WKWebView+GUIFixes.m in Sources */,
@@ -1299,9 +1333,11 @@
 				140705C41D37163900587FB4 /* WPNUXUtility.m in Sources */,
 				1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */,
 				14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */,
+				14E2CE391D42B0570027B8F2 /* FQPageSecondView.m in Sources */,
 				140705C31D37163900587FB4 /* WPNoResultsView.m in Sources */,
 				140705C71D37163900587FB4 /* WPTableViewSectionHeaderFooterView.m in Sources */,
 				148CEC411D370C34004FBEE8 /* WPEditorViewController.m in Sources */,
+				14E2CE3C1D42B0720027B8F2 /* FQPageThirdView.m in Sources */,
 				14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

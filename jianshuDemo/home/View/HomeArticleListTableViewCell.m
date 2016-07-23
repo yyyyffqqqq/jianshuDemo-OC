@@ -8,7 +8,6 @@
 
 #import "HomeArticleListTableViewCell.h"
 #import "PublicClass.h"
-#import "UIImageView+WebCache.h"
 
 @implementation HomeArticleListTableViewCell
 
@@ -77,16 +76,6 @@
 }
 
 -(void)setHomeArticle:(FQHomeArticleClass *)homeArticle {
-//    self.contentImageView.image = [UIImage imageNamed:homeArticle.contentImageUrl];
-//    [UIImage imageNamed:@"img_default"]
-    dispatch_async(dispatch_queue_create("queue", nil), ^{
-        if (homeArticle.contentImageUrl == nil || ![homeArticle.contentImageUrl isEqualToString:@""]) {
-            [self.contentImageView sd_setImageWithURL:[NSURL URLWithString: homeArticle.contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                
-            }];
-        }
-        
-    });
     
     self.headerImageView.image = [UIImage imageNamed:homeArticle.headerImageUrl];
     [self.nameBt setTitle:homeArticle.nameString forState:UIControlStateNormal];

@@ -8,6 +8,7 @@
 
 #import "UserInforTableViewCell.h"
 
+
 @implementation UserInforTableViewCell
 
 - (void)awakeFromNib {
@@ -23,18 +24,18 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier size:(CGSize)size{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
-    //测试自定义的分页scrollView；
+    //测试自定义的分页scrollView;
     _pageScrollView = [[FQPageScrollView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    UIView *view1 = [[UIView alloc]init];
-    UIView *view2 = [[UIView alloc]init];
-    UIView *view3 = [[UIView alloc]init];
-    view1.backgroundColor = [UIColor redColor];
-    view2.backgroundColor = [UIColor greenColor];
-    view3.backgroundColor = [UIColor yellowColor];
+//    FQPageFirstView *firstView = [[FQPageFirstView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
+    FQPageFirstView *firstView = [[FQPageFirstView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    UIView *secondView = [[FQPageSecondView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    UIView *thirdView = [[FQPageThirdView alloc]init];
     
-    NSArray *views = @[view1, view2, view3];
+    NSArray *views = @[firstView, secondView, thirdView];
     
-    [_pageScrollView addCustomSubview:views];
+    [_pageScrollView addCustomSubviews:views]; //添加子视图
+    
+    [_pageScrollView setCurrentSelectedIndex:2]; //默认显示第三个视图
     
     [self.contentView addSubview:_pageScrollView];
     

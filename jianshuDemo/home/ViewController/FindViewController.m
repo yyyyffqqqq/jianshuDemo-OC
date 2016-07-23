@@ -13,6 +13,7 @@
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "FQHomeClass.h"
 #import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
 
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 CGFloat const homeTableRowHeight = 150.0f;
@@ -243,7 +244,16 @@ CGFloat const homeTableRowHeight = 150.0f;
     static NSString *reuseIdentifier = @"cellID";
     
     HomeArticleListTableViewCell *cell = [[HomeArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
-//    cell.backgroundColor = [UIColor greenColor];
+    
+//    dispatch_async(dispatch_queue_create("queue", nil), ^{
+        if (((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl == nil || ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {
+            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString: ((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                
+            }];
+        }
+        
+//    });
+    
     cell.homeArticle = _homeArticleObjs[indexPath.row];
     
     return cell;
