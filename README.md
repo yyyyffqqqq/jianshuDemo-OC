@@ -7,4 +7,4 @@
 
 ![image](https://github.com/yyyyffqqqq/jianshuDemo-OC/raw/master/ReadmeCource/jianshuReadeMe.gif)
 
-![image](https://github.com/yyyyffqqqq/jianshuDemo-OC/raw/master/jianshuReadeMe2.png)
+![image](https://github.com/yyyyffqqqq/jianshuDemo-OC/raw/master/jianshuDemo/jianshuDemo/jianshuReadeMe2.png)
