@@ -5,4 +5,4 @@
 
 ##2、实现了主要框架界面及功能，演示如下：
 
-![image](https://github.com/yyyyffqqqq/jianshuDemo-OC/jianshuReadeMe.gif)
+![image](https://github.com/yyyyffqqqq/jianshuDemo-OC/raw/master/jianshuReadeMe.gif)
