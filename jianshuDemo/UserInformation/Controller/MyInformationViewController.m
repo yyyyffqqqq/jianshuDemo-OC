@@ -112,11 +112,6 @@ CGFloat const firstHeaderViewHeight = 44;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top;
     
-    NSLog(@"offsetY = %f", offsetY);
-    NSLog(@"scrollView.contentOffset.y = %f", scrollView.contentOffset.y);
-    
-    NSLog(@"tableHeaderHeight - 64.0 = %d", tableHeaderHeight - 64);
-    
     CGFloat scale = 1.0;
     // 放大
     if (offsetY < 0) {

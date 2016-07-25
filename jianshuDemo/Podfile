@@ -22,4 +22,6 @@ target 'jianshuDemo' do
 
  pod 'Realm'
 
+ pod "DXPopover"
+
 end

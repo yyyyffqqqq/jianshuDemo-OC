@@ -172,11 +172,11 @@
 		14A680321D2705660073FAAA /* MyTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680311D2705660073FAAA /* MyTabbarController.m */; };
 		14A680351D2705F20073FAAA /* CollectionCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680341D2705F20073FAAA /* CollectionCellImageView.m */; };
 		14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */; };
+		14B1A49C1D46713F00DD4BC9 /* jianshuReadeMe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14B1A49B1D46713F00DD4BC9 /* jianshuReadeMe.gif */; };
 		14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B713511D3048C700AAAC2E /* ArticleContentViewController.m */; };
 		14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */; };
 		14D133FA1D43D89200CEC982 /* FQTabItemBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */; };
 		14D133FE1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */; };
-		14D133FF1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */; };
 		14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D31D27B72D00767AF2 /* SearchResultViewController.m */; };
 		14E028D71D27B78D00767AF2 /* HorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */; };
 		14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */; };
@@ -413,6 +413,7 @@
 		14A680341D2705F20073FAAA /* CollectionCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCellImageView.m; sourceTree = "<group>"; };
 		14B1A15E1D2A6BD000D065B6 /* AttenssionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttenssionTableViewCell.h; sourceTree = "<group>"; };
 		14B1A15F1D2A6BD000D065B6 /* AttenssionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttenssionTableViewCell.m; sourceTree = "<group>"; };
+		14B1A49B1D46713F00DD4BC9 /* jianshuReadeMe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = jianshuReadeMe.gif; sourceTree = "<group>"; };
 		14B713501D3048C700AAAC2E /* ArticleContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleContentViewController.h; sourceTree = "<group>"; };
 		14B713511D3048C700AAAC2E /* ArticleContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleContentViewController.m; sourceTree = "<group>"; };
 		14BEAC5B1D306EDD00C145E8 /* PublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishViewController.h; sourceTree = "<group>"; };
@@ -420,8 +421,6 @@
 		14D133F81D43D89200CEC982 /* FQTabItemBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQTabItemBaseView.h; sourceTree = "<group>"; };
 		14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQTabItemBaseView.m; sourceTree = "<group>"; };
 		14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m; sourceTree = "<group>"; };
-		14D133FC1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIgnoreHeaderTouchTableView.h; sourceTree = "<group>"; };
-		14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXIgnoreHeaderTouchTableView.m; sourceTree = "<group>"; };
 		14D134001D43DB0500CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h; sourceTree = "<group>"; };
 		14E028D21D27B72D00767AF2 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		14E028D31D27B72D00767AF2 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
@@ -564,8 +563,6 @@
 			children = (
 				14D134001D43DB0500CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h */,
 				14D133FB1D43DAEF00CEC982 /* YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.m */,
-				14D133FC1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.h */,
-				14D133FD1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m */,
 				14D133F81D43D89200CEC982 /* FQTabItemBaseView.h */,
 				14D133F91D43D89200CEC982 /* FQTabItemBaseView.m */,
 				1454679B1D2C2E32005E153B /* FQPageScrollView.h */,
@@ -617,6 +614,7 @@
 		145B0A4E1D2591BA004BE429 /* jianshuDemo */ = {
 			isa = PBXGroup;
 			children = (
+				14B1A49A1D46713F00DD4BC9 /* ReadmeCource */,
 				145B0A4F1D2591BA004BE429 /* Supporting Files */,
 			);
 			path = jianshuDemo;
@@ -1024,6 +1022,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		14B1A49A1D46713F00DD4BC9 /* ReadmeCource */ = {
+			isa = PBXGroup;
+			children = (
+				14B1A49B1D46713F00DD4BC9 /* jianshuReadeMe.gif */,
+			);
+			path = ReadmeCource;
+			sourceTree = "<group>";
+		};
 		42DB5CD6EA202EAE6D67A8F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1192,6 +1198,7 @@
 				148CEC521D370C34004FBEE8 /* icon_format_html@3x.png in Resources */,
 				148CEC5B1D370C34004FBEE8 /* icon_format_media.png in Resources */,
 				148CEC4C1D370C34004FBEE8 /* icon-posts-editor-preview@3x.png in Resources */,
+				14B1A49C1D46713F00DD4BC9 /* jianshuReadeMe.gif in Resources */,
 				145B0A5C1D2591BA004BE429 /* Assets.xcassets in Resources */,
 				148CEC971D370C34004FBEE8 /* ZSSh5@2x.png in Resources */,
 				148CEC741D370C34004FBEE8 /* icon_preview@2x.png in Resources */,
@@ -1283,7 +1290,6 @@
 				146D5CF81D2E966000D2F7F1 /* HomeHorizontalClass.m in Sources */,
 				148CEC3D1D370C34004FBEE8 /* WPEditorFormatbarView.m in Sources */,
 				140705C51D37163900587FB4 /* WPStyleGuide.m in Sources */,
-				14D133FF1D43DAEF00CEC982 /* YXIgnoreHeaderTouchTableView.m in Sources */,
 				148CEC311D370C34004FBEE8 /* CYRLayoutManager.m in Sources */,
 				14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */,
 				140705D21D371D1600587FB4 /* WPAnalytics.m in Sources */,

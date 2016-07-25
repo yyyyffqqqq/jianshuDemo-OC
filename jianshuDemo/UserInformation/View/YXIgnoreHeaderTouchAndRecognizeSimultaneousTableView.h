@@ -1,13 +1,13 @@
 //
 //  YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h
-//  仿造淘宝商品详情页
+//  jianshuDemo
 //
-//  Created by yixiang on 16/3/25.
-//  Copyright © 2016年 yixiang. All rights reserved.
+//  Created by quan on 16/7/25.
+//  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "YXIgnoreHeaderTouchTableView.h"
+#import <UIKit/UIKit.h>
 
-@interface YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView : YXIgnoreHeaderTouchTableView
+@interface YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView : UITableView
 
 @end

@@ -9,10 +9,21 @@
 #import "AttensionViewController.h"
 #import "AttenssionTableViewCell.h"
 #import "MJRefresh.h"
+#import "DXPopover.h"
 
-CGFloat const attenssionRowHeight = 80.0f;
+static CGFloat const attenssionRowHeight = 80.0f;
 
 @interface AttensionViewController ()
+
+@property(strong, nonatomic) UITableView *popTableView;
+
+@property UIButton *titleBt;
+
+@property DXPopover *popover;
+
+@property NSArray *popoverDatas;
+
+@property CGFloat popTableViewRowHeight ;
 
 @end
 
@@ -20,13 +31,31 @@ CGFloat const attenssionRowHeight = 80.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStylePlain];
-//    _tableView.delegate = self;
-//    _tableView.dataSource = self;
-//    
-//    [self.view addSubview:self.tableView];
     
-    self.navigationItem.title = @"关注";
+    self.popover = [DXPopover new];
+    
+    _popTableViewRowHeight = 50;
+    _popoverDatas = [[NSArray alloc]initWithObjects:@"全部关注",@"只看专题",@"只看文集", @"只看用户", @"只看推送更新", nil];
+    
+    self.popTableView = [[UITableView alloc]initWithFrame:(CGRect){CGPointZero, CGSizeMake(150, _popTableViewRowHeight*_popoverDatas.count)} style:UITableViewStylePlain];
+    self.popTableView.delegate = self;
+    self.popTableView.dataSource = self;
+    _popTableView.rowHeight = _popTableViewRowHeight;
+    
+    
+    
+    _titleBt = [[UIButton alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(100, 30)}];
+    [_titleBt setTitle:@"关注全部" forState:UIControlStateNormal];
+    [_titleBt setImage:[UIImage imageNamed:@"button_dropdown_arrow"] forState:UIControlStateNormal];
+    [_titleBt addTarget:self
+                action:@selector(titleShowPopover)
+      forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = _titleBt;
+    CGFloat labelWidth = self.navigationItem.titleView.layer.bounds.size.width;
+    CGFloat imageWidth = _titleBt.imageView.layer.bounds.size.width;
+    _titleBt.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
+    _titleBt.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth-imageWidth*2, 0, -imageWidth);
+    
     self.tableView.rowHeight = attenssionRowHeight;
     
     UIBarButtonItem *addBt = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"icon_side_add"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(tapAddButton)];
@@ -47,6 +76,9 @@ CGFloat const attenssionRowHeight = 80.0f;
     
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     header.lastUpdatedTimeLabel.hidden = YES;
+    [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
     self.tableView.mj_header = header;
     [self.tableView.mj_header beginRefreshing];
     
@@ -68,6 +100,60 @@ CGFloat const attenssionRowHeight = 80.0f;
     
     
     
+}
+
+- (void)updateTableViewFrame {
+    CGRect tableViewFrame = self.popTableView.frame;
+//    tableViewFrame.size.width = _popoverWidth;
+    self.popTableView.frame = tableViewFrame;
+    self.popover.contentInset = UIEdgeInsetsZero;
+    self.popover.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)bounceTargetView:(UIView *)targetView {
+//    targetView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+//    [UIView animateWithDuration:0.5
+//                          delay:0.0
+//         usingSpringWithDamping:0.3
+//          initialSpringVelocity:5
+//                        options:UIViewAnimationOptionCurveEaseInOut
+//                     animations:^{
+//                         targetView.transform = CGAffineTransformIdentity;
+//                     }
+//                     completion:nil];
+    
+    [UIView beginAnimations:@"clockwiseAnimation" context:NULL];
+    /* Make the animation 5 seconds long */
+    [UIView setAnimationDuration:0.2f];
+    //顺时针旋转180度
+    _titleBt.imageView.transform = CGAffineTransformMakeRotation(0);
+    /* Commit the animation */
+    [UIView commitAnimations];
+}
+
+- (void)titleShowPopover {
+    [UIView beginAnimations:@"clockwiseAnimation" context:NULL];
+    /* Make the animation 5 seconds long */
+    [UIView setAnimationDuration:0.2f];
+    //顺时针旋转180度
+    _titleBt.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+    /* Commit the animation */
+    [UIView commitAnimations];
+
+    [self updateTableViewFrame];
+    
+    UIView *titleView = self.navigationItem.titleView;
+    CGPoint startPoint =
+    CGPointMake(CGRectGetMidX(titleView.frame), CGRectGetMaxY(titleView.frame) + 20);
+    
+    [self.popover showAtPoint:startPoint
+               popoverPostion:DXPopoverPositionDown
+              withContentView:self.popTableView
+                       inView:self.tabBarController.view];
+    __weak typeof(self) weakSelf = self;
+    self.popover.didDismissHandler = ^{
+        [weakSelf bounceTargetView:titleView];
+    };
 }
 
 -(void)loadNewData {
@@ -130,15 +216,42 @@ CGFloat const attenssionRowHeight = 80.0f;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    if (tableView == _popTableView) {
+        return _popoverDatas.count;
+    }
     return 50;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _popTableView) {
+        if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+            [tableView setSeparatorInset:UIEdgeInsetsZero];
+        }
+        
+        if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+            [tableView setLayoutMargins:UIEdgeInsetsZero];
+        }
+        
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
+    }
+    
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (tableView == _popTableView) {
+        static NSString *reuseIdentifier = @"popTableViewCellID";
+        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+        cell.textLabel.text = _popoverDatas[indexPath.row];
+        
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        cell.textLabel.backgroundColor = [UIColor redColor];
+        
+        return cell;
+    }
     static NSString *reuseIdentifier = @"cellID";
-    
     //显示数据，暂时不获取；
 //    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     AttenssionTableViewCell *cell = [[AttenssionTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, attenssionRowHeight)];
@@ -188,6 +301,9 @@ CGFloat const attenssionRowHeight = 80.0f;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (tableView == _popTableView) {
+        return 0;
+    }
     return 2;
 }
 

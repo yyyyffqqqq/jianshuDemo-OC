@@ -1,9 +1,9 @@
 //
-//  YXTabItemBaseView.h
-//  仿造淘宝商品详情页
+//  FQTabItemBaseView.h
+//  jianshuDemo
 //
-//  Created by yixiang on 16/3/29.
-//  Copyright © 2016年 yixiang. All rights reserved.
+//  Created by quan on 16/7/25.
+//  Copyright © 2016年 quan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

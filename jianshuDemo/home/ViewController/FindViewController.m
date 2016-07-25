@@ -18,7 +18,7 @@
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 CGFloat const homeTableRowHeight = 150.0f;
 
-@interface FindViewController () <HorizontalScrollViewDelegate>
+@interface FindViewController () <HorizontalScrollViewDelegate, SDCycleScrollViewDelegate>
 
 @property CGFloat homeTableHeaderHeight;
 
@@ -49,8 +49,10 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
-    
     _tableView.rowHeight = homeTableRowHeight;
+    
+    /* 设置SDCycleScrollViewDelegate协议 */
+    _homeTableHeader.cycleScrollView.delegate = self;
     
     [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
         
@@ -137,6 +139,22 @@ CGFloat const homeTableRowHeight = 150.0f;
 
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    //不移除对tableview的监听，这样会影响右滑返回的效果，与FDFullscreenPopGesture
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
+    
+    self.hidesBottomBarWhenPushed = NO;
+    
+}
+
 -(void)loadMoreData {
     //请求数据
     
@@ -161,21 +179,6 @@ CGFloat const homeTableRowHeight = 150.0f;
 //    return YES;
 //}
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    //不移除对tableview的监听，这样会影响右滑返回的效果，与FDFullscreenPopGesture
-    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
-    
-    self.hidesBottomBarWhenPushed = NO;
-
-}
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     [self.searchController.searchBar becomeFirstResponder];
@@ -214,8 +217,12 @@ CGFloat const homeTableRowHeight = 150.0f;
     });
 }
 
+#pragma mark - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"index is %ld", (long)index);
+}
 
-//HorizontalScrollViewDelegate
+#pragma mark - HorizontalScrollViewDelegate
 - (void)selectItemAtIndex:(NSInteger)index {
     NSLog(@"index is %ld", (long)index);
     

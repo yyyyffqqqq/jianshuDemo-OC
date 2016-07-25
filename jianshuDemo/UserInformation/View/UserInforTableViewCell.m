@@ -26,7 +26,7 @@
     
     //测试自定义的分页scrollView;
     _pageScrollView = [[FQPageScrollView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-//    FQPageFirstView *firstView = [[FQPageFirstView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
+    _pageScrollView.showsHorizontalScrollIndicator = NO;
     FQPageFirstView *firstView = [[FQPageFirstView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     UIView *secondView = [[FQPageSecondView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     UIView *thirdView = [[FQPageThirdView alloc]init];

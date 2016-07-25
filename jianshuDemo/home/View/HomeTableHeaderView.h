@@ -11,7 +11,6 @@
 #import "HorizontalScrollView.h"
 #import "SDCycleScrollView.h"
 #import "Masonry.h"
-//#import "FQHomeTabelHeaderClass.h"
 
 @interface HomeTableHeaderView : UIView
 
