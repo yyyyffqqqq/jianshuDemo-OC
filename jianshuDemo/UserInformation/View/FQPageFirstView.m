@@ -37,7 +37,9 @@
     
     [super renderUI];
     
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 60;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.estimatedRowHeight = 150;
     
     return self;
 }
@@ -53,11 +55,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //cell
-    static NSString *reuseIdentifier = @"cellID";
-    //显示数据，暂时不获取；
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    cell.textLabel.text = @"hello";
+    if (indexPath.row % 2 == 0) {
+        static NSString *reuseIdentifier = @"cellID";
+        //显示数据，暂时不获取；
+        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+        cell.textLabel.text = @"hello one";
+        cell.imageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+        cell.detailTextLabel.text = @"ghggh";
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    }
     
+    static NSString *reuseIdentifier = @"cellID2";
+    //显示数据，暂时不获取；
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    cell.textLabel.text = @"hello world";
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
 }

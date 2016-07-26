@@ -183,6 +183,7 @@
 		14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE351D42B0360027B8F2 /* FQPageFirstView.m */; };
 		14E2CE391D42B0570027B8F2 /* FQPageSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE381D42B0570027B8F2 /* FQPageSecondView.m */; };
 		14E2CE3C1D42B0720027B8F2 /* FQPageThirdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E2CE3B1D42B0720027B8F2 /* FQPageThirdView.m */; };
+		14E373031D47735800FD905A /* LaunchImage-800-Portrait-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E373021D47735800FD905A /* LaunchImage-800-Portrait-736h.png */; };
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
@@ -434,6 +435,7 @@
 		14E2CE381D42B0570027B8F2 /* FQPageSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageSecondView.m; sourceTree = "<group>"; };
 		14E2CE3A1D42B0720027B8F2 /* FQPageThirdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageThirdView.h; sourceTree = "<group>"; };
 		14E2CE3B1D42B0720027B8F2 /* FQPageThirdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageThirdView.m; sourceTree = "<group>"; };
+		14E373021D47735800FD905A /* LaunchImage-800-Portrait-736h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h.png"; sourceTree = "<group>"; };
 		14E3E7591D2AD7A700D2E7D5 /* MineUserInformationClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineUserInformationClass.h; sourceTree = "<group>"; };
 		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
 		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				145B0A501D2591BA004BE429 /* main.m */,
 				145B0A5D1D2591BA004BE429 /* LaunchScreen.storyboard */,
 				145B0A5B1D2591BA004BE429 /* Assets.xcassets */,
+				14E373021D47735800FD905A /* LaunchImage-800-Portrait-736h.png */,
 				145B0A601D2591BA004BE429 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1172,6 +1175,7 @@
 				148CEC771D370C34004FBEE8 /* js-beautifier.js in Resources */,
 				148CECAF1D370C34004FBEE8 /* ZSSundo.png in Resources */,
 				148CEC491D370C34004FBEE8 /* icon-posts-editor-inspector@3x.png in Resources */,
+				14E373031D47735800FD905A /* LaunchImage-800-Portrait-736h.png in Resources */,
 				148CEC701D370C34004FBEE8 /* icon_format_unlink@2x.png in Resources */,
 				148CECAA1D370C34004FBEE8 /* ZSSsubscript@2x.png in Resources */,
 				148CEC661D370C34004FBEE8 /* icon_format_quote@3x.png in Resources */,
