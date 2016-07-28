@@ -40,13 +40,14 @@ static CGFloat const attenssionRowHeight = 80.0f;
     self.popTableView = [[UITableView alloc]initWithFrame:(CGRect){CGPointZero, CGSizeMake(150, _popTableViewRowHeight*_popoverDatas.count)} style:UITableViewStylePlain];
     self.popTableView.delegate = self;
     self.popTableView.dataSource = self;
+    self.popTableView.scrollEnabled = NO;
     _popTableView.rowHeight = _popTableViewRowHeight;
     
     
     
     _titleBt = [[UIButton alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(100, 30)}];
     [_titleBt setTitle:@"关注全部" forState:UIControlStateNormal];
-    [_titleBt setImage:[UIImage imageNamed:@"button_dropdown_arrow"] forState:UIControlStateNormal];
+    [_titleBt setImage:[UIImage imageNamed:@"icon_following_arrow_open"] forState:UIControlStateNormal];
     [_titleBt addTarget:self
                 action:@selector(titleShowPopover)
       forControlEvents:UIControlEventTouchUpInside];

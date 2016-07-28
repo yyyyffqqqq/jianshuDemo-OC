@@ -11,7 +11,7 @@
 #import "Masonry.h"
 #import "FQHomeArticleClass.h"
 
-@interface HomeArticleListTableViewCell : UITableViewCell
+@interface ArticleListTableViewCell : UITableViewCell
 
 @property CGSize contentSize; //cell大小
 

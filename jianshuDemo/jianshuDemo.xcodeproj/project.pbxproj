@@ -160,10 +160,11 @@
 		148CECAE1D370C34004FBEE8 /* ZSStextcolor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 148CEC2E1D370C34004FBEE8 /* ZSStextcolor@2x.png */; };
 		148CECAF1D370C34004FBEE8 /* ZSSundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 148CEC2F1D370C34004FBEE8 /* ZSSundo.png */; };
 		148CECB01D370C34004FBEE8 /* ZSSundo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 148CEC301D370C34004FBEE8 /* ZSSundo@2x.png */; };
+		148F92F21D4A0FCC0086C0B9 /* ArticleListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 148F92F11D4A0FCC0086C0B9 /* ArticleListTableViewController.m */; };
 		14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA61D2C80E500A32D48 /* FQPopViewController.m */; };
 		14974BAA1D2C81BE00A32D48 /* TextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA91D2C81BE00A32D48 /* TextEditViewController.m */; };
 		14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */; };
-		149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */; };
+		149E8EC71D2BB55C00B88951 /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */; };
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
@@ -389,14 +390,16 @@
 		148CEC2E1D370C34004FBEE8 /* ZSStextcolor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZSStextcolor@2x.png"; sourceTree = "<group>"; };
 		148CEC2F1D370C34004FBEE8 /* ZSSundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZSSundo.png; sourceTree = "<group>"; };
 		148CEC301D370C34004FBEE8 /* ZSSundo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ZSSundo@2x.png"; sourceTree = "<group>"; };
+		148F92F01D4A0FCC0086C0B9 /* ArticleListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewController.h; sourceTree = "<group>"; };
+		148F92F11D4A0FCC0086C0B9 /* ArticleListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewController.m; sourceTree = "<group>"; };
 		14974BA51D2C80E500A32D48 /* FQPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPopViewController.h; sourceTree = "<group>"; };
 		14974BA61D2C80E500A32D48 /* FQPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPopViewController.m; sourceTree = "<group>"; };
 		14974BA81D2C81BE00A32D48 /* TextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEditViewController.h; sourceTree = "<group>"; };
 		14974BA91D2C81BE00A32D48 /* TextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditViewController.m; sourceTree = "<group>"; };
 		14974BAE1D2CB57400A32D48 /* MyInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationViewController.h; sourceTree = "<group>"; };
 		14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationViewController.m; sourceTree = "<group>"; };
-		149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeArticleListTableViewCell.h; sourceTree = "<group>"; };
-		149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeArticleListTableViewCell.m; sourceTree = "<group>"; };
+		149E8EC51D2BB55C00B88951 /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
+		149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
 		14A680051D2704F60073FAAA /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
 		14A680061D2704F60073FAAA /* AttensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttensionViewController.m; sourceTree = "<group>"; };
 		14A680081D2704F60073FAAA /* MyCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabBar.h; sourceTree = "<group>"; };
@@ -922,8 +925,8 @@
 				14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */,
 				14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */,
 				14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */,
-				149E8EC51D2BB55C00B88951 /* HomeArticleListTableViewCell.h */,
-				149E8EC61D2BB55C00B88951 /* HomeArticleListTableViewCell.m */,
+				149E8EC51D2BB55C00B88951 /* ArticleListTableViewCell.h */,
+				149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -935,6 +938,8 @@
 				14A6800F1D2704F60073FAAA /* FindViewController.m */,
 				14E028D21D27B72D00767AF2 /* SearchResultViewController.h */,
 				14E028D31D27B72D00767AF2 /* SearchResultViewController.m */,
+				148F92F01D4A0FCC0086C0B9 /* ArticleListTableViewController.h */,
+				148F92F11D4A0FCC0086C0B9 /* ArticleListTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1303,13 +1308,14 @@
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */,
-				149E8EC71D2BB55C00B88951 /* HomeArticleListTableViewCell.m in Sources */,
+				149E8EC71D2BB55C00B88951 /* ArticleListTableViewCell.m in Sources */,
 				140705C11D37163900587FB4 /* WPFontManager.m in Sources */,
 				14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */,
 				140705CC1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m in Sources */,
 				148CEC3A1D370C34004FBEE8 /* HRColorUtil.m in Sources */,
 				148CEC331D370C34004FBEE8 /* CYRTextView.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
+				148F92F21D4A0FCC0086C0B9 /* ArticleListTableViewController.m in Sources */,
 				148CEC341D370C34004FBEE8 /* CYRToken.m in Sources */,
 				14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */,
 				148CEC381D370C34004FBEE8 /* HRColorPickerView.m in Sources */,

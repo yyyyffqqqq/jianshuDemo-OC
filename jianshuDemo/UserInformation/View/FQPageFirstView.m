@@ -36,7 +36,7 @@
         _detailLabel.text = @"fdvhkcaadddcsvdvsdvs";
         [_attentionBt setTitle:@"已关注" forState:UIControlStateNormal];
         
-        _headerImageView.backgroundColor = [UIColor greenColor];
+//        _headerImageView.backgroundColor = [UIColor greenColor];
         
 //        _authorNameLabel.backgroundColor = [UIColor blueColor];
     
@@ -228,7 +228,7 @@
 //        _dateLabel.backgroundColor = [UIColor brownColor];
 //        _targetLabel.backgroundColor = [UIColor greenColor];
         
-        _statusAuthorView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+        _statusAuthorView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
     }
 }
 
@@ -249,7 +249,7 @@
 //        _userNameLabel.backgroundColor = [UIColor purpleColor];
 //        _dateLabel.backgroundColor = [UIColor brownColor];
 //        _targetLabel.backgroundColor = [UIColor greenColor];
-        _statusArticleView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+        _statusArticleView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
     }
 }
 
@@ -271,7 +271,7 @@
 //        _userNameLabel.backgroundColor = [UIColor purpleColor];
 //        _dateLabel.backgroundColor = [UIColor brownColor];
 //        _targetLabel.backgroundColor = [UIColor greenColor];
-        _statusSpecialTopicView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
+        _statusSpecialTopicView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
     }
 }
 
@@ -309,10 +309,10 @@
     if (indexPath.row == 3) {
         return showStatusArticleViewRowHeight;
     }
-    if (indexPath.row == 6) {
-        return showStatusSpecialTopicViewRowHeight;
+    if (indexPath.row == 14) {
+        return notShowOtherViewsRowHeight;
     }
-    return notShowOtherViewsRowHeight;
+    return showStatusSpecialTopicViewRowHeight;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -332,7 +332,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //因为是demo，所这块暂时不做优化
-    CGFloat height = notShowOtherViewsRowHeight;
+    CGFloat height = showStatusSpecialTopicViewRowHeight;
     if (indexPath.row == 1) {
         height = showStatusAuthorViewRowHeight;
     }
@@ -341,8 +341,8 @@
         height = showStatusArticleViewRowHeight;
     }
     
-    if (indexPath.row == 6) {
-        height = showStatusSpecialTopicViewRowHeight;
+    if (indexPath.row == 14) {
+        height = notShowOtherViewsRowHeight;
     }
     
     static NSString *reuseIdentifier = @"cellID2";
@@ -354,10 +354,10 @@
     } else if (indexPath.row == 3) {
         cell.showStatusArticleView = YES;
         cell.statusArticleView.contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-    } else if (indexPath.row == 6) {
-        cell.showStatusSpecialTopicView = YES;
-    } else {
+    } else if (indexPath.row == 14) {
         cell.notShowOtherViews = YES;
+    } else {
+        cell.showStatusSpecialTopicView = YES;
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

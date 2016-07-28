@@ -8,15 +8,16 @@
 
 #import "FindViewController.h"
 
-#import "HomeArticleListTableViewCell.h"
+#import "ArticleListTableViewCell.h"
 #import "FQPopViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "FQHomeClass.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "ArticleListTableViewController.h"
 
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
-CGFloat const homeTableRowHeight = 150.0f;
+static CGFloat const homeTableRowHeight = 150.0f;
 
 @interface FindViewController () <HorizontalScrollViewDelegate, SDCycleScrollViewDelegate>
 
@@ -220,11 +221,19 @@ CGFloat const homeTableRowHeight = 150.0f;
 #pragma mark - SDCycleScrollViewDelegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     NSLog(@"index is %ld", (long)index);
+    
+    self.hidesBottomBarWhenPushed = YES;
+    FQPopViewController *ArticleContentVC = [[FQPopViewController alloc]init];
+    [self showViewController:ArticleContentVC sender:self];
 }
 
 #pragma mark - HorizontalScrollViewDelegate
 - (void)selectItemAtIndex:(NSInteger)index {
-    NSLog(@"index is %ld", (long)index);
+    
+    self.hidesBottomBarWhenPushed = YES;
+    ArticleListTableViewController *ArticleListVC = [[ArticleListTableViewController alloc]init];
+    ArticleListVC.title = _homeTableHeader.horizontalScrollView.horizontalItems[index].titleString;;
+    [self showViewController:ArticleListVC sender:self];
     
 }
 
@@ -250,7 +259,10 @@ CGFloat const homeTableRowHeight = 150.0f;
     
     static NSString *reuseIdentifier = @"cellID";
     
-    HomeArticleListTableViewCell *cell = [[HomeArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
+    ArticleListTableViewCell *cell;
+    if (!cell) {
+        cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
+    }
     
 //    dispatch_async(dispatch_queue_create("queue", nil), ^{
         if (((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl == nil || ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {

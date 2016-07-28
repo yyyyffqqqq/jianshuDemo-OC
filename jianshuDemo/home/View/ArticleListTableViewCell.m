@@ -6,10 +6,10 @@
 //  Copyright © 2016年 quan. All rights reserved.
 //
 
-#import "HomeArticleListTableViewCell.h"
+#import "ArticleListTableViewCell.h"
 #import "PublicClass.h"
 
-@implementation HomeArticleListTableViewCell
+@implementation ArticleListTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
