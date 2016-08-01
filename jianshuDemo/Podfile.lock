@@ -16,9 +16,6 @@ PODS:
     - AFNetworking/NSURLSession
   - DXPopover (0.1.1)
   - FDFullscreenPopGesture (1.1)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
   - Masonry (1.0.1)
   - MJRefresh (3.1.10)
   - Reachability (3.2)
@@ -36,7 +33,6 @@ DEPENDENCIES:
   - AFNetworking
   - DXPopover
   - FDFullscreenPopGesture
-  - FMDB
   - Masonry
   - MJRefresh
   - Reachability
@@ -49,7 +45,6 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DXPopover: 13e6bbd1a0da4e62b2190de51f43a94850769e0f
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
@@ -58,6 +53,6 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
 
-PODFILE CHECKSUM: 34b562df0202e6b9120d73d9d27999ee80413704
+PODFILE CHECKSUM: 14af52554d980858562edf38d7bee7d45e0c8847
 
 COCOAPODS: 1.1.0.beta.1

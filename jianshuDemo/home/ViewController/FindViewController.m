@@ -8,7 +8,7 @@
 
 #import "FindViewController.h"
 
-#import "ArticleListTableViewCell.h"
+#import "HomeTableViewCell.h"
 #import "FQPopViewController.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 #import "FQHomeClass.h"
@@ -17,7 +17,7 @@
 #import "ArticleListTableViewController.h"
 
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
-static CGFloat const homeTableRowHeight = 150.0f;
+static CGFloat const homeTableRowHeight = 80.0f;
 
 @interface FindViewController () <HorizontalScrollViewDelegate, SDCycleScrollViewDelegate>
 
@@ -40,7 +40,8 @@ static CGFloat const homeTableRowHeight = 150.0f;
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = homeTableRowHeight;
     _tableView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
     
     
@@ -50,7 +51,6 @@ static CGFloat const homeTableRowHeight = 150.0f;
     
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
-    _tableView.rowHeight = homeTableRowHeight;
     
     /* 设置SDCycleScrollViewDelegate协议 */
     _homeTableHeader.cycleScrollView.delegate = self;
@@ -259,13 +259,13 @@ static CGFloat const homeTableRowHeight = 150.0f;
     
     static NSString *reuseIdentifier = @"cellID";
     
-    ArticleListTableViewCell *cell;
-    if (!cell) {
-        cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, homeTableRowHeight)];
-    }
+    HomeTableViewCell *cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:JianShuCellStyleHasAllView];
+//    if (!cell) {
+//        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:JianShuCellStyleHasAllView];
+//    }
     
 //    dispatch_async(dispatch_queue_create("queue", nil), ^{
-        if (((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl == nil || ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {
+        if ( ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {
             [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString: ((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 
             }];

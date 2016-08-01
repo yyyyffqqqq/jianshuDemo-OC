@@ -7,7 +7,7 @@
 //
 
 #import "ArticleListTableViewController.h"
-#import "ArticleListTableViewCell.h"
+#import "HomeTableViewCell.h"
 
 static CGFloat const tableRowHeight = 150.0f;
 
@@ -50,10 +50,10 @@ static CGFloat const tableRowHeight = 150.0f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuseID = @"reuseId";
-    ArticleListTableViewCell *cell;
+    HomeTableViewCell *cell;
     
     if (!cell) {
-        cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseID withFrame:CGRectMake(0, 0, self.view.frame.size.width, tableRowHeight)];
+        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseID jianShuCellStyle:JianShuCellStyleHasContentImageView];
     }
     
     cell.textLabel.text = @"fdfs";

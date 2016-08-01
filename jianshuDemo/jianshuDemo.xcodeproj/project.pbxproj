@@ -164,7 +164,6 @@
 		14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA61D2C80E500A32D48 /* FQPopViewController.m */; };
 		14974BAA1D2C81BE00A32D48 /* TextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BA91D2C81BE00A32D48 /* TextEditViewController.m */; };
 		14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */; };
-		149E8EC71D2BB55C00B88951 /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */; };
 		14A680281D2704F60073FAAA /* AttensionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680061D2704F60073FAAA /* AttensionViewController.m */; };
 		14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A680091D2704F60073FAAA /* MyCustomTabBar.m */; };
 		14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A6800F1D2704F60073FAAA /* FindViewController.m */; };
@@ -187,6 +186,8 @@
 		14E373031D47735800FD905A /* LaunchImage-800-Portrait-736h.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E373021D47735800FD905A /* LaunchImage-800-Portrait-736h.png */; };
 		14E3E75B1D2AD7A700D2E7D5 /* MineUserInformationClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */; };
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
+		14E5FF9E1D4FDCD900CCDDAC /* JianShuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */; };
+		14E5FFA11D4FDD1E00CCDDAC /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
@@ -398,8 +399,6 @@
 		14974BA91D2C81BE00A32D48 /* TextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEditViewController.m; sourceTree = "<group>"; };
 		14974BAE1D2CB57400A32D48 /* MyInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInformationViewController.h; sourceTree = "<group>"; };
 		14974BAF1D2CB57400A32D48 /* MyInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInformationViewController.m; sourceTree = "<group>"; };
-		149E8EC51D2BB55C00B88951 /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
-		149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
 		14A680051D2704F60073FAAA /* AttensionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttensionViewController.h; sourceTree = "<group>"; };
 		14A680061D2704F60073FAAA /* AttensionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttensionViewController.m; sourceTree = "<group>"; };
 		14A680081D2704F60073FAAA /* MyCustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomTabBar.h; sourceTree = "<group>"; };
@@ -443,6 +442,10 @@
 		14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineUserInformationClass.m; sourceTree = "<group>"; };
 		14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTitleClass.h; sourceTree = "<group>"; };
 		14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTitleClass.m; sourceTree = "<group>"; };
+		14E5FF9C1D4FDCD900CCDDAC /* JianShuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JianShuTableViewCell.h; sourceTree = "<group>"; };
+		14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianShuTableViewCell.m; sourceTree = "<group>"; };
+		14E5FF9F1D4FDD1E00CCDDAC /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
 		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -589,6 +592,7 @@
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
+				14E5FF9B1D4FDCCE00CCDDAC /* PublicView */,
 				148CEB971D370C34004FBEE8 /* Third Party */,
 				14974BA11D2C786700A32D48 /* ArticleContentDetail */,
 				145467971D2C2587005E153B /* UserInformation */,
@@ -925,8 +929,8 @@
 				14E028D61D27B78D00767AF2 /* HorizontalScrollView.m */,
 				14E028D81D27DEF000767AF2 /* HomeTableHeaderView.h */,
 				14E028D91D27DEF000767AF2 /* HomeTableHeaderView.m */,
-				149E8EC51D2BB55C00B88951 /* ArticleListTableViewCell.h */,
-				149E8EC61D2BB55C00B88951 /* ArticleListTableViewCell.m */,
+				14E5FF9F1D4FDD1E00CCDDAC /* HomeTableViewCell.h */,
+				14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1025,6 +1029,15 @@
 				14BEAC5C1D306EDD00C145E8 /* PublishViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		14E5FF9B1D4FDCCE00CCDDAC /* PublicView */ = {
+			isa = PBXGroup;
+			children = (
+				14E5FF9C1D4FDCD900CCDDAC /* JianShuTableViewCell.h */,
+				14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */,
+			);
+			path = PublicView;
 			sourceTree = "<group>";
 		};
 		42DB5CD6EA202EAE6D67A8F6 /* Pods */ = {
@@ -1290,6 +1303,7 @@
 				148CEC311D370C34004FBEE8 /* CYRLayoutManager.m in Sources */,
 				14974BB01D2CB57400A32D48 /* MyInformationViewController.m in Sources */,
 				140705D21D371D1600587FB4 /* WPAnalytics.m in Sources */,
+				14E5FFA11D4FDD1E00CCDDAC /* HomeTableViewCell.m in Sources */,
 				148CEC431D370C34004FBEE8 /* ZSSBarButtonItem.m in Sources */,
 				14E028D41D27B72D00767AF2 /* SearchResultViewController.m in Sources */,
 				148CEC441D370C34004FBEE8 /* ZSSTextView.m in Sources */,
@@ -1300,6 +1314,7 @@
 				140705BE1D37163900587FB4 /* UIColor+Helpers.m in Sources */,
 				14B713521D3048C700AAAC2E /* ArticleContentViewController.m in Sources */,
 				14E2CE331D424EAA0027B8F2 /* UserInforTableViewCell.m in Sources */,
+				14E5FF9E1D4FDCD900CCDDAC /* JianShuTableViewCell.m in Sources */,
 				14A6802E1D2704F60073FAAA /* PublicClass.m in Sources */,
 				14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */,
 				14A6802A1D2704F60073FAAA /* FindViewController.m in Sources */,
@@ -1308,7 +1323,6 @@
 				14A6802D1D2704F60073FAAA /* NotificationViewController.m in Sources */,
 				145B0A511D2591BA004BE429 /* main.m in Sources */,
 				146D5CFB1D2EF78900D2F7F1 /* UserInformationHeaderView.m in Sources */,
-				149E8EC71D2BB55C00B88951 /* ArticleListTableViewCell.m in Sources */,
 				140705C11D37163900587FB4 /* WPFontManager.m in Sources */,
 				14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */,
 				140705CC1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m in Sources */,
