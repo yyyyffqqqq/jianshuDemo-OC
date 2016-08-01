@@ -245,9 +245,6 @@
     [_contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(_contentImageView.superview);
         make.size.mas_equalTo(_contentImageViewSize);
-//        make.height.mas_lessThanOrEqualTo(_contentImageView.superview.mas_height).multipliedBy(0.6);
-//        make.width.mas_lessThanOrEqualTo(_contentImageView.superview.mas_height).multipliedBy(0.6);
-//        make.size.mas_equalTo(80);
         make.right.equalTo(_contentImageView.superview.mas_right).offset(-15);
     }];
     
