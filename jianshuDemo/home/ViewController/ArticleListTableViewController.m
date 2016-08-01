@@ -56,7 +56,6 @@ static CGFloat const tableRowHeight = 150.0f;
         cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseID jianShuCellStyle:JianShuCellStyleHasContentImageView];
     }
     
-    cell.textLabel.text = @"fdfs";
     
     return cell;
 }
