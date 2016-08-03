@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
-    JianShuCellStyleHasNoneView,
-    JianShuCellStyleHasSpecialTopicView,
-    JianShuCellStyleHasContentImageView,
-    JianShuCellStyleHasAllView,
+    JianShuCellStyleHasNoneView,          //没有内容缩略图和专题button
+    JianShuCellStyleHasSpecialTopicView,  //只有专题button
+    JianShuCellStyleHasContentImageView,  //只有内容缩略图
+    JianShuCellStyleHasAllView,           //有内容缩略图和专题button
 } JianShuCellStyle;
 
 @interface JianShuTableViewCell : UITableViewCell

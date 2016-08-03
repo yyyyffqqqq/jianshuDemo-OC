@@ -170,6 +170,7 @@ CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
 }
 
 - (void)updateData {
+    [self initData];
     [self initView];
 }
 

@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "FQTabItemBaseView.h"
 
-static CGFloat notShowOtherViewsRowHeight = 80;
-static CGFloat showStatusAuthorViewRowHeight = 150;
-static CGFloat showStatusArticleViewRowHeight = 240;
-static CGFloat showStatusSpecialTopicViewRowHeight = 240;
-static CGFloat FQPageFirstViewEstimatedRowHeight = 200;
+typedef enum : NSUInteger {
+    TimeLineCellStyleNotShowOtherViews, //不显示statusAuthorView、statusArticleView、statusSpecialTopicView
+    TimeLineCellStyleShowStatusAuthorView, //只显示statusAuthorView
+    TimeLineCellStyleShowStatusArticleView, //只显示statusArticleView
+    TimeLineCellStyleshowStatusSpecialTopicView, //只显示statusSpecialTopicView
+    
+} TimeLineCellStyle;
 
 @interface StatusAuthorView : UIButton
 
@@ -24,6 +26,8 @@ static CGFloat FQPageFirstViewEstimatedRowHeight = 200;
 @property (strong, nonatomic) UILabel *detailLabel;
 
 @property (strong, nonatomic) UIButton *attentionBt;
+
+@property CGFloat attentionBtWidth;
 
 @end
 
@@ -38,6 +42,8 @@ static CGFloat FQPageFirstViewEstimatedRowHeight = 200;
 @property (strong, nonatomic) UILabel *authorNameLabel;
 
 @property (strong, nonatomic) UILabel *readedCommentLoveLabel;
+
+@property (nonatomic) BOOL hasContentImage;
 
 @end
 
@@ -55,16 +61,6 @@ static CGFloat FQPageFirstViewEstimatedRowHeight = 200;
 
 @interface FirstTableViewCell : UITableViewCell
 
-@property CGFloat cellWidth;
-@property CGFloat cellHeight;
-
-@property (nonatomic) BOOL notShowOtherViews; //不显示statusAuthorView、statusArticleView、statusSpecialTopicView
-
-@property (nonatomic) BOOL showStatusAuthorView; //只显示statusAuthorView
-
-@property (nonatomic) BOOL showStatusArticleView; //只显示statusArticleView
-
-@property (nonatomic) BOOL showStatusSpecialTopicView; //只显示statusSpecialTopicView
 
 @property (strong, nonatomic) UIImageView *headerImageView;
 
@@ -80,12 +76,19 @@ static CGFloat FQPageFirstViewEstimatedRowHeight = 200;
 
 @property (strong, nonatomic) StatusSpecialTopicView *statusSpecialTopicView;
 
+@property (nonatomic) BOOL statusArticleViewHasContentImage;
+
 @property (strong, nonatomic) NSMutableArray *datas;
 /**
- 初始化方法
- size - 视图大小
+ *初始化方法
+ *timeLineCellStyle - 视图类型
+ *hasContentImage -  视图类型为TimeLineCellStyleShowStatusArticleView时是否有缩略图，根据该值做相应布局约束
  */
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier size:(CGSize)size;
+-(instancetype)initWithStyle:(UITableViewCellStyle)style
+             reuseIdentifier:(NSString *)reuseIdentifier
+             timeLineCellStyle:(TimeLineCellStyle)timeLineCellStyle
+             hasContentImage:(BOOL)hasContentImage;
+
 
 @end
 

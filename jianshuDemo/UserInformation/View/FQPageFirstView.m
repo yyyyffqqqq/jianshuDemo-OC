@@ -7,96 +7,159 @@
 //
 
 #import "FQPageFirstView.h"
+#import "Masonry.h"
 
 @implementation StatusAuthorView
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self createView];
+    }
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
-        //小数数值部分是占比
+        [self createView];
         
-//        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, frame.size.height*0.5*0.5, frame.size.height*0.5, frame.size.height*0.5)];
-        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, frame.size.height*0.5*0.5, notShowOtherViewsRowHeight*0.5, notShowOtherViewsRowHeight*0.5)];
-        _authorNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMinY(_headerImageView.frame), frame.size.width*0.5, _headerImageView.frame.size.height*0.5)];
-        
-        _detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMaxY(_authorNameLabel.frame), frame.size.width*0.5, _headerImageView.frame.size.height*0.5)];
-        
-        _attentionBt = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetWidth(frame)-100, CGRectGetMidY(self.frame)-_headerImageView.frame.size.height*0.5*0.5, 80, frame.size.height*0.33)];
-        _attentionBt.center = CGPointMake(_attentionBt.center.x, _headerImageView.center.y);
-        
-        [self addSubview:_headerImageView];
-        [self addSubview:_authorNameLabel];
-        [self addSubview:_detailLabel];
-        [self addSubview:_attentionBt];
-        
-        _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-        _authorNameLabel.text = @"yyyyyyyyyy";
-        _detailLabel.text = @"fdvhkcaadddcsvdvsdvs";
-        [_attentionBt setTitle:@"已关注" forState:UIControlStateNormal];
-        
-//        _headerImageView.backgroundColor = [UIColor greenColor];
-        
-//        _authorNameLabel.backgroundColor = [UIColor blueColor];
-    
-//        _detailLabel.backgroundColor = [UIColor yellowColor];
-//        _attentionBt.backgroundColor = [UIColor brownColor];
     }
     
     return self;
 }
+
+- (void)createView {
+    _attentionBtWidth = 60;
+    
+    _headerImageView = [[UIImageView alloc]init];
+    _authorNameLabel = [[UILabel alloc]init];
+    
+    _detailLabel = [[UILabel alloc]init];
+    
+    _attentionBt = [[UIButton alloc]init];
+    _attentionBt.center = CGPointMake(_attentionBt.center.x, _headerImageView.center.y);
+    
+    [self addSubview:_headerImageView];
+    [self addSubview:_authorNameLabel];
+    [self addSubview:_detailLabel];
+    [self addSubview:_attentionBt];
+    
+    _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+    _authorNameLabel.text = @"yyyyyyyyyy";
+    _detailLabel.text = @"fdvhkcaadddcsvdvsdvs";
+    [_attentionBt setTitle:@"已关注" forState:UIControlStateNormal];
+    
+//    _headerImageView.backgroundColor = [UIColor greenColor];
+//
+//    _authorNameLabel.backgroundColor = [UIColor blueColor];
+//
+//    _detailLabel.backgroundColor = [UIColor yellowColor];
+//    _attentionBt.backgroundColor = [UIColor brownColor];
+    
+    [self createViewWithMasonryLayout];
+}
+
+- (void)createViewWithMasonryLayout {
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.superview.mas_top).offset(20);
+        make.left.mas_equalTo(_headerImageView.superview.mas_left).offset(10);
+        make.size.mas_equalTo(40);
+    }];
+    [_authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.mas_top).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_authorNameLabel.mas_bottom).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_attentionBt.mas_left).offset(-20);
+        make.bottom.mas_equalTo(_detailLabel.superview.mas_bottom).offset(-20);
+    }];
+    [_attentionBt mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(_attentionBtWidth);
+        make.centerY.mas_equalTo(_headerImageView);
+        make.right.mas_equalTo(_headerImageView.superview.mas_right).offset(-15);
+    }];
+    
+    
+}
+
+@end
+
+@interface StatusArticleView ()
 
 
 @end
 
 @implementation StatusArticleView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)initWithHasContentImage:(BOOL)hasContentImage {
+    self = [super init];
     if (self) {
-        
-        _titleTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, frame.size.height*0.05, frame.size.width-30, frame.size.height*0.2)];
-        
-        _contentImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_titleTextLabel.frame)+frame.size.height*0.05, 0, frame.size.height*0.4)];
-        
-        
-        _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_contentImageView.frame)+15, CGRectGetMaxY(_titleTextLabel.frame)+frame.size.height*0.05, frame.size.width-CGRectGetWidth(_contentImageView.frame)-45, frame.size.height*0.4)];
-        
-        _authorNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(_contentLabel.frame)+frame.size.height*0.05, frame.size.width*0.3, frame.size.height*0.1)];
-        
-        _readedCommentLoveLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_authorNameLabel.frame)+10, CGRectGetMaxY(_contentLabel.frame)+frame.size.height*0.05, frame.size.width*0.6, frame.size.height*0.1)];
-        
-        
-        [self addSubview:_titleTextLabel];
-        [self addSubview:_contentImageView];
-        [self addSubview:_contentLabel];
-        [self addSubview:_authorNameLabel];
-        [self addSubview:_readedCommentLoveLabel];
-        
-        
-        _titleTextLabel.text = @"ios fhksfsfvxnfkjmgsffwakkkygdgdgsfsfs";
-        _contentLabel.text = @"vcdhhslllllll阅读lllladadsdsddsadsdadadfdsfssdgdagaasdjghhkghgjgjgjgjhgkjkvbvxvdfdsdvss";
-        _contentLabel.numberOfLines = 3;
-        _contentLabel.font = [UIFont systemFontOfSize:12];
-        _authorNameLabel.text = @"yyyqqqq";
-        _readedCommentLoveLabel.text = @"阅读 25 • 评论 15 • 喜欢 888";
-        
-        _authorNameLabel.font = [UIFont systemFontOfSize:12];
-        _readedCommentLoveLabel.font = _authorNameLabel.font;
-//        _titleTextLabel.backgroundColor = [UIColor redColor];
-//        _contentImageView.backgroundColor = [UIColor grayColor];
-//        _contentLabel.backgroundColor = [UIColor blueColor];
-//        _authorNameLabel.backgroundColor = [UIColor greenColor];
-//        _readedCommentLoveLabel.backgroundColor = [UIColor yellowColor];
-        
-        [_contentImageView addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionNew  context:nil];
+        _hasContentImage = hasContentImage;
+        [self createViews];
         
     }
     
-    
+    return self;
+}
+
+
+- (instancetype)initWithFrame:(CGRect)frame hasContentImage:(BOOL)hasContentImage{
+    self = [super initWithFrame:frame];
+    if (self) {
+        _hasContentImage = hasContentImage;
+        [self createViews];
+        
+    }
     
     return self;
+}
+
+- (void)createViews {
+    _titleTextLabel = [[UILabel alloc]init];
+    
+    _contentImageView = [[UIImageView alloc]init];
+    
+    
+    _contentLabel = [[UILabel alloc]init];
+    
+    _authorNameLabel = [[UILabel alloc]init];
+    
+    _readedCommentLoveLabel = [[UILabel alloc]init];
+    
+    
+    [self addSubview:_titleTextLabel];
+    [self addSubview:_contentImageView];
+    [self addSubview:_contentLabel];
+    [self addSubview:_authorNameLabel];
+    [self addSubview:_readedCommentLoveLabel];
+    
+    
+    _titleTextLabel.text = @"ios fhksfsfvxnfkjmgsffwakkkygdgdgsfsfs";
+    _contentLabel.text = @"vcdhhslllllll阅读lllladadsdsddsadsdadadfdsfssdgdagaasdjghhkghgjgjgjgjhgkjkvbvxvdfdsdvss";
+    _contentLabel.numberOfLines = 3;
+    _contentLabel.font = [UIFont systemFontOfSize:12];
+    _authorNameLabel.text = @"yyyqqqq";
+    _readedCommentLoveLabel.text = @"阅读 25 • 评论 15 • 喜欢 888";
+    
+    _authorNameLabel.font = [UIFont systemFontOfSize:12];
+    _readedCommentLoveLabel.font = _authorNameLabel.font;
+    
+    //        _titleTextLabel.backgroundColor = [UIColor redColor];
+    //        _contentImageView.backgroundColor = [UIColor grayColor];
+    //        _contentLabel.backgroundColor = [UIColor blueColor];
+    //        _authorNameLabel.backgroundColor = [UIColor greenColor];
+    //        _readedCommentLoveLabel.backgroundColor = [UIColor yellowColor];
+    
+    //        [_contentImageView addObserver:self forKeyPath:@"image" options:NSKeyValueObservingOptionNew  context:nil];
+    
+    _contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+    
+    [self createViewWithMasonryLayout];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -104,20 +167,60 @@
                     change:(NSDictionary *)change
                     context:(void *)context {
     if (object == _contentImageView) {
-        NSLog(@"dsfs");
-        _contentImageView.frame = CGRectMake(15, CGRectGetMaxY(_titleTextLabel.frame)+self.frame.size.height*0.05, self.frame.size.height*0.4, self.frame.size.height*0.4);
         
-        _contentLabel.frame = CGRectMake(CGRectGetMaxX(_contentImageView.frame)+15, CGRectGetMaxY(_titleTextLabel.frame)+self.frame.size.height*0.05, self.frame.size.width-CGRectGetWidth(_contentImageView.frame)-45, self.frame.size.height*0.4);
-        
-        _authorNameLabel.frame = CGRectMake(15, CGRectGetMaxY(_contentLabel.frame)+self.frame.size.height*0.05, self.frame.size.width*0.3, self.frame.size.height*0.2);
-        
-        _readedCommentLoveLabel.frame = CGRectMake(CGRectGetMaxX(_authorNameLabel.frame)+10, CGRectGetMaxY(_contentLabel.frame)+self.frame.size.height*0.05, self.frame.size.width*0.6, self.frame.size.height*0.2);
     }
     
 }
 
+- (void)createViewWithMasonryLayout {
+    
+    [_titleTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(20);
+        make.left.mas_equalTo(_titleTextLabel.superview.mas_left).offset(15);
+        make.right.mas_lessThanOrEqualTo(_titleTextLabel.superview.mas_right).offset(-15);
+    }];
+    
+    //如果有内容缩略图
+    CGFloat contentImageWidth;
+    CGFloat contentImageHeight = 60;
+    CGFloat contentImageAndContentTextMargin;
+    if (_hasContentImage) {
+        contentImageWidth = 60;
+        contentImageAndContentTextMargin = 5;
+    } else {
+        contentImageWidth = 0;
+        contentImageAndContentTextMargin = 0;
+    }
+    
+    [_contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_titleTextLabel.mas_bottom).offset(20);
+        make.left.mas_equalTo(_titleTextLabel.superview.mas_left).offset(15);
+        make.height.mas_equalTo(contentImageHeight);
+        make.width.mas_equalTo(contentImageWidth);
+    }];
+    
+    [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_contentImageView.mas_top);
+        make.left.mas_equalTo(_contentImageView.mas_right).offset(contentImageAndContentTextMargin);
+        make.height.mas_equalTo(_contentImageView.mas_height);
+        make.right.mas_equalTo(_contentLabel.superview.mas_right).offset(-15);
+    }];
+    [_authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_contentLabel.mas_bottom).offset(20);
+        make.left.mas_equalTo(_contentLabel.superview.mas_left).offset(15);
+    }];
+    [_readedCommentLoveLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_authorNameLabel.mas_right).offset(5);
+        make.height.mas_equalTo(_authorNameLabel.mas_height);
+        make.top.mas_equalTo(_authorNameLabel.mas_top);
+        make.bottom.mas_equalTo(self.mas_bottom).offset(-20);
+    }];
+    
+}
+
+
 -(void)dealloc {
-    [_contentImageView removeObserver:self forKeyPath:@"image"];
+//    [_contentImageView removeObserver:self forKeyPath:@"image"];
 }
 
 
@@ -125,72 +228,96 @@
 
 @implementation StatusSpecialTopicView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)init {
+    self = [super init];
     if (self) {
         
-        _statusSpecialTopicView = [[StatusAuthorView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height*0.5)];
-        
-        
-        _separatorLineView = [[UIView alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(_statusSpecialTopicView.frame), frame.size.width-30, 1)];
-        
-        _summaryLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(_separatorLineView.frame)+frame.size.height*0.07, CGRectGetWidth(_separatorLineView.frame), frame.size.height*0.35)];
-        
-        [self addSubview:_statusSpecialTopicView];
-        [self addSubview:_separatorLineView];
-        [self addSubview:_summaryLabel];
-        _summaryLabel.numberOfLines = 2;
-        _summaryLabel.text = @"一起讨论iOS 开发 kfsfsfdfddddhghfhfghfgffsfsfsdfsdfsfsfsfafjhkkihmbmggd";
-        
-        _separatorLineView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
-//        _statusSpecialTopicView.backgroundColor = [UIColor redColor];
-        
-//        _summaryLabel.backgroundColor = [UIColor yellowColor];
+        [self createView];
         
     }
     
     return self;
 }
 
-@end
-
-@implementation FirstTableViewCell
-
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier size:(CGSize)size{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
-    _cellWidth = size.width;
-    _cellHeight = size.height;
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        [self createView];
+        
+    }
     
     return self;
 }
 
--(void)createViewWithHeight:(CGFloat)height {
-    _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, height*0.5, height*0.5)];
+- (void)createView {
+    _statusSpecialTopicView = [[StatusAuthorView alloc]init];
     
-    _userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMinY(_headerImageView.frame), _cellWidth*0.3, _headerImageView.frame.size.height*0.5)];
     
-    _dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMaxY(_userNameLabel.frame), _cellWidth*0.6, _headerImageView.frame.size.height*0.5)];
+    _separatorLineView = [[UIView alloc]init];
     
-    _targetLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_userNameLabel.frame), CGRectGetMinY(_headerImageView.frame), 100, _headerImageView.frame.size.height*0.5)];
+    _summaryLabel = [[UILabel alloc]init];
     
-    [self.contentView addSubview:_headerImageView];
-    [self.contentView addSubview:_userNameLabel];
-    [self.contentView addSubview:_dateLabel];
-    [self.contentView addSubview:_targetLabel];
+    [self addSubview:_statusSpecialTopicView];
+    [self addSubview:_separatorLineView];
+    [self addSubview:_summaryLabel];
+    _summaryLabel.numberOfLines = 2;
+    _summaryLabel.text = @"一起讨论iOS 开发 kfsfsfdfddddhghfhfghfgffsfsfsdfsdfsfsfsfafjhkkihmbmggd";
+    
+    _separatorLineView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+    
+    //_statusSpecialTopicView.backgroundColor = [UIColor redColor];
+    //
+    //_summaryLabel.backgroundColor = [UIColor yellowColor];
+    
+    [self createViewWithMasonryLayout];
 }
 
+- (void)createViewWithMasonryLayout {
+    
+    [_statusSpecialTopicView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_statusSpecialTopicView.superview.mas_top).offset(0);
+        make.left.mas_equalTo(_statusSpecialTopicView.superview.mas_left).offset(0);
+        make.right.mas_equalTo(_statusSpecialTopicView.superview.mas_right);
+    }];
+    [_separatorLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_statusSpecialTopicView.mas_bottom).offset(0);
+        make.left.mas_equalTo(_separatorLineView.superview.mas_left).offset(15);
+        make.height.mas_equalTo(1);
+        make.right.mas_equalTo(_separatorLineView.superview.mas_right).offset(-15);
+    }];
+    [_summaryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_separatorLineView.mas_bottom).offset(20);
+        make.left.mas_equalTo(_summaryLabel.superview.mas_left).offset(15);
+        make.right.mas_lessThanOrEqualTo(_summaryLabel.superview.mas_right).offset(-15);
+        make.bottom.mas_equalTo(_summaryLabel.superview.mas_bottom).offset(-20);
+    }];
+    
+}
 
--(void)setNotShowOtherViews:(BOOL)notShowOtherViews {
-    if (notShowOtherViews) {
+@end
+
+@implementation FirstTableViewCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style
+              reuseIdentifier:(NSString *)reuseIdentifier
+              timeLineCellStyle:(TimeLineCellStyle)timeLineCellStyle
+              hasContentImage:(BOOL)hasContentImage
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    if (self) {
         
-        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, _cellHeight*0.25, _cellHeight*0.5, _cellHeight*0.5)];
+        if (TimeLineCellStyleShowStatusArticleView == timeLineCellStyle) {
+            _statusArticleViewHasContentImage = hasContentImage;
+        }
         
-        _userNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMinY(_headerImageView.frame), _cellWidth*0.3, _headerImageView.frame.size.height*0.5)];
+        _headerImageView = [[UIImageView alloc]init];
+        _userNameLabel = [[UILabel alloc]init];
         
-        _dateLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_headerImageView.frame)+10, CGRectGetMaxY(_userNameLabel.frame), _cellWidth*0.6, _headerImageView.frame.size.height*0.5)];
-        
-        _targetLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_userNameLabel.frame), CGRectGetMinY(_headerImageView.frame), 100, _headerImageView.frame.size.height*0.5)];
+        _dateLabel = [[UILabel alloc]init];
+
+        _targetLabel = [[UILabel alloc]init];
         
         [self.contentView addSubview:_headerImageView];
         [self.contentView addSubview:_userNameLabel];
@@ -198,81 +325,174 @@
         [self.contentView addSubview:_targetLabel];
         
         _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-        _userNameLabel.text = @"yyyffffqqqq";
-        _dateLabel.text = @"06.16 15:22";
-        _targetLabel.text = @"加入了简书";
         
 //        _headerImageView.backgroundColor = [UIColor grayColor];
 //        _userNameLabel.backgroundColor = [UIColor purpleColor];
 //        _dateLabel.backgroundColor = [UIColor brownColor];
 //        _targetLabel.backgroundColor = [UIColor greenColor];
+        
+        _userNameLabel.text = @"name";
+        _dateLabel.text = @"06.12 12:24";
+        _targetLabel.text = @"关注了。。。";
+        
+//        _dateLabel.numberOfLines = 1;
+        
+        switch (timeLineCellStyle) {
+            case TimeLineCellStyleNotShowOtherViews:
+                [self createWithNotShowOtherViews];
+                break;
+            case TimeLineCellStyleShowStatusAuthorView:
+                [self createWithStatusAuthorView];
+                break;
+            case TimeLineCellStyleShowStatusArticleView:
+                [self createWithStatusArticleView];
+                break;
+            case TimeLineCellStyleshowStatusSpecialTopicView:
+                [self createWithStatusSpecialTopicView];
+                break;
+                
+            default:
+                break;
+        }
     }
+    
+    return self;
+}
+
+- (void)createWithNotShowOtherViews {
+    
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.superview.mas_top).offset(20);
+        make.left.mas_equalTo(_headerImageView.superview.mas_left).offset(15);
+        make.height.mas_equalTo(40);
+        make.width.mas_equalTo(40);
+    }];
+    [_userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.mas_top).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_targetLabel.mas_left);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_targetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_userNameLabel.mas_right);
+        make.centerY.mas_equalTo(_userNameLabel);
+        make.right.mas_lessThanOrEqualTo(_targetLabel.superview.mas_right).offset(-15);
+        make.height.mas_equalTo(_userNameLabel.mas_height);
+    }];
+    
+    
+    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_userNameLabel.mas_bottom).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_dateLabel.superview.mas_right).offset(-20);
+        make.bottom.mas_equalTo(_dateLabel.superview.mas_bottom).offset(-20);
+    }];
     
 }
 
--(void)setShowStatusAuthorView:(BOOL)showStatusAuthorView {
-    if (showStatusAuthorView) {
+- (void)createWithStatusAuthorView {
+    _statusAuthorView = [[StatusAuthorView alloc]init];
+    
+    [self.contentView addSubview:_statusAuthorView];
+    
+    _statusAuthorView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    
+    
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.superview.mas_top).offset(20);
+        make.left.mas_equalTo(_headerImageView.superview.mas_left).offset(15);
+        make.size.mas_equalTo(40);
+    }];
+    [_userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.mas_top).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_targetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_userNameLabel.mas_right);
+        make.centerY.mas_equalTo(_userNameLabel);
+        make.right.mas_lessThanOrEqualTo(_headerImageView.superview.mas_right).offset(-15);
+    }];
+    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_userNameLabel.mas_bottom).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_dateLabel.superview.mas_right).offset(-15);
         
-        [self createViewWithHeight:notShowOtherViewsRowHeight];
-        
-        _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-        _userNameLabel.text = @"yyyffffqqqq";
-        _dateLabel.text = @"07.16 10:27";
-        _targetLabel.text = @"关注了作者";
-        
-        _statusAuthorView = [[StatusAuthorView alloc]initWithFrame:CGRectMake(self.contentView.frame.size.width*0.05, 60, _cellWidth*0.9, _cellHeight*0.45)];
-        [self.contentView addSubview:_statusAuthorView];
-        
-//        _headerImageView.backgroundColor = [UIColor grayColor];
-//        _userNameLabel.backgroundColor = [UIColor purpleColor];
-//        _dateLabel.backgroundColor = [UIColor brownColor];
-//        _targetLabel.backgroundColor = [UIColor greenColor];
-        
-        _statusAuthorView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
-    }
+    }];
+    [_statusAuthorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_dateLabel.mas_bottom).offset(20);
+        make.left.mas_equalTo(_headerImageView.mas_left);
+        make.right.mas_equalTo(_statusAuthorView.superview.mas_right).offset(-15);
+        make.bottom.mas_equalTo(_statusAuthorView.superview.mas_bottom).offset(-20);
+    }];
 }
 
--(void)setShowStatusArticleView:(BOOL)showStatusArticleView {
-    if (showStatusArticleView) {
-        
-        [self createViewWithHeight:notShowOtherViewsRowHeight];
-        
-        _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-        _userNameLabel.text = @"yyyffffqqqq";
-        _dateLabel.text = @"07.05 10:57";
-        _targetLabel.text = @"喜欢了文章";
-        
-        _statusArticleView = [[StatusArticleView alloc]initWithFrame:CGRectMake(self.contentView.frame.size.width*0.05, CGRectGetMaxY(_headerImageView.frame)+15, _cellWidth*0.9, _cellHeight*0.6)];
-        [self.contentView addSubview:_statusArticleView];
-        
-//        _headerImageView.backgroundColor = [UIColor grayColor];
-//        _userNameLabel.backgroundColor = [UIColor purpleColor];
-//        _dateLabel.backgroundColor = [UIColor brownColor];
-//        _targetLabel.backgroundColor = [UIColor greenColor];
-        _statusArticleView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
-    }
+- (void)createWithStatusArticleView {
+    //初始化为有缩略图的文章视图；
+    _statusArticleView = [[StatusArticleView alloc]initWithHasContentImage:_statusArticleViewHasContentImage];
+    [self.contentView addSubview:_statusArticleView];
+    _statusArticleView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.superview.mas_top).offset(20);
+        make.left.mas_equalTo(_headerImageView.superview.mas_left).offset(15);
+        make.size.mas_equalTo(40);
+    }];
+    [_userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.mas_top).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_targetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_userNameLabel.mas_right);
+        make.centerY.mas_equalTo(_userNameLabel);
+        make.right.mas_lessThanOrEqualTo(_headerImageView.superview.mas_right).offset(-15);
+    }];
+    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_userNameLabel.mas_bottom).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_dateLabel.superview.mas_right).offset(-20);
+    }];
+    [_statusArticleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_dateLabel.mas_bottom).offset(20);
+        make.left.mas_equalTo(_headerImageView.mas_left);
+        make.right.mas_lessThanOrEqualTo(_statusArticleView.superview.mas_right).offset(-15);
+        make.bottom.mas_equalTo(_statusArticleView.superview.mas_bottom).offset(-20);
+    }];
 }
 
--(void)setShowStatusSpecialTopicView:(BOOL)showStatusSpecialTopicView {
-    if (showStatusSpecialTopicView) {
-        
-        [self createViewWithHeight:notShowOtherViewsRowHeight];
-
-        
-        _headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-        _userNameLabel.text = @"yyyffffqqqq";
-        _dateLabel.text = @"07.05 16:57";
-        _targetLabel.text = @"关注了专题";
-        
-        _statusSpecialTopicView = [[StatusSpecialTopicView alloc]initWithFrame:CGRectMake(self.contentView.frame.size.width*0.05, CGRectGetMaxY(_headerImageView.frame)+15, _cellWidth*0.9, _cellHeight*0.6)];
-        [self.contentView addSubview:_statusSpecialTopicView];
-        
-//        _headerImageView.backgroundColor = [UIColor grayColor];
-//        _userNameLabel.backgroundColor = [UIColor purpleColor];
-//        _dateLabel.backgroundColor = [UIColor brownColor];
-//        _targetLabel.backgroundColor = [UIColor greenColor];
-        _statusSpecialTopicView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.4];
-    }
+- (void)createWithStatusSpecialTopicView {
+    _statusSpecialTopicView = [[StatusSpecialTopicView alloc]init];
+    [self.contentView addSubview:_statusSpecialTopicView];
+    _statusSpecialTopicView.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
+    
+    [_headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.superview.mas_top).offset(20);
+        make.left.mas_equalTo(_headerImageView.superview.mas_left).offset(15);
+        make.size.mas_equalTo(40);
+    }];
+    [_userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_headerImageView.mas_top).offset(0);
+        make.left.mas_lessThanOrEqualTo(_headerImageView.mas_right).offset(10);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_targetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(_userNameLabel.mas_right);
+        make.centerY.mas_equalTo(_userNameLabel);
+        make.right.mas_lessThanOrEqualTo(_headerImageView.superview.mas_right).offset(-15);
+        make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.5);
+    }];
+    [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_userNameLabel.mas_bottom).offset(0);
+        make.left.mas_equalTo(_headerImageView.mas_right).offset(10);
+        make.right.mas_lessThanOrEqualTo(_dateLabel.superview.mas_right).offset(-20);
+    }];
+    [_statusSpecialTopicView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_dateLabel.mas_bottom).offset(20);
+        make.left.mas_equalTo(_headerImageView.mas_left);
+        make.right.mas_lessThanOrEqualTo(_statusSpecialTopicView.superview.mas_right).offset(-15);
+        make.bottom.mas_equalTo(_statusSpecialTopicView.superview.mas_bottom).offset(-20);
+    }];
 }
 
 
@@ -285,6 +505,9 @@
     
     if (self) {
         [super renderUI];
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 100;
         
     }
     
@@ -301,19 +524,6 @@
     return 15;
 }
 
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 1) {
-        return showStatusAuthorViewRowHeight;
-    }
-    if (indexPath.row == 3) {
-        return showStatusArticleViewRowHeight;
-    }
-    if (indexPath.row == 14) {
-        return notShowOtherViewsRowHeight;
-    }
-    return showStatusSpecialTopicViewRowHeight;
-}
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
@@ -332,33 +542,28 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //因为是demo，所这块暂时不做优化
-    CGFloat height = showStatusSpecialTopicViewRowHeight;
+    TimeLineCellStyle style = TimeLineCellStyleShowStatusArticleView;
     if (indexPath.row == 1) {
-        height = showStatusAuthorViewRowHeight;
+        style = TimeLineCellStyleShowStatusAuthorView;
     }
     
     if (indexPath.row == 3) {
-        height = showStatusArticleViewRowHeight;
+        style = TimeLineCellStyleshowStatusSpecialTopicView;
     }
     
     if (indexPath.row == 14) {
-        height = notShowOtherViewsRowHeight;
+        style = TimeLineCellStyleNotShowOtherViews;
+    }
+    
+    BOOL hasContentImage = NO;
+    
+    if (indexPath.row == 5 || indexPath.row == 7) {
+        hasContentImage = YES;
     }
     
     static NSString *reuseIdentifier = @"cellID2";
     //显示数据，暂时不获取；
-    FirstTableViewCell *cell = [[FirstTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier size:CGSizeMake(self.frame.size.width, height)];
-    
-    if (indexPath.row == 1) {
-        cell.showStatusAuthorView = YES;
-    } else if (indexPath.row == 3) {
-        cell.showStatusArticleView = YES;
-        cell.statusArticleView.contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
-    } else if (indexPath.row == 14) {
-        cell.notShowOtherViews = YES;
-    } else {
-        cell.showStatusSpecialTopicView = YES;
-    }
+    FirstTableViewCell *cell = [[FirstTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier timeLineCellStyle:style hasContentImage:hasContentImage];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

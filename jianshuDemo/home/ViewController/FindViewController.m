@@ -35,7 +35,6 @@ static CGFloat const homeTableRowHeight = 80.0f;
     [super viewDidLoad];
     
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithWhite:0.96 alpha:1.0];
-//    self.navigationController.navigationBar.translucent = NO;
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height+20) style:UITableViewStyleGrouped];
     _tableView.delegate = self;
@@ -51,33 +50,15 @@ static CGFloat const homeTableRowHeight = 80.0f;
     
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
+    _homeTableHeader.horizontalScrollView.delegate = self;
     
     /* 设置SDCycleScrollViewDelegate协议 */
     _homeTableHeader.cycleScrollView.delegate = self;
     
-    [FQHomeClass requestHomeData:^(NSMutableArray<FQHomeArticleClass*> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass*> *homeHorizontalObjects) {
-        
-        _homeArticleObjs = articleObjects;
-        
-        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
-        _homeTableHeader.horizontalScrollView.delegate = self;
-        
-        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
-//        _homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
-        
-        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
-        
-        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
-        
-        
-        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
-    }];
-    
-    
     _searchResultVC = [[SearchResultViewController alloc]initWithStyle:UITableViewStylePlain];
     
     _searchHistorys= [[NSMutableArray alloc]initWithObjects:@"ios 开发", @"ios 开发 布局", @"ios 开发 发布流程", nil];
-    _searchResultVC.searchResults = [_searchHistorys copy];
+    _searchResultVC.searchResults = [_searchHistorys mutableCopy];
     
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -94,9 +75,14 @@ static CGFloat const homeTableRowHeight = 80.0f;
     _tableView.tableHeaderView = _homeTableHeader;
     self.navigationItem.titleView = self.searchController.searchBar;
     
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self loadNewData];
-    }];
+//    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        
+//        [self loadNewData];
+//        
+//    }];
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+    
     header.lastUpdatedTimeLabel.hidden = YES;
     [header setTitle:@"松开刷新" forState:MJRefreshStatePulling];
     [header setTitle:@"正在加载" forState:MJRefreshStateRefreshing];
@@ -105,39 +91,10 @@ static CGFloat const homeTableRowHeight = 80.0f;
     [self.tableView.mj_header beginRefreshing];
     
     
-}
-
--(void)loadNewData {
-    //请求数据
-    [FQHomeClass pullRequestData:^(NSMutableArray<FQHomeArticleClass *> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass *> *homeHorizontalObjects) {
-        if (articleObjects) {
-            
-        }
-        _homeArticleObjs = articleObjects;
-        _homeTableHeader.horizontalScrollView.delegate = self;
-        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
-        
-        
-        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
-        //_homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
-        
-        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
-        
-        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
-        
-        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
-        
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView reloadData];
-
-    }];
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
-    [footer setTitle:@"-End-" forState:MJRefreshStateIdle];
-    [footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
-    footer.refreshingTitleHidden = YES;
-    self.tableView.mj_footer = footer;
-
+    _footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [_footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    _footer.refreshingTitleHidden = YES;
+    self.tableView.mj_footer = _footer;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -156,6 +113,32 @@ static CGFloat const homeTableRowHeight = 80.0f;
     
 }
 
+-(void)loadNewData {
+    //请求数据
+    [FQHomeClass pullRequestData:^(NSMutableArray<FQHomeArticleClass *> *articleObjects, FQHomeClass *homeObjects, NSMutableArray<HomeHorizontalClass *> *homeHorizontalObjects) {
+        
+        NSLog(@"%@", homeHorizontalObjects[0].imageUrl);
+        _homeArticleObjs = articleObjects;
+        _homeTableHeader.horizontalScrollView.horizontalItems = homeHorizontalObjects;
+        
+        
+        _homeTableHeader.homePageImageView.image = [UIImage imageNamed:homeObjects.homePageImageURL];
+        //_homeTableHeader.hotArticleImageView.image = [UIImage imageNamed:homeObjects.hotArticleImageURL];
+        
+        [_homeTableHeader.homePageLabel setTitle:homeObjects.homePageLabelString forState:UIControlStateNormal];
+        
+        [_homeTableHeader.hotArticleLabel setTitle:homeObjects.hotArticleLabelString forState:UIControlStateNormal];
+        
+        _homeTableHeader.cycleScrollView.imageURLStringsGroup = homeObjects.homeCycleImageUrl;
+        
+        
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+
+    }];
+
+}
+
 -(void)loadMoreData {
     //请求数据
     
@@ -168,8 +151,8 @@ static CGFloat const homeTableRowHeight = 80.0f;
         } else {
             [self.tableView reloadData];
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            [_footer setTitle:@"-End-" forState:MJRefreshStateNoMoreData];
         }
-        
         
     }];
 

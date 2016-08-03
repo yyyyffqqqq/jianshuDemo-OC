@@ -71,20 +71,29 @@
             break;
     }
     
-    _headerImageView.backgroundColor = [UIColor redColor];
-    _nameBt.backgroundColor = [UIColor greenColor];
-    _publishDateLabel.backgroundColor = [UIColor grayColor];
+//    _headerImageView.backgroundColor = [UIColor redColor];
+//    _nameBt.backgroundColor = [UIColor greenColor];
+    [_nameBt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    _nameBt.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    
+//    _publishDateLabel.backgroundColor = [UIColor grayColor];
     _publishDateLabel.text = @"07.08";
-    _contentLabel.backgroundColor = [UIColor yellowColor];
+//    _contentLabel.backgroundColor = [UIColor yellowColor];
     _contentLabel.text = @"dsafsgdasdjfdjhklutyfsdfdggfhghjhgjhkjhkhjkhkhkfhgjhvbchfghgfhgfhfghgfhhdfgdfgdgdfgdfgdgdmmfskfsfdsfdfdfdsfdfdfsgjgftfwcxvcxvzczc";
     _contentLabel.numberOfLines = 2;
     
-    _readedCommentLoveLabel.backgroundColor = [UIColor blueColor];
+//    _readedCommentLoveLabel.backgroundColor = [UIColor blueColor];
     _readedCommentLoveLabel.text = @"gdfggdgdgfdfhgfhgfhgjhgjhjjkkjlfsddwererxvfcbddggfdfb";
     
-    _specialTopicBt.backgroundColor = [UIColor yellowColor];
+    _specialTopicBt.layer.borderColor = [UIColor yellowColor].CGColor;
+    _specialTopicBt.layer.borderWidth = 1;
+    _specialTopicBt.layer.cornerRadius = 10;
+    _specialTopicBt.layer.masksToBounds = YES;
+    [_specialTopicBt setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    _specialTopicBt.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    
     [_specialTopicBt setTitle:@"ios Developer" forState:UIControlStateNormal];
-    _contentImageView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.3];
+//    _contentImageView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.3];
     _contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
     [_contentImageView setContentMode:UIViewContentModeScaleToFill];
 }
@@ -239,7 +248,7 @@
         make.centerY.mas_equalTo(_headerImageView).offset(0);
         make.left.mas_equalTo(_nameBt.mas_right).offset(5);
         make.height.mas_equalTo(_headerImageView.mas_height).multipliedBy(0.8);
-        make.right.mas_lessThanOrEqualTo(_contentImageView.mas_left).offset(15);
+        make.right.mas_lessThanOrEqualTo(_contentImageView.mas_left).offset(-15);
     }];
     
     [_contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -90,7 +90,7 @@
     FQHomeClass *homeObject = [[FQHomeClass alloc]initWith:homeObjectsDic];
     
     //articleObjects
-    NSDictionary *articleObjectDic = [NSDictionary dictionaryWithObjectsAndKeys:@"http://cms.csdnimg.cn/article/201304/08/516270e774a16.jpg", @"contentImageUrl", @"icon_personal_qq", @"headerImageUrl", @"name", @"nameString", @"2016.07.07", @"publishDateString", @"kllfdsadaddfdfdfsfdsfsdsaddfdfdfsargfd", @"contentString", @"ios Developer", @"specialTopicString", @"阅读 621 • 评论 12 • 喜欢 66", @"readedCommentLoveString", nil];
+    NSDictionary *articleObjectDic = [NSDictionary dictionaryWithObjectsAndKeys:@"http://cms.csdnimg.cn/article/201304/08/516270e774a16.jpg", @"contentImageUrl", @"icon_personal_qq", @"headerImageUrl", @"namejhjgjgfgdfdfsfdsfdfdfdffsfdfsfs", @"nameString", @"2016.07.07", @"publishDateString", @"kllfdsadaddfdfdfsfdsfsdsaddfdfdfsargfd", @"contentString", @"ios Developer", @"specialTopicString", @"阅读 621 • 评论 12 • 喜欢 66", @"readedCommentLoveString", nil];
     
     NSDictionary *articleObjectDic2 = [NSDictionary dictionaryWithObjectsAndKeys:@"http://www.wuxianedu.com/uploads/allimg/160629/1F02CA7-0.jpg", @"contentImageUrl", @"icon_personal_qq", @"headerImageUrl", @"name", @"nameString", @"2016.07.07", @"publishDateString", @"kllfdsadaddfdfdfsfdsfsdsaddfdfdfsargfd", @"contentString", @"ios Developer", @"specialTopicString", @"阅读 621 • 评论 12 • 喜欢 66", @"readedCommentLoveString", nil];
     

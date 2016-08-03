@@ -57,8 +57,6 @@ CGFloat const firstHeaderViewHeight = 44;
     self.titleImageView.layer.cornerRadius = 40;
     self.titleImageView.layer.masksToBounds = YES;
     self.titleImageView.frame = CGRectMake(0, 0, 80, 80);
-    self.titleImageView.layer.borderWidth = 1;
-    self.titleImageView.layer.borderColor = [UIColor redColor].CGColor;
     self.titleImageView.center = CGPointMake(titleView.center.x, 0);
     [titleView addSubview:self.titleImageView];
     
