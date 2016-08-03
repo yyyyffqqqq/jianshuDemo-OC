@@ -16,6 +16,8 @@
 
 #import "FQPopViewController.h"
 
+#import "TopWindow.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,9 +27,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //1.创建标签控制器
     MyTabbarController *tab = [[MyTabbarController alloc]init];
@@ -71,7 +70,9 @@
     tab.viewControllers = array;
     
     //这里加载第一个页面；
-//    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:tab];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = tab;
     
@@ -79,6 +80,25 @@
     
     return YES;
 }
+
+/*
+ *处理点击状态栏，系统使uitableview等滚动视图滚动到顶部的手势失效问题
+ */
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    CGPoint location = [[[event allTouches] anyObject] locationInView:[UIApplication sharedApplication].keyWindow];
+    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
+    if (CGRectContainsPoint(statusBarFrame, location)) {
+        [self statusBarTouchedAction];
+    }
+}
+/*
+ *处理点击状态栏，系统使uitableview等滚动视图滚动到顶部的手势失效问题
+ */
+- (void)statusBarTouchedAction {
+    [TopWindow scrollViewScrollToTop];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

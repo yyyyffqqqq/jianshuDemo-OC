@@ -19,7 +19,7 @@
     if (self) {
         
         _jianShuCellStyle = jianShuCellStyle;
-        _contentImageViewSize = 80;
+        _contentImageViewSize = 70;
         
         [self createView ];
         
@@ -56,7 +56,7 @@
         case JianShuCellStyleHasContentImageView:
             _contentImageView = [UIImageView new];
             [self.contentView addSubview:_contentImageView];
-            _contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width*0.7;
+            _contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width*0.65;
             [self layoutMySubViewsOfStatus3];
             break;
         case JianShuCellStyleHasAllView:
@@ -64,7 +64,7 @@
             _contentImageView = [UIImageView new];
             [self.contentView addSubview:_contentImageView];
             [self.contentView addSubview:_specialTopicBt];
-            _contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width*0.7;
+            _contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width*0.65;
             [self layoutMySubViewsOfStatus4];
             break;
         default:
@@ -74,26 +74,29 @@
 //    _headerImageView.backgroundColor = [UIColor redColor];
 //    _nameBt.backgroundColor = [UIColor greenColor];
     [_nameBt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    _nameBt.titleLabel.font = [UIFont systemFontOfSize:10];
     _nameBt.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     
 //    _publishDateLabel.backgroundColor = [UIColor grayColor];
     _publishDateLabel.text = @"07.08";
+    _publishDateLabel.font = [UIFont systemFontOfSize:10];
 //    _contentLabel.backgroundColor = [UIColor yellowColor];
     _contentLabel.text = @"dsafsgdasdjfdjhklutyfsdfdggfhghjhgjhkjhkhjkhkhkfhgjhvbchfghgfhgfhfghgfhhdfgdfgdgdfgdfgdgdmmfskfsfdsfdfdfdsfdfdfsgjgftfwcxvcxvzczc";
     _contentLabel.numberOfLines = 2;
     
 //    _readedCommentLoveLabel.backgroundColor = [UIColor blueColor];
     _readedCommentLoveLabel.text = @"gdfggdgdgfdfhgfhgfhgjhgjhjjkkjlfsddwererxvfcbddggfdfb";
+    _readedCommentLoveLabel.font = [UIFont systemFontOfSize:10];
     
     _specialTopicBt.layer.borderColor = [UIColor yellowColor].CGColor;
     _specialTopicBt.layer.borderWidth = 1;
-    _specialTopicBt.layer.cornerRadius = 10;
+    _specialTopicBt.layer.cornerRadius = 8;
     _specialTopicBt.layer.masksToBounds = YES;
     [_specialTopicBt setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     _specialTopicBt.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    
     [_specialTopicBt setTitle:@"ios Developer" forState:UIControlStateNormal];
-//    _contentImageView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.3];
+    _specialTopicBt.titleLabel.font = [UIFont systemFontOfSize:10];
+    
     _contentImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
     [_contentImageView setContentMode:UIViewContentModeScaleToFill];
 }
@@ -170,13 +173,13 @@
     [_specialTopicBt mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_contentLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_contentLabel.superview.mas_left).offset(15);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(20);
         make.bottom.mas_lessThanOrEqualTo(self.contentView.mas_bottom).offset(-30);
         
     }];
     
     [_readedCommentLoveLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(_contentLabel.mas_bottom).offset(5);
+        make.height.mas_equalTo(20);
         make.left.mas_equalTo(_specialTopicBt.mas_right).offset(5);
         make.right.mas_lessThanOrEqualTo(_readedCommentLoveLabel.superview.mas_right).offset(-15);
         make.centerY.mas_equalTo(_specialTopicBt);
@@ -265,7 +268,7 @@
     [_specialTopicBt mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_contentLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_contentLabel.superview.mas_left).offset(15);
-        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(20);
         make.bottom.mas_lessThanOrEqualTo(self.contentView.mas_bottom).offset(-30);
         
     }];
@@ -273,6 +276,7 @@
     [_readedCommentLoveLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(_specialTopicBt);
         make.left.mas_equalTo(_specialTopicBt.mas_right).offset(5);
+        make.height.mas_equalTo(20);
         make.right.mas_lessThanOrEqualTo(_contentImageView.mas_left).offset(-20);
     }];
     

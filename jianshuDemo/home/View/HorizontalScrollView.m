@@ -51,7 +51,6 @@ CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
     self = [super init];
     if (self) {
         [self initData];
-        [self initView];
     }
     
     return self;
@@ -61,7 +60,6 @@ CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
     self = [super initWithFrame:frame];
     if (self) {
         [self initData];
-        [self initView];
     }
     
     return self;

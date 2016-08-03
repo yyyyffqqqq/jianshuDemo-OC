@@ -188,6 +188,7 @@
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14E5FF9E1D4FDCD900CCDDAC /* JianShuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */; };
 		14E5FFA11D4FDD1E00CCDDAC /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */; };
+		14F3337D1D52314E00E2DFC9 /* TopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F3337C1D52314E00E2DFC9 /* TopWindow.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
@@ -446,6 +447,8 @@
 		14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianShuTableViewCell.m; sourceTree = "<group>"; };
 		14E5FF9F1D4FDD1E00CCDDAC /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		14F3337B1D52314E00E2DFC9 /* TopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopWindow.h; sourceTree = "<group>"; };
+		14F3337C1D52314E00E2DFC9 /* TopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopWindow.m; sourceTree = "<group>"; };
 		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
 		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -629,6 +632,8 @@
 		145B0A4F1D2591BA004BE429 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14F3337B1D52314E00E2DFC9 /* TopWindow.h */,
+				14F3337C1D52314E00E2DFC9 /* TopWindow.m */,
 				14A680301D2705660073FAAA /* MyTabbarController.h */,
 				14A680311D2705660073FAAA /* MyTabbarController.m */,
 				145B0A521D2591BA004BE429 /* AppDelegate.h */,
@@ -1354,6 +1359,7 @@
 				14E2CE391D42B0570027B8F2 /* FQPageSecondView.m in Sources */,
 				140705C31D37163900587FB4 /* WPNoResultsView.m in Sources */,
 				140705C71D37163900587FB4 /* WPTableViewSectionHeaderFooterView.m in Sources */,
+				14F3337D1D52314E00E2DFC9 /* TopWindow.m in Sources */,
 				148CEC411D370C34004FBEE8 /* WPEditorViewController.m in Sources */,
 				14E2CE3C1D42B0720027B8F2 /* FQPageThirdView.m in Sources */,
 				14BEAC5D1D306EDD00C145E8 /* PublishViewController.m in Sources */,

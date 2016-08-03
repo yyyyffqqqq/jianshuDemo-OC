@@ -16,6 +16,8 @@
 #import "UIImageView+WebCache.h"
 #import "ArticleListTableViewController.h"
 
+#import "TopWindow.h"
+
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 static CGFloat const homeTableRowHeight = 80.0f;
 
@@ -51,6 +53,7 @@ static CGFloat const homeTableRowHeight = 80.0f;
     _homeTableHeaderHeight = self.view.frame.size.height*0.5;
     _homeTableHeader = [[HomeTableHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _homeTableHeaderHeight)];
     _homeTableHeader.horizontalScrollView.delegate = self;
+    
     
     /* 设置SDCycleScrollViewDelegate协议 */
     _homeTableHeader.cycleScrollView.delegate = self;
@@ -95,7 +98,16 @@ static CGFloat const homeTableRowHeight = 80.0f;
     [_footer setTitle:@"" forState:MJRefreshStateRefreshing];
     _footer.refreshingTitleHidden = YES;
     self.tableView.mj_footer = _footer;
+    
+    
+    
+    //解决点击状态栏不能滚到顶部bug
+    _tableView.scrollsToTop = YES;
+    _homeTableHeader.horizontalScrollView.collectionView.scrollsToTop = NO;
+    _searchResultVC.tableView.scrollsToTop = NO;
+    
 }
+
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -171,7 +183,7 @@ static CGFloat const homeTableRowHeight = 80.0f;
 }
 
 - (void)willPresentSearchController:(UISearchController *)searchController {
-//    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.translucent = YES;
     _searchResultVC.tableView.frame = CGRectMake(0, 64, _searchResultVC.tableView.frame.size.width, _searchResultVC.tableView.frame.size.height);
     [self.view addSubview:_searchResultVC.tableView];
 }
@@ -181,7 +193,7 @@ static CGFloat const homeTableRowHeight = 80.0f;
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController {
-//    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = NO;
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     [_searchResultVC.tableView removeFromSuperview];
 }
@@ -284,6 +296,7 @@ static CGFloat const homeTableRowHeight = 80.0f;
         }
     }
 }
+
 
 
 - (void)didReceiveMemoryWarning {
