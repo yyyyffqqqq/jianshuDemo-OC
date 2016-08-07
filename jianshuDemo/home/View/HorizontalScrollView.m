@@ -79,7 +79,6 @@ CGFloat const LAYOUT_ITEM_OFFSET = 20.0;
     _showIndicator = NO;
     
     _collectionLayout = [[CollectionLayout alloc] init];
-    _collectionView = nil;
 }
 
 - (void)initView {
