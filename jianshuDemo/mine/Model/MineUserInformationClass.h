@@ -13,10 +13,10 @@
 @interface MineUserInformationClass : NSObject
 
 //还有一个图片未放在属性里；
-@property (strong, nonatomic) NSString *userName;
-@property (strong, nonatomic) NSString *headerImageUrl;
-@property (strong, nonatomic) NSString *userPoint;
-@property (strong, nonatomic) NSString *userPointValue;
+@property (copy, nonatomic) NSString *userName;
+@property (copy, nonatomic) NSString *headerImageUrl;
+@property (copy, nonatomic) NSString *userPoint;
+@property (copy, nonatomic) NSString *userPointValue;
 
 -(instancetype)initWithDictionary: (NSDictionary*)dataDictionary;
 

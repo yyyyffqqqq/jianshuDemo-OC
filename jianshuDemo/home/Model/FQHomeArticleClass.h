@@ -10,14 +10,14 @@
 
 @interface FQHomeArticleClass : NSObject
 
-@property (strong, nonatomic) NSString *contentImageUrl;
-@property (strong, nonatomic) NSString *headerImageUrl;
+@property (copy, nonatomic) NSString *contentImageUrl;
+@property (copy, nonatomic) NSString *headerImageUrl;
 
-@property (strong, nonatomic) NSString *nameString;
-@property (strong, nonatomic) NSString *publishDateString;
-@property (strong, nonatomic) NSString *contentString;
-@property (strong, nonatomic) NSString *specialTopicString;
-@property (strong, nonatomic) NSString *readedCommentLoveString;
+@property (copy, nonatomic) NSString *nameString;
+@property (copy, nonatomic) NSString *publishDateString;
+@property (copy, nonatomic) NSString *contentString;
+@property (copy, nonatomic) NSString *specialTopicString;
+@property (copy, nonatomic) NSString *readedCommentLoveString;
 
 -(instancetype)initWith:(NSDictionary*)dic;
 

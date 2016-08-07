@@ -18,17 +18,17 @@
 //@property (strong, nonatomic) FQHomeTabelHeaderClass *tableviewObject;
 //@property (strong, nonatomic) HomeHorizontalClass *homeHorizontalObject;
 
-@property (strong, nonatomic) NSString *hotArticleImageURL; //热门文章图标；
-@property (strong, nonatomic) NSString *hotArticleLabelString; //热门文章标签；
+@property (copy, nonatomic) NSString *hotArticleImageURL; //热门文章图标；
+@property (copy, nonatomic) NSString *hotArticleLabelString; //热门文章标签；
 
-@property (strong, nonatomic) NSString *homePageImageURL;  //首页投稿图标；
-@property (strong, nonatomic) NSString *homePageLabelString;  //首页投稿标签；
+@property (copy, nonatomic) NSString *homePageImageURL;  //首页投稿图标；
+@property (copy, nonatomic) NSString *homePageLabelString;  //首页投稿标签；
 
-@property (strong, nonatomic) NSArray<NSString*> *homeCycleImageUrl;
+@property (copy, nonatomic) NSArray<NSString*> *homeCycleImageUrl;
 
-@property (strong, nonatomic) NSArray<NSString*> *horizontaltitleName;
-@property (strong, nonatomic) NSArray<NSString*> *horizontalBackgroundImageUrl;
-@property (strong, nonatomic) NSArray<NSString*> *horizontalImageUrl;
+@property (copy, nonatomic) NSArray<NSString*> *horizontaltitleName;
+@property (copy, nonatomic) NSArray<NSString*> *horizontalBackgroundImageUrl;
+@property (copy, nonatomic) NSArray<NSString*> *horizontalImageUrl;
 
 //@property (strong, nonatomic) NSMutableArray<NSString*> *cycleImageUrlOfTableHeader;
 //

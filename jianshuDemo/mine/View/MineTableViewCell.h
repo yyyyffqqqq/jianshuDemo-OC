@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) MASConstraint *topConstraint;
 
-@property CGSize contentSize; //cell大小
+@property (nonatomic) CGSize contentSize; //cell大小
 
 @property (nonatomic, strong) MineTitleClass *mineTitle;
 @property (nonatomic, strong) MineUserInformationClass *mineUserInf;

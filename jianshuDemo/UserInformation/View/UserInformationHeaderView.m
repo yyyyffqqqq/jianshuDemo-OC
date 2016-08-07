@@ -12,9 +12,9 @@
 
 @interface UserInformationHeaderView ()
     
-@property CGFloat viewHeight;
+@property (nonatomic, assign) CGFloat viewHeight;
 
-@property CGFloat editWidth;
+@property (nonatomic, assign) CGFloat editWidth;
 
 @end
 

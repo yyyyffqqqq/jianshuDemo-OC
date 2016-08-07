@@ -11,8 +11,8 @@
 @interface MineTitleClass : NSObject
 
 //还有一个图片未放在属性里；
-@property (strong, nonatomic) NSString *titleName;
-@property (strong, nonatomic) NSString *articleCounts;
+@property (copy, nonatomic) NSString *titleName;
+@property (copy, nonatomic) NSString *articleCounts;
 
 -(instancetype)initMineTitleWithDictionary: (NSDictionary*)dataDictionary;
 

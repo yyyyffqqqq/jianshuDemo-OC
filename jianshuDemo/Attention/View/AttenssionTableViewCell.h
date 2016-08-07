@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) MASConstraint *topConstraint_2;
 
-@property CGSize contentSize; //cell大小
+@property (nonatomic, assign) CGSize contentSize; //cell大小
 
 @property (strong, nonatomic) UIImageView *headerImageView;
 @property (strong, nonatomic) UILabel *nameLabel;

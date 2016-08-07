@@ -10,11 +10,11 @@
 
 @interface HomeHorizontalClass : NSObject
 
-@property (strong, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *imageUrl;
 
-@property (strong, nonatomic) NSString *titleString;
+@property (copy, nonatomic) NSString *titleString;
 
-@property (strong, nonatomic) NSString *backgroundImageUrl;
+@property (copy, nonatomic) NSString *backgroundImageUrl;
 
 -(instancetype)initWithDicationary:(NSDictionary*)dic;
 

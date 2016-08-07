@@ -246,32 +246,40 @@ static CGFloat const homeTableRowHeight = 80.0f;
     return 2;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"55555");
-}
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *reuseIdentifier = @"cellID";
+    HomeTableViewCell *cell = nil;
+    JianShuCellStyle style = JianShuCellStyleHasAllView;
+    if (indexPath.row == 1) {
+        style = JianShuCellStyleHasNoneView;
+    } else if (indexPath.row == 4) {
+        style = JianShuCellStyleHasSpecialTopicView;
+    } else if (indexPath.row == 6 || indexPath.row == 10){
+        style = JianShuCellStyleHasContentImageView;
+    }
     
-    HomeTableViewCell *cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:JianShuCellStyleHasAllView];
-//    if (!cell) {
-//        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:JianShuCellStyleHasAllView];
-//    }
-    
-//    dispatch_async(dispatch_queue_create("queue", nil), ^{
-        if ( ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {
-            [cell.contentImageView sd_setImageWithURL:[NSURL URLWithString: ((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                
-            }];
-        }
-        
-//    });
-    
-    cell.homeArticle = _homeArticleObjs[indexPath.row];
+    if (!cell) {
+        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:style];
+    }
     
     return cell;
     
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeTableViewCell *myCell = (HomeTableViewCell*)cell;
+    //    NSLog(@"55555");
+    //    dispatch_async(dispatch_queue_create("queue", nil), ^{
+    if ( ![((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl isEqualToString:@""]) {
+        [myCell.contentImageView sd_setImageWithURL:[NSURL URLWithString: ((FQHomeArticleClass*)_homeArticleObjs[indexPath.row]).contentImageUrl] placeholderImage:[UIImage imageNamed:@"img_default"] options:SDWebImageProgressiveDownload | SDWebImageLowPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+        }];
+    }
+    
+    //    });
+    
+    myCell.homeArticle = _homeArticleObjs[indexPath.row];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

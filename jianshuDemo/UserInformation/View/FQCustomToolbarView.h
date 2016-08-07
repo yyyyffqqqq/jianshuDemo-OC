@@ -12,7 +12,7 @@
 
 @property (assign, nonatomic) CGFloat tapAtIndex;
 
-@property (strong, nonatomic) void (^responseTapEvent)(int index);
+@property (copy, nonatomic) void (^responseTapEvent)(int index);
 
 -(instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray<NSString*>*)titles andImages:(NSArray<UIImage*>*)images;
 

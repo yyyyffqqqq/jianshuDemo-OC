@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
 
 @interface JianShuTableViewCell : UITableViewCell
 
-@property CGFloat contentImageViewSize; //缩略图大小
+@property (nonatomic, assign) CGFloat contentImageViewSize; //缩略图大小
 
 @property (strong, nonatomic) UIImageView *headerImageView;
 @property (strong, nonatomic) UIImageView *contentImageView;

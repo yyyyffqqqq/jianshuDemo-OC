@@ -11,7 +11,7 @@
 @interface MyCustomTabBar : UITabBar
 
 /** 发布按钮 */
-@property (nonatomic, weak) UIButton *publishButton;
+@property (nonatomic, strong) UIButton *publishButton;
 
 //@property (nonatomic, assign) void (^publishBtTapCallback)();
 
