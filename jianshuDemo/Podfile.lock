@@ -19,6 +19,16 @@ PODS:
   - Masonry (1.0.1)
   - MJRefresh (3.1.10)
   - Reachability (3.2)
+  - React/Core (0.22.2)
+  - React/RCTImage (0.22.2):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTNetwork (0.22.2):
+    - React/Core
+  - React/RCTText (0.22.2):
+    - React/Core
+  - React/RCTWebSocket (0.22.2):
+    - React/Core
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -36,10 +46,19 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - Reachability
+  - React/Core (from `./reactnative/node_modules/react-native`)
+  - React/RCTImage (from `./reactnative/node_modules/react-native`)
+  - React/RCTNetwork (from `./reactnative/node_modules/react-native`)
+  - React/RCTText (from `./reactnative/node_modules/react-native`)
+  - React/RCTWebSocket (from `./reactnative/node_modules/react-native`)
   - Realm
   - SDCycleScrollView
   - SDWebImage
   - WebViewJavascriptBridge
+
+EXTERNAL SOURCES:
+  React:
+    :path: ./reactnative/node_modules/react-native
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -48,11 +67,12 @@ SPEC CHECKSUMS:
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  React: be2dc9f9a325f0b4db1fcd3a0cea29c0e00af9b7
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
 
-PODFILE CHECKSUM: cd144e2602aa94ab66572a12e327794319221998
+PODFILE CHECKSUM: d11be03885720f0cfe78c5a3017f466894153744
 
 COCOAPODS: 1.1.0.beta.1

@@ -45,22 +45,38 @@ static CGFloat const tableRowHeight = 150.0f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *reuseID = @"reuseId";
-    HomeTableViewCell *cell;
+
+    static NSString *reuseIdentifier = @"cellID";
+    HomeTableViewCell *cell = nil;
+    JianShuCellStyle style = JianShuCellStyleHasAllView;
+    if (indexPath.row == 2) {
+        style = JianShuCellStyleHasNoneView;
+    } else if (indexPath.row == 4) {
+        style = JianShuCellStyleHasSpecialTopicView;
+    } else if (indexPath.row == 5 || indexPath.row == 7){
+        style = JianShuCellStyleHasContentImageView;
+    }
     
     if (!cell) {
-        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseID jianShuCellStyle:JianShuCellStyleHasContentImageView];
+        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier jianShuCellStyle:style];
     }
     
     
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    NSBundle *bundle = [NSBundle mainBundle];
+    //    NSString *resourcePath = [bundle resourcePath];
+    //    NSString *filePath = [resourcePath stringByAppendingPathComponent:@"icon_personal_qq"];
+    //    cell.headerImageView.image = [UIImage imageWithContentsOfFile:filePath];//;
+    ((HomeTableViewCell*)cell).headerImageView.image = [UIImage imageNamed:@"icon_personal_qq"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+}
 
 
 @end

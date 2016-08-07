@@ -11,11 +11,15 @@
 #import "UserInformationHeaderView.h"
 #import "UserInforTableViewCell.h"
 
+#import "UIImage+FQCircleImage.h"
+
 #import "YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h"
+
+#import "ReactNativeView.h"
 
 #define tableHeaderHeight (int)([UIScreen mainScreen].bounds.size.height*0.3)
 
-CGFloat const firstHeaderViewHeight = 44;
+static CGFloat const firstHeaderViewHeight = 44;
 
 @interface MyInformationViewController ()<FQPageScrollViewDelegate>
 
@@ -32,6 +36,8 @@ CGFloat const firstHeaderViewHeight = 44;
 
 @property (nonatomic, assign) BOOL canScroll;
 
+@property (strong, nonatomic) ReactNativeView *reactNativeView; //测试react native视图
+
 @end
 
 @implementation MyInformationViewController
@@ -40,6 +46,7 @@ CGFloat const firstHeaderViewHeight = 44;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //初始化
     self.tableView = [[YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-kBottomBarHeight) style:UITableViewStylePlain];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.delegate = self;
@@ -54,14 +61,25 @@ CGFloat const firstHeaderViewHeight = 44;
     UIView *titleView = [[UIView alloc] init];
     self.navigationItem.titleView = titleView;
     self.titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_personal_qq"]];
-    self.titleImageView.layer.cornerRadius = 40;
-    self.titleImageView.layer.masksToBounds = YES;
+    //设置圆角;
+    [self.titleImageView.image circleImage];
+//    self.titleImageView.layer.cornerRadius = 40;
+//    self.titleImageView.layer.masksToBounds = YES;
     self.titleImageView.frame = CGRectMake(0, 0, 80, 80);
     self.titleImageView.center = CGPointMake(titleView.center.x, 0);
     [titleView addSubview:self.titleImageView];
     
     _userInfoHeaderView = [[UserInformationHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tableHeaderHeight)];
     self.tableView.tableHeaderView = _userInfoHeaderView;
+    
+    /**
+     * 测试集成React native
+     *
+     */
+//    _reactNativeView = [[ReactNativeView alloc] initWithFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.bounds), 100)];
+//    
+//    [_userInfoHeaderView addSubview:_reactNativeView];
+    
     
     _userInfoHeaderView.nameLabel.text = @"ykllkk";
     

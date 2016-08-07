@@ -71,8 +71,9 @@
             break;
     }
     
-//    _headerImageView.backgroundColor = [UIColor redColor];
-//    _nameBt.backgroundColor = [UIColor greenColor];
+    _headerImageView.backgroundColor = [UIColor redColor];
+    _nameBt.backgroundColor = [UIColor greenColor];
+    [_nameBt setTitle:@"name" forState:UIControlStateNormal];
     [_nameBt setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     _nameBt.titleLabel.font = [UIFont systemFontOfSize:10];
     _nameBt.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
