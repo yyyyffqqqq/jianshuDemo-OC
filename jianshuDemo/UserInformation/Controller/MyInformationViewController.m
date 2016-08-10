@@ -15,8 +15,6 @@
 
 #import "YXIgnoreHeaderTouchAndRecognizeSimultaneousTableView.h"
 
-#import "ReactNativeView.h"
-
 #define tableHeaderHeight (int)([UIScreen mainScreen].bounds.size.height*0.3)
 
 static CGFloat const firstHeaderViewHeight = 44;
@@ -36,7 +34,6 @@ static CGFloat const firstHeaderViewHeight = 44;
 
 @property (nonatomic, assign) BOOL canScroll;
 
-@property (strong, nonatomic) ReactNativeView *reactNativeView; //测试react native视图
 
 @end
 
@@ -71,15 +68,6 @@ static CGFloat const firstHeaderViewHeight = 44;
     
     _userInfoHeaderView = [[UserInformationHeaderView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, tableHeaderHeight)];
     self.tableView.tableHeaderView = _userInfoHeaderView;
-    
-    /**
-     * 测试集成React native
-     *
-     */
-//    _reactNativeView = [[ReactNativeView alloc] initWithFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.bounds), 100)];
-//    
-//    [_userInfoHeaderView addSubview:_reactNativeView];
-    
     
     _userInfoHeaderView.nameLabel.text = @"ykllkk";
     

@@ -1,0 +1,10 @@
+
+{
+    "name": "ReactnativeIOS",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "react": "^0.14.8",
+        "react-native": "^0.22.2"
+    }
+}

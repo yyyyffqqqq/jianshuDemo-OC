@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RCTRootView.h>
 
-@interface ReactNativeView : UIImageView
+//@class RCTRootView;
+
+@interface ReactNativeView : UIView
+
+@property (strong, nonatomic) RCTRootView *rootView;
 
 @end

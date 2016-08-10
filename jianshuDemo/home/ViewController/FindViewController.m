@@ -16,8 +16,6 @@
 #import "UIImageView+WebCache.h"
 #import "ArticleListTableViewController.h"
 
-#import "TopWindow.h"
-
 #define SCREEN_SIZE_HEIGHT [UIScreen mainScreen].bounds.size.height
 static CGFloat const homeTableRowHeight = 80.0f;
 
@@ -28,6 +26,7 @@ static CGFloat const homeTableRowHeight = 80.0f;
 @property NSMutableArray<FQHomeArticleClass*> *homeArticleObjs;
 
 @property (strong, nonatomic) MJRefreshAutoNormalFooter *footer;
+
 
 @end
 
@@ -113,6 +112,11 @@ static CGFloat const homeTableRowHeight = 80.0f;
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [self.tableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -296,7 +300,6 @@ static CGFloat const homeTableRowHeight = 80.0f;
             CGPoint newPoint = [change[NSKeyValueChangeNewKey] CGPointValue];
             //CGPoint oldPoint = [change[NSKeyValueChangeOldKey] CGPointValue];
             if (newPoint.y + 20 >= _homeTableHeaderHeight*0.72 ) { //0.72是头部视图布局时的比率
-//                self.navigationController.navigationBar.translucent = YES;
                 [self.navigationController setNavigationBarHidden:NO animated:NO];
             } else {
                 [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -305,11 +308,12 @@ static CGFloat const homeTableRowHeight = 80.0f;
     }
 }
 
-
+-(void)dealloc {
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 /*

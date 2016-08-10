@@ -22,10 +22,11 @@
 		140705CC1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 140705CB1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m */; };
 		140705D21D371D1600587FB4 /* WPAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 140705D11D371D1600587FB4 /* WPAnalytics.m */; };
 		140705D41D37237000587FB4 /* content.html in Resources */ = {isa = PBXBuildFile; fileRef = 140705D31D37237000587FB4 /* content.html */; };
+		140CA2491D57B8E80081A9F2 /* index.ios.js in Resources */ = {isa = PBXBuildFile; fileRef = 140CA2471D57B8E80081A9F2 /* index.ios.js */; };
+		140CA24A1D57B8E80081A9F2 /* package.json in Resources */ = {isa = PBXBuildFile; fileRef = 140CA2481D57B8E80081A9F2 /* package.json */; };
 		1416A55A1D297A43003F0A6F /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5561D297A43003F0A6F /* MineTableViewCell.m */; };
 		1416A55B1D297A43003F0A6F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1416A5591D297A43003F0A6F /* MineViewController.m */; };
 		141D74A11D5798A600E9C1CB /* UIImage+FQCircleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D74A01D5798A600E9C1CB /* UIImage+FQCircleImage.m */; };
-		141D74A51D57A4F600E9C1CB /* ReactNativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141D74A41D57A4F600E9C1CB /* ReactNativeView.m */; };
 		1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1454679C1D2C2E32005E153B /* FQPageScrollView.m */; };
 		145B0A511D2591BA004BE429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A501D2591BA004BE429 /* main.m */; };
 		145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145B0A531D2591BA004BE429 /* AppDelegate.m */; };
@@ -190,8 +191,12 @@
 		14E3E75E1D2ADBE700D2E7D5 /* MineTitleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */; };
 		14E5FF9E1D4FDCD900CCDDAC /* JianShuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */; };
 		14E5FFA11D4FDD1E00CCDDAC /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */; };
+		14EC33141D5B36FD00CDE7E2 /* ICollectArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC33131D5B36FD00CDE7E2 /* ICollectArticleViewController.m */; };
+		14EC33171D5B4BC900CDE7E2 /* RNIOSAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC33161D5B4BC900CDE7E2 /* RNIOSAlert.m */; };
+		14EC331A1D5B5DBB00CDE7E2 /* NativeCallReact.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EC33191D5B5DBB00CDE7E2 /* NativeCallReact.m */; };
 		14F3337D1D52314E00E2DFC9 /* TopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F3337C1D52314E00E2DFC9 /* TopWindow.m */; };
 		14F40E1C1D2D3CFD0039119A /* FQCustomToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */; };
+		14F5A5091D5850F10074B93D /* ReactNativeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F5A5081D5850F10074B93D /* ReactNativeView.m */; };
 		6A44CBB9BD2BD29C41F86C2F /* libPods-jianshuDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -226,14 +231,14 @@
 		140705D01D371D1600587FB4 /* WPAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAnalytics.h; sourceTree = "<group>"; };
 		140705D11D371D1600587FB4 /* WPAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAnalytics.m; sourceTree = "<group>"; };
 		140705D31D37237000587FB4 /* content.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content.html; sourceTree = "<group>"; };
+		140CA2471D57B8E80081A9F2 /* index.ios.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.ios.js; sourceTree = "<group>"; };
+		140CA2481D57B8E80081A9F2 /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		1416A5551D297A43003F0A6F /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		1416A5561D297A43003F0A6F /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		1416A5581D297A43003F0A6F /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		1416A5591D297A43003F0A6F /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		141D749F1D5798A600E9C1CB /* UIImage+FQCircleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FQCircleImage.h"; sourceTree = "<group>"; };
 		141D74A01D5798A600E9C1CB /* UIImage+FQCircleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FQCircleImage.m"; sourceTree = "<group>"; };
-		141D74A31D57A4F600E9C1CB /* ReactNativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeView.h; sourceTree = "<group>"; };
-		141D74A41D57A4F600E9C1CB /* ReactNativeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeView.m; sourceTree = "<group>"; };
 		1454679B1D2C2E32005E153B /* FQPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQPageScrollView.h; sourceTree = "<group>"; };
 		1454679C1D2C2E32005E153B /* FQPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQPageScrollView.m; sourceTree = "<group>"; };
 		145B0A4C1D2591BA004BE429 /* jianshuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jianshuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,10 +458,18 @@
 		14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianShuTableViewCell.m; sourceTree = "<group>"; };
 		14E5FF9F1D4FDD1E00CCDDAC /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		14E5FFA01D4FDD1E00CCDDAC /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		14EC33121D5B36FD00CDE7E2 /* ICollectArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICollectArticleViewController.h; sourceTree = "<group>"; };
+		14EC33131D5B36FD00CDE7E2 /* ICollectArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICollectArticleViewController.m; sourceTree = "<group>"; };
+		14EC33151D5B4BC900CDE7E2 /* RNIOSAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNIOSAlert.h; sourceTree = "<group>"; };
+		14EC33161D5B4BC900CDE7E2 /* RNIOSAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNIOSAlert.m; sourceTree = "<group>"; };
+		14EC33181D5B5DBB00CDE7E2 /* NativeCallReact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeCallReact.h; sourceTree = "<group>"; };
+		14EC33191D5B5DBB00CDE7E2 /* NativeCallReact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeCallReact.m; sourceTree = "<group>"; };
 		14F3337B1D52314E00E2DFC9 /* TopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopWindow.h; sourceTree = "<group>"; };
 		14F3337C1D52314E00E2DFC9 /* TopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopWindow.m; sourceTree = "<group>"; };
 		14F40E1A1D2D3CFD0039119A /* FQCustomToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQCustomToolbarView.h; sourceTree = "<group>"; };
 		14F40E1B1D2D3CFD0039119A /* FQCustomToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FQCustomToolbarView.m; sourceTree = "<group>"; };
+		14F5A5071D5850F10074B93D /* ReactNativeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeView.h; sourceTree = "<group>"; };
+		14F5A5081D5850F10074B93D /* ReactNativeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeView.m; sourceTree = "<group>"; };
 		A3F14BAAE97C124A042D6A9F /* libPods-jianshuDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-jianshuDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01C214373357DE24A22CD9 /* Pods-jianshuDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D3DBA8C730FC0CED39DCA /* Pods-jianshuDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jianshuDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-jianshuDemo/Pods-jianshuDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -508,6 +521,17 @@
 			path = "WordPress-iOS-Shared";
 			sourceTree = "<group>";
 		};
+		140CA2461D57B8E80081A9F2 /* reactnative */ = {
+			isa = PBXGroup;
+			children = (
+				14F5A5061D5850F10074B93D /* ReactNativeView */,
+				140CA2471D57B8E80081A9F2 /* index.ios.js */,
+				140CA2481D57B8E80081A9F2 /* package.json */,
+				1486AF881D5AEE96007603CE /* js */,
+			);
+			path = reactnative;
+			sourceTree = "<group>";
+		};
 		1416A5521D297A43003F0A6F /* mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +549,10 @@
 				14E3E75A1D2AD7A700D2E7D5 /* MineUserInformationClass.m */,
 				14E3E75C1D2ADBE700D2E7D5 /* MineTitleClass.h */,
 				14E3E75D1D2ADBE700D2E7D5 /* MineTitleClass.m */,
+				14EC33151D5B4BC900CDE7E2 /* RNIOSAlert.h */,
+				14EC33161D5B4BC900CDE7E2 /* RNIOSAlert.m */,
+				14EC33181D5B5DBB00CDE7E2 /* NativeCallReact.h */,
+				14EC33191D5B5DBB00CDE7E2 /* NativeCallReact.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,6 +571,8 @@
 			children = (
 				1416A5581D297A43003F0A6F /* MineViewController.h */,
 				1416A5591D297A43003F0A6F /* MineViewController.m */,
+				14EC33121D5B36FD00CDE7E2 /* ICollectArticleViewController.h */,
+				14EC33131D5B36FD00CDE7E2 /* ICollectArticleViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -554,15 +584,6 @@
 				141D74A01D5798A600E9C1CB /* UIImage+FQCircleImage.m */,
 			);
 			name = CircleImageView;
-			sourceTree = "<group>";
-		};
-		141D74A21D57A4D400E9C1CB /* ReactView */ = {
-			isa = PBXGroup;
-			children = (
-				141D74A31D57A4F600E9C1CB /* ReactNativeView.h */,
-				141D74A41D57A4F600E9C1CB /* ReactNativeView.m */,
-			);
-			name = ReactView;
 			sourceTree = "<group>";
 		};
 		145467971D2C2587005E153B /* UserInformation */ = {
@@ -619,6 +640,7 @@
 		145B0A431D2591BA004BE429 = {
 			isa = PBXGroup;
 			children = (
+				140CA2461D57B8E80081A9F2 /* reactnative */,
 				14A6801E1D2704F60073FAAA /* PublicModel */,
 				14E5FF9B1D4FDCCE00CCDDAC /* PublicView */,
 				148CEB971D370C34004FBEE8 /* Third Party */,
@@ -669,6 +691,13 @@
 				145B0A601D2591BA004BE429 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1486AF881D5AEE96007603CE /* js */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = js;
 			sourceTree = "<group>";
 		};
 		148CEB971D370C34004FBEE8 /* Third Party */ = {
@@ -1063,12 +1092,20 @@
 		14E5FF9B1D4FDCCE00CCDDAC /* PublicView */ = {
 			isa = PBXGroup;
 			children = (
-				141D74A21D57A4D400E9C1CB /* ReactView */,
 				141D749E1D57985D00E9C1CB /* CircleImageView */,
 				14E5FF9C1D4FDCD900CCDDAC /* JianShuTableViewCell.h */,
 				14E5FF9D1D4FDCD900CCDDAC /* JianShuTableViewCell.m */,
 			);
 			path = PublicView;
+			sourceTree = "<group>";
+		};
+		14F5A5061D5850F10074B93D /* ReactNativeView */ = {
+			isa = PBXGroup;
+			children = (
+				14F5A5071D5850F10074B93D /* ReactNativeView.h */,
+				14F5A5081D5850F10074B93D /* ReactNativeView.m */,
+			);
+			path = ReactNativeView;
 			sourceTree = "<group>";
 		};
 		42DB5CD6EA202EAE6D67A8F6 /* Pods */ = {
@@ -1162,6 +1199,7 @@
 				148CEC541D370C34004FBEE8 /* icon_format_italic@2x.png in Resources */,
 				148CECA71D370C34004FBEE8 /* ZSSrightjustify.png in Resources */,
 				148CEC821D370C34004FBEE8 /* WPHybridLogger.js in Resources */,
+				140CA2491D57B8E80081A9F2 /* index.ios.js in Resources */,
 				148CEC851D370C34004FBEE8 /* wpsave.js in Resources */,
 				148CEC9E1D370C34004FBEE8 /* ZSSleftjustify.png in Resources */,
 				148CEC7A1D370C34004FBEE8 /* rangy-highlighter.js in Resources */,
@@ -1227,6 +1265,7 @@
 				14E373031D47735800FD905A /* LaunchImage-800-Portrait-736h.png in Resources */,
 				148CEC701D370C34004FBEE8 /* icon_format_unlink@2x.png in Resources */,
 				148CECAA1D370C34004FBEE8 /* ZSSsubscript@2x.png in Resources */,
+				140CA24A1D57B8E80081A9F2 /* package.json in Resources */,
 				148CEC661D370C34004FBEE8 /* icon_format_quote@3x.png in Resources */,
 				148CECAE1D370C34004FBEE8 /* ZSStextcolor@2x.png in Resources */,
 				148CEC8F1D370C34004FBEE8 /* ZSSh1@2x.png in Resources */,
@@ -1318,7 +1357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				141D74A51D57A4F600E9C1CB /* ReactNativeView.m in Sources */,
+				14F5A5091D5850F10074B93D /* ReactNativeView.m in Sources */,
 				14A680291D2704F60073FAAA /* MyCustomTabBar.m in Sources */,
 				14974BA71D2C80E500A32D48 /* FQPopViewController.m in Sources */,
 				148CEC3C1D370C34004FBEE8 /* WPEditorField.m in Sources */,
@@ -1342,6 +1381,7 @@
 				148CEC441D370C34004FBEE8 /* ZSSTextView.m in Sources */,
 				145B0A541D2591BA004BE429 /* AppDelegate.m in Sources */,
 				14E028DA1D27DEF000767AF2 /* HomeTableHeaderView.m in Sources */,
+				14EC33141D5B36FD00CDE7E2 /* ICollectArticleViewController.m in Sources */,
 				14D133FA1D43D89200CEC982 /* FQTabItemBaseView.m in Sources */,
 				140705BC1D37163900587FB4 /* NSString+Util.m in Sources */,
 				140705BE1D37163900587FB4 /* UIColor+Helpers.m in Sources */,
@@ -1360,6 +1400,7 @@
 				14E2CE361D42B0360027B8F2 /* FQPageFirstView.m in Sources */,
 				140705CC1D37189A00587FB4 /* WPAnimatedImageResponseSerializer.m in Sources */,
 				148CEC3A1D370C34004FBEE8 /* HRColorUtil.m in Sources */,
+				14EC33171D5B4BC900CDE7E2 /* RNIOSAlert.m in Sources */,
 				148CEC331D370C34004FBEE8 /* CYRTextView.m in Sources */,
 				14B1A1601D2A6BD000D065B6 /* AttenssionTableViewCell.m in Sources */,
 				148F92F21D4A0FCC0086C0B9 /* ArticleListTableViewController.m in Sources */,
@@ -1370,6 +1411,7 @@
 				140705C01D37163900587FB4 /* WPDeviceIdentification.m in Sources */,
 				1454679D1D2C2E32005E153B /* FQPageScrollView.m in Sources */,
 				140705C61D37163900587FB4 /* WPTableViewCell.m in Sources */,
+				14EC331A1D5B5DBB00CDE7E2 /* NativeCallReact.m in Sources */,
 				14A680321D2705660073FAAA /* MyTabbarController.m in Sources */,
 				140705C81D37163900587FB4 /* WPTextFieldTableViewCell.m in Sources */,
 				148CEC361D370C34004FBEE8 /* HRCgUtil.m in Sources */,

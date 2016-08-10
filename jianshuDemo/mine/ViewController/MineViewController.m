@@ -7,9 +7,11 @@
 //
 
 #import "MineViewController.h"
+
 #import "MineTableViewCell.h"
 #import "MineUserInformationClass.h"
 #import "MyInformationViewController.h"
+#import "ICollectArticleViewController.h"
 
 CGFloat const firstRowHeight = 80.0f;
 CGFloat const otherRowHeightOfMe = 50.0f;
@@ -48,7 +50,7 @@ CGFloat const otherRowHeightOfMe = 50.0f;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 
@@ -72,18 +74,28 @@ CGFloat const otherRowHeightOfMe = 50.0f;
     
     //显示数据，暂时不获取；
     MineTableViewCell *cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+    if (indexPath.section == 0) {
+        cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, firstRowHeight)];
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section==1) {
         
-        cell.imageView.image = _imageDatas[indexPath.row];
+        ((MineTableViewCell*)cell).imageView.image = _imageDatas[indexPath.row];
         
-        cell.mineTitle = _mintTitleDatas_section_one[indexPath.row];
+        ((MineTableViewCell*)cell).mineTitle = _mintTitleDatas_section_one[indexPath.row];
         
     } else if (indexPath.section==2) {
-        cell.imageView.image = _imageDatas_2[indexPath.row];
-        cell.mineTitle = _mintTitleDatas_section_two[indexPath.row];
+        ((MineTableViewCell*)cell).imageView.image = _imageDatas_2[indexPath.row];
+        ((MineTableViewCell*)cell).mineTitle = _mintTitleDatas_section_two[indexPath.row];
         
     } else if (indexPath.section == 0) {
-        cell = [[MineTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier withFrame:CGRectMake(0, 0, self.view.frame.size.width, firstRowHeight)];
         
         ((MineTableViewCell*)cell).headerImageView.layer.cornerRadius = firstRowHeight*0.6*0.5; //0.6是图片大小占行高的比率
         ((MineTableViewCell*)cell).headerImageView.layer.masksToBounds = YES;
@@ -96,20 +108,15 @@ CGFloat const otherRowHeightOfMe = 50.0f;
         ((MineTableViewCell*)cell).jifenValueLabel.textColor = jifenColor;
         ((MineTableViewCell*)cell).accessoryTypeValueLabel.font = [UIFont systemFontOfSize:13];
         ((MineTableViewCell*)cell).accessoryTypeValueLabel.textColor = [UIColor whiteColor];
-
+        
         ((MineTableViewCell*)cell).jifenSuperView.layer.borderColor = jifenColor.CGColor;
         ((MineTableViewCell*)cell).jifenSuperView.layer.borderWidth=1;
         
-        cell.mineUserInf = _mineUserInfDatas[indexPath.row];
+        ((MineTableViewCell*)cell).mineUserInf = _mineUserInfDatas[indexPath.row];
     }
     
-    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;
-    cell.imageView.layer.masksToBounds = YES;
-    
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
-    
+//    ((MineTableViewCell*)cell).imageView.layer.cornerRadius = cell.imageView.frame.size.height*0.5;
+//    ((MineTableViewCell*)cell).imageView.layer.masksToBounds = YES;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
@@ -132,16 +139,12 @@ CGFloat const otherRowHeightOfMe = 50.0f;
         MyInformationViewController *myInformationVC = [[MyInformationViewController alloc]init];
         [self showViewController:myInformationVC sender:self];
     }
+    if (indexPath.section == 1 && indexPath.row == 2) {
+        self.hidesBottomBarWhenPushed = YES;
+        ICollectArticleViewController *collectArticleVC = [ICollectArticleViewController new];
+        [self showViewController:collectArticleVC sender:self];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

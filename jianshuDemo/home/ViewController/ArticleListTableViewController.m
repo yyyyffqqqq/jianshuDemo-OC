@@ -52,13 +52,9 @@ static CGFloat const tableRowHeight = 150.0f;
 
     static NSString *reuseIdentifier = @"cellID";
     HomeTableViewCell *cell = nil;
-    JianShuCellStyle style = JianShuCellStyleHasAllView;
-    if (indexPath.row == 2) {
+    JianShuCellStyle style = JianShuCellStyleHasContentImageView;
+    if (indexPath.row == 2 || indexPath.row == 5 || indexPath.row == 7) {
         style = JianShuCellStyleHasNoneView;
-    } else if (indexPath.row == 4) {
-        style = JianShuCellStyleHasSpecialTopicView;
-    } else if (indexPath.row == 5 || indexPath.row == 7){
-        style = JianShuCellStyleHasContentImageView;
     }
     
     if (!cell) {

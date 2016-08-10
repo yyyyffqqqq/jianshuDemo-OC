@@ -17,11 +17,6 @@
     [self searchScrollViewInView:window];
 }
 
-+ (void)statusBarWindowClick {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [self searchScrollViewInView:window];
-}
-
 + (BOOL)isShowingOnKeyWindow:(UIView *)view {
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     CGRect newFrame = [keyWindow convertRect:view.frame fromView:view.superview];
